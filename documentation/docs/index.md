@@ -1,5 +1,11 @@
 # Visão do Produto e Projeto
 
+## Histórico de revisão
+| Data | Versão | Descrição | Autor |
+| ---- | ---- | ---- | ---- |
+| 31/10/22 | 0.1 | Primeiro preenchimento do documento | Beatriz |
+| 08/11/22 | 0.2 | Ajustes iniciais sugeridos | Beatriz |
+
 ## 1 Visão Geral do Produto
 
 O Strix é um produto voltado aos profissionais de educação física que trabalham como Personal Trainers, principalmente os autônomos, mas também pode ser usado pelos que trabalham em alguma academia. É um sistema para a gestão geral do profissional nas suas atividades, possuindo funcionalidades como calendário para marcação de aulas, cadastro de alunos, controle de pagamentos recebidos, envio de planejamento de treino para os alunos entre outros. 
