@@ -5,6 +5,7 @@
 | ---- | ---- | ---- | ---- |
 | 31/10/22 | 0.1 | Primeiro preenchimento do documento | Beatriz |
 | 08/11/22 | 0.2 | Ajustes iniciais sugeridos | Beatriz |
+| 15/11/22 | 0.3 | Definição do processo de desenvolvimento | Pedro, Guilherme, Mário, Beatriz, Israel |
 
 ## 1 Visão Geral do Produto
 
@@ -37,23 +38,27 @@ Javascript, React, Node.js
 
 | Papel| Atribuições | Responsável | Participantes |
 |----|----|----|----|
-| Desenvolvedor | Codificar o produto, codificar testes unitários, realizar refatoração | Guilherme, Mário | Israel, Beatriz, Pedro |
-| Dono do Produto | Atualizar o escopo do produto, organizar o escopo das sprints, validar as entregas | Beatriz, Guilherme | Mário, Israel, Pedro |
-| Analista de Qualidade | Garantir a qualidade do produto, garantir o cumprimento do conceito de pronto, realizar inspeções de código | Guilherme | Mário, Beatriz, Israel, Pedro |
+| Desenvolvedor | Codificar o produto, codificar testes unitários, realizar refatoração | Mário | Guilherme, Beatriz, Pedro, Israel |
+| Product Owner | Atualizar o escopo do produto, organizar o escopo das sprints, validar as entregas | Beatriz | Guilherme |
+| Scrum Master | Garantir que o Time Scrum se oriente pelos valores e práticas do Scrum, certifica-se de que os membros não se comprometam com compromissos além dos que eles conseguem cumprir dentro de uma Sprint. | Guilherme | Mário, Beatriz, Israel, Pedro |
+| Analista de Qualidade | Garantir a qualidade das entregas e o cumprimento dos conceitos propostos. | Pedro | Mário, Beatriz, Israel |
 
 ### 2.2 Planejamento das Fases e/ou Iterações do Projeto
 
 | Sprint | Produto (entrega) | Data Início | Data Fim |
 | ---- | ---- | ---- | ---- |
-| Sprint 1 | Definição do Produto | 31/10/2022 | 12/11/2022 |
+| Sprint 1 | Definição do Produto | 31/10/2022 | 18/11/2022 |
 
 ### 2.3 Matriz de Comunicação
 
 | Descrição | Área/Envolvidos | Periodicidade | Produtos Gerados |
 | ---- | ---- | ---- | ---- |
-| Acompanhamento das Atividades em Andamento | Equipe do Projeto | Semanal | Ata de reunião |
-| Acompanhamento dos Riscos, Compromissos, Ações Pendentes, Indicadores |  | Quinzenal  | Relatório de situação do projeto | 
-| Comunicar situação do projeto | Equipe, prof | Semanal | Ata de reunião e relatório de situação do projeto |
+| Comunicação sobre a situação das atividades sendo executadas (Daily) | Equipe do Projeto | Diária | Resumo da reunião |
+| Acompanhamento das atividades em desenvolvimento (Sprint Review) | Equipe do Projeto | Quinzenal | Resumo da reunião |
+| Análise dos riscos, planejamento de próximas atividades (Sprint Planning) | Equipe do Projeto | Quinzenal | Relatório de situação do projeto e resumo da reunião |
+| Retrospectiva | Equipe do Projeto | Quinzenal | Relatório sobre situação da equipe e dificuldades |
+| Comunicar situação do projeto | Equipe do Projeto, Professor | Semanal | Resumo da reunião e feedback do professor |
+| Reunião com o cliente | Equipe do Projeto | Quinzenal | Feedback do cliente |
 
 ### 2.4 Gerenciamento de Riscos 
 Os riscos identificados são:
@@ -79,17 +84,22 @@ O grupo deve se replanejar caso haja:
 * Ajuste nas datas, devendo analisar o que deve ser entregue na nova data e rever os ciclos
 
 ## 3 Processo de Desenvolvimento de Software
-O Grupo adotará a abordagem ágil Kanban para gestão [...]
+Será adotado um ciclo de vida incremental para o processo de desenvolvimento, com ciclos curtos e iterativos, adotando também algumas propriedades do XP. Utilizaremos de um Product Backlog e Sprint Backlog para o planejamento, com procedimentos do processo ágil como: Sprint planning, Spring Review, com Pair Programming e Planning Poker.
 
-### 3.1 atividade 1
+### 3.1 Planejamento
 
 | Atividade | Método | Ferramenta | Entrega |
 | ---- | ---- | ---- | ---- |
-| Gestão | Kanban | Trello | Atualização diária | 
+| Daily | Reunião para informar o progresso feito no dia por cada integrante | Discord e Whatsapp | Atualização diária do progresso das atividades |
+| Sprint Planning | Avaliação do backlog e definição de atividades para integrantes da equipe | Trello, Discord, Google Meets | Planejamento de atividades da sprint |
+| Sprint Review | Avaliação da Sprint e o cumprimento dos prazos e atividades propostas | Discord e Google Meets | Resumo da Sprint e progresso do produto |
+| Retrospectiva | Reunião dos integrantes para levantamento de dificuldades e sugestões para a equipe | Discord e Google Meets | Relatório da organização da equipe |
 
 ## 4 Lições aprendidas
 
 ### 4.1 Unidade 1
+
+Percebeu-se a necessidade de comunicação ativa entre os integrantes da equipe, além do aprofundamento em relação às metodologias de desenvolvimento e estudo das técnologias.
 
 ## 5 Referências bibliográficas
 
