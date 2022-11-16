@@ -109,6 +109,12 @@
 <td>Ajustes iniciais sugeridos</td>
 <td>Beatriz</td>
 </tr>
+<tr>
+<td>15/11/22</td>
+<td>0.3</td>
+<td>Definição do processo de desenvolvimento</td>
+<td>Pedro, Guilherme, Mário, Beatriz, Israel</td>
+</tr>
 </tbody>
 </table>
 <h2 id="1-visao-geral-do-produto">1 Visão Geral do Produto</h2>
@@ -169,20 +175,26 @@ Para o controle dos pagamentos recebidos será exibida uma lista com os alunos o
 <tr>
 <td>Desenvolvedor</td>
 <td>Codificar o produto, codificar testes unitários, realizar refatoração</td>
-<td>Guilherme, Mário</td>
-<td>Israel, Beatriz, Pedro</td>
+<td>Mário</td>
+<td>Guilherme, Beatriz, Pedro, Israel</td>
 </tr>
 <tr>
-<td>Dono do Produto</td>
+<td>Product Owner</td>
 <td>Atualizar o escopo do produto, organizar o escopo das sprints, validar as entregas</td>
-<td>Beatriz, Guilherme</td>
-<td>Mário, Israel, Pedro</td>
+<td>Beatriz</td>
+<td>Guilherme</td>
+</tr>
+<tr>
+<td>Scrum Master</td>
+<td>Garantir que o Time Scrum se oriente pelos valores e práticas do Scrum, certifica-se de que os membros não se comprometam com compromissos além dos que eles conseguem cumprir dentro de uma Sprint.</td>
+<td>Guilherme</td>
+<td>Mário, Beatriz, Israel, Pedro</td>
 </tr>
 <tr>
 <td>Analista de Qualidade</td>
-<td>Garantir a qualidade do produto, garantir o cumprimento do conceito de pronto, realizar inspeções de código</td>
-<td>Guilherme</td>
-<td>Mário, Beatriz, Israel, Pedro</td>
+<td>Garantir a qualidade das entregas e o cumprimento dos conceitos propostos.</td>
+<td>Pedro</td>
+<td>Mário, Beatriz, Israel</td>
 </tr>
 </tbody>
 </table>
@@ -201,7 +213,7 @@ Para o controle dos pagamentos recebidos será exibida uma lista com os alunos o
 <td>Sprint 1</td>
 <td>Definição do Produto</td>
 <td>31/10/2022</td>
-<td>12/11/2022</td>
+<td>18/11/2022</td>
 </tr>
 </tbody>
 </table>
@@ -217,22 +229,40 @@ Para o controle dos pagamentos recebidos será exibida uma lista com os alunos o
 </thead>
 <tbody>
 <tr>
-<td>Acompanhamento das Atividades em Andamento</td>
+<td>Comunicação sobre a situação das atividades sendo executadas (Daily)</td>
 <td>Equipe do Projeto</td>
-<td>Semanal</td>
-<td>Ata de reunião</td>
+<td>Diária</td>
+<td>Resumo da reunião</td>
 </tr>
 <tr>
-<td>Acompanhamento dos Riscos, Compromissos, Ações Pendentes, Indicadores</td>
-<td></td>
+<td>Acompanhamento das atividades em desenvolvimento (Sprint Review)</td>
+<td>Equipe do Projeto</td>
 <td>Quinzenal</td>
-<td>Relatório de situação do projeto</td>
+<td>Resumo da reunião</td>
+</tr>
+<tr>
+<td>Análise dos riscos, planejamento de próximas atividades (Sprint Planning)</td>
+<td>Equipe do Projeto</td>
+<td>Quinzenal</td>
+<td>Relatório de situação do projeto e resumo da reunião</td>
+</tr>
+<tr>
+<td>Retrospectiva</td>
+<td>Equipe do Projeto</td>
+<td>Quinzenal</td>
+<td>Relatório sobre situação da equipe e dificuldades</td>
 </tr>
 <tr>
 <td>Comunicar situação do projeto</td>
-<td>Equipe, prof</td>
+<td>Equipe do Projeto, Professor</td>
 <td>Semanal</td>
-<td>Ata de reunião e relatório de situação do projeto</td>
+<td>Resumo da reunião e feedback do professor</td>
+</tr>
+<tr>
+<td>Reunião com o cliente</td>
+<td>Equipe do Projeto</td>
+<td>Quinzenal</td>
+<td>Feedback do cliente</td>
 </tr>
 </tbody>
 </table>
@@ -260,8 +290,8 @@ Para o controle dos pagamentos recebidos será exibida uma lista com os alunos o
 <li>Ajuste nas datas, devendo analisar o que deve ser entregue na nova data e rever os ciclos</li>
 </ul>
 <h2 id="3-processo-de-desenvolvimento-de-software">3 Processo de Desenvolvimento de Software</h2>
-<p>O Grupo adotará a abordagem ágil Kanban para gestão [...]</p>
-<h3 id="31-atividade-1">3.1 atividade 1</h3>
+<p>Será adotado um ciclo de vida incremental para o processo de desenvolvimento, com ciclos curtos e iterativos, adotando também algumas propriedades do XP. Utilizaremos de um Product Backlog e Sprint Backlog para o planejamento, com procedimentos do processo ágil como: Sprint planning, Spring Review, com Pair Programming e Planning Poker.</p>
+<h3 id="31-planejamento">3.1 Planejamento</h3>
 <table>
 <thead>
 <tr>
@@ -273,15 +303,34 @@ Para o controle dos pagamentos recebidos será exibida uma lista com os alunos o
 </thead>
 <tbody>
 <tr>
-<td>Gestão</td>
-<td>Kanban</td>
-<td>Trello</td>
-<td>Atualização diária</td>
+<td>Daily</td>
+<td>Reunião para informar o progresso feito no dia por cada integrante</td>
+<td>Discord e Whatsapp</td>
+<td>Atualização diária do progresso das atividades</td>
+</tr>
+<tr>
+<td>Sprint Planning</td>
+<td>Avaliação do backlog e definição de atividades para integrantes da equipe</td>
+<td>Trello, Discord, Google Meets</td>
+<td>Planejamento de atividades da sprint</td>
+</tr>
+<tr>
+<td>Sprint Review</td>
+<td>Avaliação da Sprint e o cumprimento dos prazos e atividades propostas</td>
+<td>Discord e Google Meets</td>
+<td>Resumo da Sprint e progresso do produto</td>
+</tr>
+<tr>
+<td>Retrospectiva</td>
+<td>Reunião dos integrantes para levantamento de dificuldades e sugestões para a equipe</td>
+<td>Discord e Google Meets</td>
+<td>Relatório da organização da equipe</td>
 </tr>
 </tbody>
 </table>
 <h2 id="4-licoes-aprendidas">4 Lições aprendidas</h2>
 <h3 id="41-unidade-1">4.1 Unidade 1</h3>
+<p>Percebeu-se a necessidade de comunicação ativa entre os integrantes da equipe, além do aprofundamento em relação às metodologias de desenvolvimento e estudo das técnologias.</p>
 <h2 id="5-referencias-bibliograficas">5 Referências bibliográficas</h2></div>
             </div>
         </div>
@@ -363,5 +412,5 @@ Para o controle dos pagamentos recebidos será exibida uma lista com os alunos o
 
 <!--
 MkDocs version : 1.4.2
-Build Date UTC : 2022-11-10 12:59:49.646537+00:00
+Build Date UTC : 2022-11-16 00:32:56.599956+00:00
 -->
