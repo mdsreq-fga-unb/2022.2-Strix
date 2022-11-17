@@ -24,9 +24,25 @@
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand" href=".">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
                 <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="visao_do_produto/" class="nav-link">Visão do Produto e Projeto</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="entregas/" class="nav-link">Entregas</a>
+                            </li>
+                        </ul>
 
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item">
@@ -34,6 +50,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="visao_do_produto/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -52,33 +78,9 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#visao-do-produto-e-projeto" class="nav-link">Visão do Produto e Projeto</a>
+            <li class="nav-item" data-level="1"><a href="#projeto-strix" class="nav-link">Projeto Strix</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#historico-de-revisao" class="nav-link">Histórico de revisão</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#1-visao-geral-do-produto" class="nav-link">1 Visão Geral do Produto</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#2-visao-geral-do-produto" class="nav-link">2 Visão Geral do Produto</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#3-processo-de-desenvolvimento-de-software" class="nav-link">3 Processo de Desenvolvimento de Software</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#4-licoes-aprendidas" class="nav-link">4 Lições aprendidas</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#5-referencias-bibliograficas" class="nav-link">5 Referências bibliográficas</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#6-entregas" class="nav-link">6 Entregas</a>
+            <li class="nav-item" data-level="2"><a href="#colaboradores" class="nav-link">Colaboradores</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -89,42 +91,9 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="visao-do-produto-e-projeto">Visão do Produto e Projeto</h1>
-<h2 id="historico-de-revisao">Histórico de revisão</h2>
-<table>
-<thead>
-<tr>
-<th>Data</th>
-<th>Versão</th>
-<th>Descrição</th>
-<th>Autor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>31/10/22</td>
-<td>0.1</td>
-<td>Primeiro preenchimento do documento</td>
-<td>Beatriz</td>
-</tr>
-<tr>
-<td>08/11/22</td>
-<td>0.2</td>
-<td>Ajustes iniciais sugeridos</td>
-<td>Beatriz</td>
-</tr>
-<tr>
-<td>15/11/22</td>
-<td>0.3</td>
-<td>Definição do processo de desenvolvimento</td>
-<td>Pedro, Guilherme, Mário, Beatriz, Israel</td>
-</tr>
-</tbody>
-</table>
-<h2 id="1-visao-geral-do-produto">1 Visão Geral do Produto</h2>
-<p>O Strix é um produto voltado aos profissionais de educação física que trabalham como Personal Trainers, principalmente os autônomos, mas também pode ser usado pelos que trabalham em alguma academia. É um sistema para a gestão geral do profissional nas suas atividades, possuindo funcionalidades como calendário para marcação de aulas, cadastro de alunos, controle de pagamentos recebidos, envio de planejamento de treino para os alunos entre outros. </p>
-<p>O diferencial comparado a outros produtos disponíveis é a gratuidade independente da quantidade de alunos registrados e a oportunidade de fazer uma gestão completa do negócio em uma única ferramenta (da gestão financeira, de agenda, de alunos e de treinos). Se o cliente procura uma ferramenta para se organizar sem custo algum,  de fácil utilização e com tudo que precisa em um lugar só, esse é o sistema ideal pra ele!</p>
-<h3 id="11-declaracao-de-posicao-do-produto">1.1 Declaração de Posição do Produto</h3>
+<h1 id="projeto-strix">Projeto Strix</h1>
+<p>O Strix é um sistema web de gestão para profissionais de educação física que trabalham como Personal Trainer. </p>
+<h2 id="colaboradores">Colaboradores</h2>
 <table>
 <thead>
 <tr>
@@ -134,226 +103,24 @@
 </thead>
 <tbody>
 <tr>
-<td>Para</td>
-<td>Personal Trainers</td>
+<td>Mário Vinícus Beleza Carneiro</td>
+<td>mario.mvbc@gmail.com</td>
 </tr>
 <tr>
-<td>Quem</td>
-<td>Trabalha com vários clientes diferentes e precisa gerenciar seu negócio</td>
+<td>Pedro Daia Cardoso</td>
+<td>pedrodaia.c@gmail.com</td>
 </tr>
 <tr>
-<td>O Strix</td>
-<td>É um Sistema web de gestão</td>
+<td>Beatriz Santos de Oliveira</td>
+<td>bia.santosdoliveira@gmail.com</td>
 </tr>
 <tr>
-<td>Que</td>
-<td>Permite o preenchimento da agenda de aulas do personal, o cadastro dos alunos com seus dados, o controle de pagamentos recebidos, o cadastro de exercícios, a seleção dos mesmos e o envio automatizado dos treinos</td>
+<td>Israel Thalles Dutra dos Santos</td>
+<td>santosisrael14@gmail.com</td>
 </tr>
 <tr>
-<td>Ao contrário</td>
-<td>Do Mobitrainer</td>
-</tr>
-<tr>
-<td>Nosso produto</td>
-<td>É totalmente gratuito, não importa quantos alunos o profissional tenha e possibilita uma gestão completa do negócio</td>
-</tr>
-</tbody>
-</table>
-<h3 id="12-objetivos-do-produto">1.2 Objetivos do Produto</h3>
-<p>O produto tem o objetivo de permitir o gerenciamento do negócio do personal trainer permitindo o preenchimento e a visualização da agenda de aulas ao abrir o calendário, selecionar o dia e anotar o compromisso. Também permitirá o cadastro de alunos, ao selecionar a opção de adicionar cadastro e preencher os campos disponíveis (como nome, endereço e contato), além de possibilitar a edição dos alunos e seus dados. 
-Para o controle dos pagamentos recebidos será exibida uma lista com os alunos onde será possível sinalizar (dar “check”) em cada mês que o aluno pagou. Quanto aos exercícios será possível adicioná-los em uma lista especificando o nome e as instruções para o mesmo, que quando o personal selecionar a opção de montar treino será exibida a lista de exercícios onde ele marca os desejados, após isso ele seleciona o aluno destinatário e o sistema envia automaticamente para o mesmo. </p>
-<h3 id="12-tecnologias-a-serem-utilizadas">1.2 Tecnologias a Serem Utilizadas</h3>
-<p>Javascript, React, Node.js</p>
-<h2 id="2-visao-geral-do-produto">2 Visão Geral do Produto</h2>
-<h3 id="21-organizacao-do-projeto">2.1 Organização do Projeto</h3>
-<table>
-<thead>
-<tr>
-<th>Papel</th>
-<th>Atribuições</th>
-<th>Responsável</th>
-<th>Participantes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Desenvolvedor</td>
-<td>Codificar o produto, codificar testes unitários, realizar refatoração</td>
-<td>Mário</td>
-<td>Guilherme, Beatriz, Pedro, Israel</td>
-</tr>
-<tr>
-<td>Product Owner</td>
-<td>Atualizar o escopo do produto, organizar o escopo das sprints, validar as entregas</td>
-<td>Beatriz</td>
-<td>Guilherme</td>
-</tr>
-<tr>
-<td>Scrum Master</td>
-<td>Garantir que o Time Scrum se oriente pelos valores e práticas do Scrum, certifica-se de que os membros não se comprometam com compromissos além dos que eles conseguem cumprir dentro de uma Sprint.</td>
-<td>Guilherme</td>
-<td>Mário, Beatriz, Israel, Pedro</td>
-</tr>
-<tr>
-<td>Analista de Qualidade</td>
-<td>Garantir a qualidade das entregas e o cumprimento dos conceitos propostos.</td>
-<td>Pedro</td>
-<td>Mário, Beatriz, Israel</td>
-</tr>
-</tbody>
-</table>
-<h3 id="22-planejamento-das-fases-eou-iteracoes-do-projeto">2.2 Planejamento das Fases e/ou Iterações do Projeto</h3>
-<table>
-<thead>
-<tr>
-<th>Sprint</th>
-<th>Produto (entrega)</th>
-<th>Data Início</th>
-<th>Data Fim</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Sprint 1</td>
-<td>Definição do Produto</td>
-<td>31/10/2022</td>
-<td>18/11/2022</td>
-</tr>
-</tbody>
-</table>
-<h3 id="23-matriz-de-comunicacao">2.3 Matriz de Comunicação</h3>
-<table>
-<thead>
-<tr>
-<th>Descrição</th>
-<th>Área/Envolvidos</th>
-<th>Periodicidade</th>
-<th>Produtos Gerados</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Comunicação sobre a situação das atividades sendo executadas (Daily)</td>
-<td>Equipe do Projeto</td>
-<td>Diária</td>
-<td>Resumo da reunião</td>
-</tr>
-<tr>
-<td>Acompanhamento das atividades em desenvolvimento (Sprint Review)</td>
-<td>Equipe do Projeto</td>
-<td>Quinzenal</td>
-<td>Resumo da reunião</td>
-</tr>
-<tr>
-<td>Análise dos riscos, planejamento de próximas atividades (Sprint Planning)</td>
-<td>Equipe do Projeto</td>
-<td>Quinzenal</td>
-<td>Relatório de situação do projeto e resumo da reunião</td>
-</tr>
-<tr>
-<td>Retrospectiva</td>
-<td>Equipe do Projeto</td>
-<td>Quinzenal</td>
-<td>Relatório sobre situação da equipe e dificuldades</td>
-</tr>
-<tr>
-<td>Comunicar situação do projeto</td>
-<td>Equipe do Projeto, Professor</td>
-<td>Semanal</td>
-<td>Resumo da reunião e feedback do professor</td>
-</tr>
-<tr>
-<td>Reunião com o cliente</td>
-<td>Equipe do Projeto</td>
-<td>Quinzenal</td>
-<td>Feedback do cliente</td>
-</tr>
-</tbody>
-</table>
-<h3 id="24-gerenciamento-de-riscos">2.4 Gerenciamento de Riscos</h3>
-<p>Os riscos identificados são:</p>
-<ul>
-<li>Falta de afinidade com a linguagem de programação escolhidada</li>
-<li>Falta de organização com as entregas a serem feitas</li>
-<li>Falhas na comunicação e alinhamento entre os integrantes </li>
-<li>Falta de tempo para se dedicar ao projeto devido há outras demandas externas</li>
-</ul>
-<p>As ações a serem tomadas para a mitigação dos mesmos são:</p>
-<ul>
-<li>Escolher linguagens que facilitem a programação do grupo e estudá-las </li>
-<li>Estar sempre atentos as datas de entregas e o que deve ser entregue em cada uma delas</li>
-<li>Sempre informar ao grupo coisas importantes e compreender o que os membros estão informando</li>
-<li>Organização pessoal e informar ao grupo qualquer impedimento</li>
-</ul>
-<h3 id="25-criterio-de-replanejamento">2.5 Critério de Replanejamento</h3>
-<p>O grupo deve se replanejar caso haja:</p>
-<ul>
-<li>Atraso em alguma tarefa a ser realizada, devendo realocá-la no próximo ciclo</li>
-<li>Incremento de tarefa a ser realizada, devendo alocá-la em algum dos ciclos </li>
-<li>Desfalque do grupo, devendo ajustar os ciclos de acordo com a capacidade do time</li>
-<li>Ajuste nas datas, devendo analisar o que deve ser entregue na nova data e rever os ciclos</li>
-</ul>
-<h2 id="3-processo-de-desenvolvimento-de-software">3 Processo de Desenvolvimento de Software</h2>
-<p>Será adotado um ciclo de vida incremental para o processo de desenvolvimento, com ciclos curtos e iterativos, adotando também algumas propriedades do XP. Utilizaremos de um Product Backlog e Sprint Backlog para o planejamento, com procedimentos do processo ágil como: Sprint planning, Spring Review, com Pair Programming e Planning Poker.</p>
-<h3 id="31-planejamento">3.1 Planejamento</h3>
-<table>
-<thead>
-<tr>
-<th>Atividade</th>
-<th>Método</th>
-<th>Ferramenta</th>
-<th>Entrega</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Daily</td>
-<td>Reunião para informar o progresso feito no dia por cada integrante</td>
-<td>Discord e Whatsapp</td>
-<td>Atualização diária do progresso das atividades</td>
-</tr>
-<tr>
-<td>Sprint Planning</td>
-<td>Avaliação do backlog e definição de atividades para integrantes da equipe</td>
-<td>Trello, Discord, Google Meets</td>
-<td>Planejamento de atividades da sprint</td>
-</tr>
-<tr>
-<td>Sprint Review</td>
-<td>Avaliação da Sprint e o cumprimento dos prazos e atividades propostas</td>
-<td>Discord e Google Meets</td>
-<td>Resumo da Sprint e progresso do produto</td>
-</tr>
-<tr>
-<td>Retrospectiva</td>
-<td>Reunião dos integrantes para levantamento de dificuldades e sugestões para a equipe</td>
-<td>Discord e Google Meets</td>
-<td>Relatório da organização da equipe</td>
-</tr>
-</tbody>
-</table>
-<h2 id="4-licoes-aprendidas">4 Lições aprendidas</h2>
-<h3 id="41-unidade-1">4.1 Unidade 1</h3>
-<p>Percebeu-se a necessidade de comunicação ativa entre os integrantes da equipe, além do aprofundamento em relação às metodologias de desenvolvimento e estudo das técnologias.</p>
-<h2 id="5-referencias-bibliograficas">5 Referências bibliográficas</h2>
-<p>PRESSMAN, ROGER S., Engenharia de Software- (6ª edição), São Paulo, Ed. McGrawHill, 2006.</p>
-<p>L. Sommerville, Engenharia de Software, 9a ed., Pearson, 2011. </p>
-<h2 id="6-entregas">6 Entregas</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Video de apresentação do documento de visão do produto e projeto</td>
-<td><a href="https://www.youtube.com/watch?v=EjtqzDgSy_w">link</a></td>
-</tr>
-<tr>
-<td>Material do seminário de processos e ciclos de vida</td>
-<td><a href="https://docs.google.com/presentation/d/1UiUgiFNUzba7ayCEBlZnpJ7UEB7uvV8o4FU8TWKbIn4/edit#slide=id.gc6f90357f_0_47">link</a></td>
+<td>Guilherme França Dib de Oliveira Bessa</td>
+<td>dibclash@gmail.com</td>
 </tr>
 </tbody>
 </table></div>
@@ -437,5 +204,5 @@ Para o controle dos pagamentos recebidos será exibida uma lista com os alunos o
 
 <!--
 MkDocs version : 1.4.2
-Build Date UTC : 2022-11-17 02:47:26.637709+00:00
+Build Date UTC : 2022-11-17 03:40:34.832989+00:00
 -->
