@@ -102,9 +102,10 @@ Será adotado um ciclo de vida incremental para o processo de desenvolvimento, c
 Percebeu-se a necessidade de comunicação ativa entre os integrantes da equipe, além do aprofundamento em relação às metodologias de desenvolvimento e estudo das técnologias.
 
 ## 5 Referências bibliográficas
+PRESSMAN, ROGER S., Engenharia de Software- (6ª edição), São Paulo, Ed. McGrawHill, 2006. 
 
-## Entregas
+## 6 Entregas
 |  |  |
 |----|----| 
-| Video de apresentação do documento de visão do produto e projeto | https://www.youtube.com/watch?v=EjtqzDgSy_w |
+| Video de apresentação do documento de visão do produto e projeto | <https://www.youtube.com/watch?v=EjtqzDgSy_w> |
 
