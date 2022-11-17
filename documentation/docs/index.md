@@ -102,7 +102,9 @@ Será adotado um ciclo de vida incremental para o processo de desenvolvimento, c
 Percebeu-se a necessidade de comunicação ativa entre os integrantes da equipe, além do aprofundamento em relação às metodologias de desenvolvimento e estudo das técnologias.
 
 ## 5 Referências bibliográficas
-PRESSMAN, ROGER S., Engenharia de Software- (6ª edição), São Paulo, Ed. McGrawHill, 2006. 
+PRESSMAN, ROGER S., Engenharia de Software- (6ª edição), São Paulo, Ed. McGrawHill, 2006.
+
+L. Sommerville, Engenharia de Software, 9a ed., Pearson, 2011. 
 
 ## 6 Entregas
 |  |  |
