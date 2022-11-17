@@ -103,5 +103,8 @@ Percebeu-se a necessidade de comunicação ativa entre os integrantes da equipe,
 
 ## 5 Referências bibliográficas
 
-
+## Entregas
+|  |  |
+|----|----| 
+| Video de apresentação do documento de visão do produto e projeto | https://www.youtube.com/watch?v=EjtqzDgSy_w |
 
