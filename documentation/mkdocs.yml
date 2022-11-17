@@ -1,3 +1,5 @@
 site_name: My Docs
 nav:
   - Home: index.md
+  - Visão do Produto e Projeto: visao_do_produto.md
+  - Entregas: entregas.md
