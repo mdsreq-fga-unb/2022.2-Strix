@@ -2,13 +2,11 @@
 
 <br/>
 
-## Histórico de revisãonte diagrama de hierarquia:
-
-2.1.1 Épicos
+## Histórico de revisão:
 
 | Data     | Versão | Descrição                                                                                 | Autor                            |
 |----------|--------|-------------------------------------------------------------------------------------------|----------------------------------|                                  
-| 30/11/22 | 0.1    | Criação do documento e introdução | Pedro
+| 30/11/22 | 0.1    | Criação do documento e introdução | Pedro, Mário, Israel
 | 30/11/22 | 0.2    | Elaboração do diagrama, elicitação dos requisitos funcionais | Beatriz
 | 01/12/22 | 0.3    | Elicitação dos requisitos não-funcionais e criação do rascunho dos User Stories | Guilherme, Pedro
 | 04/12/22 | 0.4    | Revisão dos User Stories e elaboração de seus Critérios de Aceite  | Beatriz
