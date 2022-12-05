@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Documento de requisitos - My Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../visao_do_produto/" class="nav-link">Visão do Produto e Projeto</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../entregas/" class="nav-link">Entregas</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Documento de requisitos</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../entregas/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#documento-de-requisitos" class="nav-link">Documento de requisitos</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#historico-de-revisao" class="nav-link">Histórico de revisão:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#1-introducao" class="nav-link">1. Introdução</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-requisitos" class="nav-link">2. Requisitos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="documento-de-requisitos">Documento de requisitos</h1>
+<p><br/></p>
+<h2 id="historico-de-revisao">Histórico de revisão:</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Versão</th>
+<th>Descrição</th>
+<th>Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30/11/22</td>
+<td>0.1</td>
+<td>Criação do documento e introdução</td>
+<td>Pedro, Mário, Israel</td>
+</tr>
+<tr>
+<td>30/11/22</td>
+<td>0.2</td>
+<td>Elaboração do diagrama, elicitação dos requisitos funcionais</td>
+<td>Beatriz</td>
+</tr>
+<tr>
+<td>01/12/22</td>
+<td>0.3</td>
+<td>Elicitação dos requisitos não-funcionais e criação do rascunho dos User Stories</td>
+<td>Guilherme, Pedro</td>
+</tr>
+<tr>
+<td>04/12/22</td>
+<td>0.4</td>
+<td>Revisão dos User Stories e elaboração de seus Critérios de Aceite</td>
+<td>Beatriz</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-introducao">1. Introdução</h2>
+<p>Este documento tem como objetivo apresentar uma descrição detalhada dos requisitos do STRIX, sistema de gerenciamento para Personal Trainers. Por meio deste documento, o cliente tomará conhecimento das funcionalidades do projeto e os desenvolvedores terão uma noção de como implementar tais funcionalidades.</p>
+<h3 id="11-objetivos">1.1 Objetivos</h3>
+<p>Dentre os objetivos deste documento estão o de listar, de forma mais clara possível, os requisitos funcionais e não funcionais do sistema em questão.</p>
+<h3 id="12-escopo">1.2 Escopo</h3>
+<p>O presente documento visa ser escrito de forma abrangente e clara, para que possa ser utilizado por todos os membros da equipe responsável, e também compreendido pelo cliente. Serão abordados os requisitos funcionais com base na classificação do SAFe framework, e os requisitos não-funcionais com base na classificação FURPS+.</p>
+<p><br/></p>
+<h2 id="2-requisitos">2. Requisitos</h2>
+<p>Esta seção apresenta em detalhe os requisitos elicitados de acordo com as estruturas de classificação especificadas acima.</p>
+<h3 id="21-requisitos-funcionais">2.1 Requisitos Funcionais</h3>
+<p>Os requisitos funcionais estão organizados hierarquicamente na estrutura de Épicos, Features e User Stories. Para sua rastreabilidade, o ID é dado no formato X.Y.Z, com X o ID do épico, Y o ID da feature, e Z o ID da user story. A organização dos requisitos se deu com base na elaboração do seguinte diagrama de hierarquia:</p>
+<p><img alt="" src="../img/diagrama.png" /></p>
+<h4 id="211-epicos">2.1.1 Épicos</h4>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Nome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0.0</td>
+<td>Gerenciar Agenda</td>
+</tr>
+<tr>
+<td>2.0.0</td>
+<td>Administrar Alunos</td>
+</tr>
+<tr>
+<td>3.0.0</td>
+<td>Gerenciar Pagamentos</td>
+</tr>
+<tr>
+<td>4.0.0</td>
+<td>Administrar Exercícios</td>
+</tr>
+<tr>
+<td>5.0.0</td>
+<td>Criar Treinos</td>
+</tr>
+<tr>
+<td>6.0.0</td>
+<td>Realizar Autenticação</td>
+</tr>
+</tbody>
+</table>
+<h4 id="222-features">2.2.2 Features</h4>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Nome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1.0</td>
+<td>Cadastro de aulas</td>
+</tr>
+<tr>
+<td>1.2.0</td>
+<td>Exibição de aulas no calendário</td>
+</tr>
+<tr>
+<td>2.1.0</td>
+<td>Gerenciamento de alunos</td>
+</tr>
+<tr>
+<td>3.1.0</td>
+<td>Registro de pendentes</td>
+</tr>
+<tr>
+<td>3.2.0</td>
+<td>Registro de pagamentos</td>
+</tr>
+<tr>
+<td>4.1.0</td>
+<td>Registro de exercícios</td>
+</tr>
+<tr>
+<td>5.1.0</td>
+<td>Montagem de treino</td>
+</tr>
+<tr>
+<td>6.1.0</td>
+<td>Login</td>
+</tr>
+</tbody>
+</table>
+<h4 id="223-user-stories">2.2.3 User Stories</h4>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Critérios de aceite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1.1</td>
+<td>Adicionar aula</td>
+<td>Eu como personal,<br>Quero adicionar uma aula,<br>Para lembrar-me mais tarde.</td>
+<td>Deve abrir o formulário para preenchimento da data, hora, duração, nome da aula e seleção de alunos;<br>Deve permitir apenas a inclusão de alunos cadastrados no sistema;<br>Deve permitir a não inclusão de alunos (campo não obrigatório);<br>Não deve permitir a marcação de aulas com choque de horário (levando em consideração a hora de início e sua duração).</td>
+</tr>
+<tr>
+<td>1.1.2</td>
+<td>Editar aula</td>
+<td>Eu como personal,<br>Quero editar uma aula registrada,<br>Para alterar algum dado.</td>
+<td>Deve permitir editar todos os dados da aula (data, hora, duração, nome da aula e alunos);<br>Não deve seguir os mesmos critérios de inclusão - não permitir marcação com choque de horários e inclusão de alunos não registrados)</td>
+</tr>
+<tr>
+<td>1.1.3</td>
+<td>Excluir aula</td>
+<td>Eu como personal,<br>Quero excluir uma aula registrada,<br>Para retirar um compromisso que não existe mais.</td>
+<td>Deve realizar a exclusão da aula selecionada após a confirmação da exclusão por meio de modal;<br>Deve retirar a aula excluída do calendário.</td>
+</tr>
+<tr>
+<td>1.2.1</td>
+<td>Visualizar calendário</td>
+<td>Eu como personal,<br>Quero visualizar no calendário as aulas que tenho marcadas,<br>Para organizar meus compromissos.</td>
+<td>Deve listar as aulas registradas no calendário, cada dia deve conter as aulas marcadas em ordem crescente de horário;<br>Deve mostrar apenas as aulas que ainda irão acontecer, não deve aparecer as dos dias passados;</td>
+</tr>
+<tr>
+<td>2.1.1</td>
+<td>Adicionar aluno</td>
+<td>Eu como personal,<br>Quero adicionar um aluno,<br>Para gerenciar suas aulas e pagamentos.</td>
+<td>Deve abrir o formulário para preenchimento dos dados do aluno contendo nome completo, data de nascimento, telefone, CPF e email;<br>Deve exibir máscara nos campos de data, telefone e CPF;<br>Deve realizar a validação do CPF e da data que não pode ser superior a atual;<br>Não deve permitir a inclusão de alunos com o mesmo CPF;<br>Todos os campos são obrigatórios.</td>
+</tr>
+<tr>
+<td>2.1.2</td>
+<td>Visualizar aluno</td>
+<td>Eu como personal,<br>Quero visualizar os meus alunos,<br>Para obter a listagem de todos eles.</td>
+<td>Deve permitir a visualização da lista de alunos adicionados;</td>
+</tr>
+<tr>
+<td>2.1.3</td>
+<td>Editar aluno</td>
+<td>Eu como personal,<br>Quero editar os dados de um aluno,<br>Para os manter sempre atualizados.</td>
+<td>Deve permitir a edição dos dados do aluno, com exceção do CPF;<br>Os campos devem seguir as mesmas regras de inclusão do aluno quanto as validações, máscaras e obrigatoriedade.</td>
+</tr>
+<tr>
+<td>2.1.4</td>
+<td>Excluir aluno</td>
+<td>Eu, como usuário, desejo remover do sistema um aluno previamente adicionado, para lidar com a desistência de alunos.</td>
+<td>Deve permitir a exclusão do aluno selecionado após a confirmação da exclusão por meio de modal;<br>Deve retirar o aluno excluído do calendário.</td>
+</tr>
+<tr>
+<td>3.1.1</td>
+<td>Adicionar pendência</td>
+<td>Eu como personal,<br>Quero adicionar uma pendência,<br>Para estar sempre ciente dos pagamentos a serem feitos.</td>
+<td>Deve permitir adicionar uma pendência de pagamento ao preencher os campos de valor, data de vencimento, tĩtulo, aluno e status.<br>Deve permitir adicionar apenas 1 aluno já registrado;<br>Deve exibir a máscara nos campos de valor e data;<br>O status pode ser “em aberto” ou “pago”.</td>
+</tr>
+<tr>
+<td>3.1.2</td>
+<td>Visualizar pendência</td>
+<td>Eu como personal,<br>Quero visualizar as pendências de pagamento,<br>Para me organizar financeiramente.</td>
+<td>Deve listar todas as pendências cadastradas;</td>
+</tr>
+<tr>
+<td>3.1.3</td>
+<td>Editar pendência</td>
+<td>Eu com personal,<br>Quero editar uma pendência registrada,<br>Para manter a mesma atualizada.</td>
+<td>Deve permitir editar todos os dados da pendência;<br>Os campos devem seguir as mesmas regras da inclusão de pendência.</td>
+</tr>
+<tr>
+<td>3.1.4</td>
+<td>Excluir pendência</td>
+<td>Eu como personal,<br>Quero excluir uma pendência,<br>Para caso a pendência não exista mais.</td>
+<td>Deve permitir excluir a pendência após a confirmação por meio de modal;<br>Deve retirar a pendência da listagem.</td>
+</tr>
+<tr>
+<td>3.2.1</td>
+<td>Confirmar pagamento</td>
+<td>Eu como personal,<br>Quero confirmar o pagamento,<br>Para saber que a pendência foi paga.</td>
+<td>Deve permitir mudar o status da pendência para “pago”;<br>Deve alterar o status na listagem.</td>
+</tr>
+<tr>
+<td>4.1.1</td>
+<td>Adicionar exercício</td>
+<td>Eu, como usuário, desejo criar um novo exercício e adicioná-lo ao sistema, para poder cadastrar os exercícios que eu enviarei aos alunos.</td>
+<td>Deve permitir adicionar um exercício ao preencher os campos de nome e descrição.</td>
+</tr>
+<tr>
+<td>4.1.2</td>
+<td>Visualizar exercício</td>
+<td>Eu, como usuário, desejo visualizar os dados de um exercício, para verificar se as instruções estão corretas.</td>
+<td>Deve permitir editar todos os dados do exercício e salvá-lo.</td>
+</tr>
+<tr>
+<td>4.1.3</td>
+<td>Editar exercício</td>
+<td>Eu, como usuário, desejo editar os dados de um exercício, para poder acrescentar ou remover instruções.</td>
+<td>Deve permitir editar todos os dados do exercício e salvá-lo.</td>
+</tr>
+<tr>
+<td>4.1.4</td>
+<td>Excluir exercício</td>
+<td>Eu, como usuário, desejo remover do sistema um exercício previamente cadastrado, para não instruir mais este exercício aos alunos.</td>
+<td>Deve permitir excluir o exercício selecionado após confirmação pelo modal;<br>Deve retirar o exercício excluído da listagem.</td>
+</tr>
+<tr>
+<td>5.1.1</td>
+<td>Enviar treino</td>
+<td>Eu, como usuário, desejo selecionar múltiplos exercícios, para definir o treino de um aluno.</td>
+<td>Deve permitir a criação do treino por meio da seleção de exercícios e do aluno a recebê-lo. <br>Cada exercício deve ter associado a ele o preenchimento da quantidade de repetições e um campo de observações;<br>Deve permitir incluir qualquer quantidade de exercícios;<br>Deve enviar o treino ao email do aluno selecionado;</td>
+</tr>
+<tr>
+<td>6.1.1</td>
+<td>Logar no sistema</td>
+<td>Eu, como usuário, desejo me autenticar no sistema com meu user e senha, poder utilizar das funcionalidades do sistema.</td>
+<td>Deve permitir realizar o login por meio do preenchimento de usuário e senha;<br>Não deve permitir o login caso alguma informação esteja incorreta;<br>O login deve expirar após 12 horas de inatividade, exigindo uma nova autenticação.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h3 id="22-requisitos-nao-funcionais">2.2 Requisitos Não-Funcionais</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Categoria</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RNF01</td>
+<td>Implementação</td>
+<td>A API do sistema deve ser desenvolvida em NodeJS e se conectar a um banco de dados Postgres.</td>
+</tr>
+<tr>
+<td>RNF02</td>
+<td>Implementação</td>
+<td>O front-end do sistema deve ser desenvolvido em NextJS.</td>
+</tr>
+<tr>
+<td>RNF03</td>
+<td>Suportabilidade</td>
+<td>O sistema web e todas as suas funcionalidades devem ser suportadas pelas últimas versões dos browsers modernos (Chrome, Firefox, Edge, Safari, Opera)</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
