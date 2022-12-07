@@ -94,3 +94,34 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 | RNF01 | Implementação   | A API do sistema deve ser desenvolvida em NodeJS e se conectar a um banco de dados Postgres.                                                          |
 | RNF02 | Implementação   | O front-end do sistema deve ser desenvolvido em NextJS.                                                                                               |
 | RNF03 | Suportabilidade | O sistema web e todas as suas funcionalidades devem ser suportadas pelas últimas versões dos browsers modernos (Chrome, Firefox, Edge, Safari, Opera) |
+
+## 3. MVP
+
+### 3.1 MVP 1
+
+| User Story| Sprint |
+|----|----|
+| [2.1.1] Adicionar aluno | Sprint 4 |
+| [2.1.2] Visualizar aluno | Sprint 4  |
+| [2.1.4] Excluir aluno | Sprint 4 |
+| [4.1.1] Adicionar exercício | Sprint 5 |
+| [4.1.2] Visualizar exercício | Sprint 5 |
+| [4.1.4] Excluir exercício | Sprint 5 |
+
+### 3.2 MVP 2
+
+| User Story | Sprint |
+| ---- | ---- |
+| [2.1.3] Editar aluno | Sprint 6 |
+| [4.1.4] Editar exercício | Sprint 6 |
+| [1.1.1] Adicionar aula | Sprint 6 |
+| [1.1.2] Editar aula | Sprint 6 |
+| [1.1.3] Excluir aula | Sprint 6 |
+| [3.1.1] Adicionar pendência | Sprint 7 |
+| [3.1.2] Visualizar pendência | Sprint 7 |
+| [3.1.3] Editar pendência | Sprint 7 |
+| [3.1.4] Excluir pendência | Sprint 7 |
+| [1.2.1] Visualizar calendário | Sprint 7 |
+| [3.2.1] Confirmar pagamento | Sprint 7 |
+| [5.1.1] Enviar treino | Sprint 7 |
+| [6.1.1] Logar no sistema | Sprint 7 |

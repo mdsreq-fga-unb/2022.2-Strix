@@ -26,8 +26,7 @@ O diferencial comparado a outros produtos disponíveis é a gratuidade independe
 
 ### 1.2 Objetivos do Produto
 
-O produto tem o objetivo de permitir o gerenciamento do negócio do personal trainer permitindo o preenchimento e a visualização da agenda de aulas ao abrir o calendário, selecionar o dia e anotar o compromisso. Também permitirá o cadastro de alunos, ao selecionar a opção de adicionar cadastro e preencher os campos disponíveis (como nome, endereço e contato), além de possibilitar a edição dos alunos e seus dados. 
-Para o controle dos pagamentos recebidos será exibida uma lista com os alunos onde será possível sinalizar (dar “check”) em cada mês que o aluno pagou. Quanto aos exercícios será possível adicioná-los em uma lista especificando o nome e as instruções para o mesmo, que quando o personal selecionar a opção de montar treino será exibida a lista de exercícios onde ele marca os desejados, após isso ele seleciona o aluno destinatário e o sistema envia automaticamente para o mesmo. 
+O objetivo do sistema é facilitar ao personal trainer o envio dos treinos para seus alunos e o controle de pagamentos e exercícios, ou seja, a automação do negócio do personal. 
 
 ### 1.2 Tecnologias a Serem Utilizadas
 
@@ -38,7 +37,7 @@ Javascript, React, Node.js
 
 | Papel| Atribuições | Responsável | Participantes |
 |----|----|----|----|
-| Desenvolvedor | Codificar o produto, codificar testes unitários, realizar refatoração | Mário | Guilherme, Beatriz, Pedro, Israel |
+| Tech lead | Codificar o produto, codificar testes unitários, realizar refatoração | Mário | Guilherme, Beatriz, Pedro, Israel |
 | Product Owner | Atualizar o escopo do produto, organizar o escopo das sprints, validar as entregas | Beatriz | Guilherme |
 | Scrum Master | Garantir que o Time Scrum se oriente pelos valores e práticas do Scrum, certifica-se de que os membros não se comprometam com compromissos além dos que eles conseguem cumprir dentro de uma Sprint. | Guilherme | Mário, Beatriz, Israel, Pedro |
 | Analista de Qualidade | Garantir a qualidade das entregas e o cumprimento dos conceitos propostos. | Pedro | Mário, Beatriz, Israel |
@@ -48,6 +47,12 @@ Javascript, React, Node.js
 | Sprint | Produto (entrega) | Data Início | Data Fim |
 | ---- | ---- | ---- | ---- |
 | Sprint 1 | Definição do Produto | 31/10/2022 | 18/11/2022 |
+| Sprint 2 | Definição do Backlog do produto  | 19/11/2022 | 03/12/2022 |
+| Sprint 3 | Criação do protótipo e configuração de ambiente de desenvolvimento | 04/12/2022 | 19/12/2022 |
+| Sprint 4 | Implementação do CRUD de aluno | 20/12/2022 | 03/01/2023 |
+| Sprint 5 | Implementação do CRUD de exercícios | 04/01/2023 | 18/01/2023 |
+| Sprint 6 | Implementação de edição de aluno, edição de exercício, CRUD de aula | 19/01/2023 | 02/02/2023 |
+| Sprint 7 | CRUD de pendências, visualizar calendário, confirmar pagamento, enviar treino, logar no sistema | 03/02/2023 | 17/02/2023 |
 
 ### 2.3 Matriz de Comunicação
 
@@ -86,7 +91,19 @@ O grupo deve se replanejar caso haja:
 ## 3 Processo de Desenvolvimento de Software
 Será adotado um ciclo de vida incremental para o processo de desenvolvimento, com ciclos curtos e iterativos, adotando também algumas propriedades do XP. Utilizaremos de um Product Backlog e Sprint Backlog para o planejamento, com procedimentos do processo ágil como: Sprint planning, Spring Review, com Pair Programming e Planning Poker.
 
-### 3.1 Planejamento
+### 3.1 Práticas adotadas do XP 
+
+- Pair Programming: Dois programadores trabalham juntos em uma máquina onde um codifica e o outro acompanha, fazendo críticas e dando sugestões. Os pares trocam de lugar periodicamente. 
+
+- Ritmo sustentável: Será adotado um ritmo de trabalho aceitável que não sobrecarrege a equipe de desenvolvimento, já que horas-extra de trabalho impactam na qualidade do código e na produtividade da equipe a longo prazo.
+
+- Projeto simples: Adoção de um projeto simples capaz de passar nos testes, não possuir duplicidade de funções, que seja fácil de refatorar e de implementar novas funcionalidades. 
+
+- Refatoração: O código sofre manutenção onde podem ser feitas melhorias sem alteração das funcionalidades do sistema (refatoração), melhorando a qualidade do código.
+
+- Testes: Serão implementados testes unitários e de aceitação. 
+
+### 3.2 Planejamento
 
 | Atividade | Método | Ferramenta | Entrega |
 | ---- | ---- | ---- | ---- |
