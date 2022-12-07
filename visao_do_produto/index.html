@@ -185,8 +185,7 @@
 </tbody>
 </table>
 <h3 id="12-objetivos-do-produto">1.2 Objetivos do Produto</h3>
-<p>O produto tem o objetivo de permitir o gerenciamento do negócio do personal trainer permitindo o preenchimento e a visualização da agenda de aulas ao abrir o calendário, selecionar o dia e anotar o compromisso. Também permitirá o cadastro de alunos, ao selecionar a opção de adicionar cadastro e preencher os campos disponíveis (como nome, endereço e contato), além de possibilitar a edição dos alunos e seus dados. 
-Para o controle dos pagamentos recebidos será exibida uma lista com os alunos onde será possível sinalizar (dar “check”) em cada mês que o aluno pagou. Quanto aos exercícios será possível adicioná-los em uma lista especificando o nome e as instruções para o mesmo, que quando o personal selecionar a opção de montar treino será exibida a lista de exercícios onde ele marca os desejados, após isso ele seleciona o aluno destinatário e o sistema envia automaticamente para o mesmo. </p>
+<p>O objetivo do sistema é facilitar ao personal trainer o envio dos treinos para seus alunos e o controle de pagamentos e exercícios, ou seja, a automação do negócio do personal. </p>
 <h3 id="12-tecnologias-a-serem-utilizadas">1.2 Tecnologias a Serem Utilizadas</h3>
 <p>Javascript, React, Node.js</p>
 <h2 id="2-visao-geral-do-produto">2 Visão Geral do Produto</h2>
@@ -202,7 +201,7 @@ Para o controle dos pagamentos recebidos será exibida uma lista com os alunos o
 </thead>
 <tbody>
 <tr>
-<td>Desenvolvedor</td>
+<td>Tech lead</td>
 <td>Codificar o produto, codificar testes unitários, realizar refatoração</td>
 <td>Mário</td>
 <td>Guilherme, Beatriz, Pedro, Israel</td>
@@ -243,6 +242,42 @@ Para o controle dos pagamentos recebidos será exibida uma lista com os alunos o
 <td>Definição do Produto</td>
 <td>31/10/2022</td>
 <td>18/11/2022</td>
+</tr>
+<tr>
+<td>Sprint 2</td>
+<td>Definição do Backlog do produto</td>
+<td>19/11/2022</td>
+<td>03/12/2022</td>
+</tr>
+<tr>
+<td>Sprint 3</td>
+<td>Criação do protótipo e configuração de ambiente de desenvolvimento</td>
+<td>04/12/2022</td>
+<td>19/12/2022</td>
+</tr>
+<tr>
+<td>Sprint 4</td>
+<td>Implementação do CRUD de aluno</td>
+<td>20/12/2022</td>
+<td>03/01/2023</td>
+</tr>
+<tr>
+<td>Sprint 5</td>
+<td>Implementação do CRUD de exercícios</td>
+<td>04/01/2023</td>
+<td>18/01/2023</td>
+</tr>
+<tr>
+<td>Sprint 6</td>
+<td>Implementação de edição de aluno, edição de exercício, CRUD de aula</td>
+<td>19/01/2023</td>
+<td>02/02/2023</td>
+</tr>
+<tr>
+<td>Sprint 7</td>
+<td>CRUD de pendências, visualizar calendário, confirmar pagamento, enviar treino, logar no sistema</td>
+<td>03/02/2023</td>
+<td>17/02/2023</td>
 </tr>
 </tbody>
 </table>
@@ -320,7 +355,25 @@ Para o controle dos pagamentos recebidos será exibida uma lista com os alunos o
 </ul>
 <h2 id="3-processo-de-desenvolvimento-de-software">3 Processo de Desenvolvimento de Software</h2>
 <p>Será adotado um ciclo de vida incremental para o processo de desenvolvimento, com ciclos curtos e iterativos, adotando também algumas propriedades do XP. Utilizaremos de um Product Backlog e Sprint Backlog para o planejamento, com procedimentos do processo ágil como: Sprint planning, Spring Review, com Pair Programming e Planning Poker.</p>
-<h3 id="31-planejamento">3.1 Planejamento</h3>
+<h3 id="31-praticas-adotadas-do-xp">3.1 Práticas adotadas do XP</h3>
+<ul>
+<li>
+<p>Pair Programming: Dois programadores trabalham juntos em uma máquina onde um codifica e o outro acompanha, fazendo críticas e dando sugestões. Os pares trocam de lugar periodicamente. </p>
+</li>
+<li>
+<p>Ritmo sustentável: Será adotado um ritmo de trabalho aceitável que não sobrecarrege a equipe de desenvolvimento, já que horas-extra de trabalho impactam na qualidade do código e na produtividade da equipe a longo prazo.</p>
+</li>
+<li>
+<p>Projeto simples: Adoção de um projeto simples capaz de passar nos testes, não possuir duplicidade de funções, que seja fácil de refatorar e de implementar novas funcionalidades. </p>
+</li>
+<li>
+<p>Refatoração: O código sofre manutenção onde podem ser feitas melhorias sem alteração das funcionalidades do sistema (refatoração), melhorando a qualidade do código.</p>
+</li>
+<li>
+<p>Testes: Serão implementados testes unitários e de aceitação. </p>
+</li>
+</ul>
+<h3 id="32-planejamento">3.2 Planejamento</h3>
 <table>
 <thead>
 <tr>
