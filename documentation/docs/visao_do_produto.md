@@ -52,7 +52,7 @@ Javascript, React, Node.js
 | Sprint 4 | Implementação do CRUD de alunos | 20/12/2022 | 03/01/2023 |
 | Sprint 5 | Implementação do CRUD de exercícios e envio de treino | 04/01/2023 | 18/01/2023 |
 | Sprint 6 | Implementação do CRUD de aula e do CRUD de pendências | 19/01/2023 | 02/02/2023 |
-| Sprint 7 | Confirmar pagamento, logar no sistema, alterar senha e visualizar calendário | 03/02/2023 | 09/02/2023 |
+| Sprint 7 | Confirmar pagamento, logar no sistema, alterar senha | 03/02/2023 | 09/02/2023 |
 
 ### 2.3 Matriz de Comunicação
 
@@ -95,6 +95,7 @@ Será adotado um ciclo de vida incremental para o processo de desenvolvimento, c
 O XP é um método ágil de desenvolvimento de software criado no final da década de 90 que se baseia na criação de sistemas de alta qualidade com base em princípios e práticas tais como interação próxima do cliente, testagem constante do código, ciclos curtos de desenvolvimento, programação em pares e ritmo sustentável de desenvolvimento, por exemplo. No XP os requisitos são expressos na forma de histórias de usuários, que refletem as características que devem ser implementadas no sistema. Essas histórias serão divididas em uma série de tarefas que devem ser cumpridas em cada sprint.
 
 ![Processo de desenvolvimento do XP (Pressman)](./img/XP.jpg)
+Processo de desenvolvimento do XP (Pressman)
 
 ### 3.2 Práticas adotadas do XP 
 
@@ -107,8 +108,9 @@ O XP é um método ágil de desenvolvimento de software criado no final da déca
 - Refatoração: Ocorrerá manutenções periódicas no código onde podem ser feitas melhorias sem alteração das funcionalidades do sistema (refatoração), melhorando a qualidade do código.
 
 - Testes: Serão implementados testes unitários, de integração e de aceitação. 
+- Integração Contínua: Consiste em integrar o trabalho diversas vezes ao dia, assegurando que a base de código permaneça consistente ao final de cada integração.
 
-### 3.2 Planejamento
+### 3.3 Planejamento
 
 | Atividade | Método | Ferramenta | Entrega |
 | ---- | ---- | ---- | ---- |
@@ -116,6 +118,16 @@ O XP é um método ágil de desenvolvimento de software criado no final da déca
 | Sprint Planning | Avaliação do backlog e definição de atividades para integrantes da equipe | Trello, Discord, Google Meets | Planejamento de atividades da sprint |
 | Sprint Review | Avaliação da Sprint e o cumprimento dos prazos e atividades propostas | Discord e Google Meets | Resumo da Sprint e progresso do produto |
 | Retrospectiva | Reunião dos integrantes para levantamento de dificuldades e sugestões para a equipe | Discord e Google Meets | Relatório da organização da equipe |
+
+### 3.4 Implementação
+- Banco de dados: O grupo fará a modelagem do banco de dados utilizando o postgres aliado ao prisma (ORM) para realizar as migrações e as devidas manipulações das tabelas. 
+
+- Front-end: O grupo adotará o pair programming para a construção do front do sistema utilizando o NextJS (framework do React) para implementação.
+
+- Back-end: O grupo irá utilizar o nodeJs aliado ao express e outras bibliotecas pra construção do back do sistema, adotando práticas como pair programming, testes e refatoração.
+
+- Testes: Será adota o pair programming para a implementação de testes tanto no back como no front utilizando Jest para a elaboração de testes unitários e integração. 
+
 
 ## 4 Lições aprendidas
 

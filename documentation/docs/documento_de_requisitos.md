@@ -127,4 +127,3 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 | [3.2.1] Confirmar pagamento | Sprint 7 |
 | [5.1.1] Logar no sistema | Sprint 7 |
 | [5.1.2] Alterar senha | Sprint 7 |
-| [1.2.1] Visualizar calendário | Sprint 7 |
