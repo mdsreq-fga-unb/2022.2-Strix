@@ -26,7 +26,7 @@ O diferencial comparado a outros produtos disponíveis é a gratuidade independe
 
 ### 1.2 Objetivos do Produto
 
-O objetivo do sistema é facilitar ao personal trainer o envio dos treinos para seus alunos e o controle de pagamentos e exercícios, ou seja, a automação do negócio do personal. 
+O objetivo do sistema é facilitar ao personal trainer o envio dos treinos personalizados para seus alunos e o controle de pagamentos, ou seja, a automação do negócio do personal. 
 
 ### 1.2 Tecnologias a Serem Utilizadas
 
@@ -50,9 +50,9 @@ Javascript, React, Node.js
 | Sprint 2 | Definição do Backlog do produto  | 19/11/2022 | 03/12/2022 |
 | Sprint 3 | Criação do protótipo e configuração de ambiente de desenvolvimento | 04/12/2022 | 19/12/2022 |
 | Sprint 4 | Implementação do CRUD de aluno | 20/12/2022 | 03/01/2023 |
-| Sprint 5 | Implementação do CRUD de exercícios | 04/01/2023 | 18/01/2023 |
-| Sprint 6 | Implementação de edição de aluno, edição de exercício, CRUD de aula | 19/01/2023 | 02/02/2023 |
-| Sprint 7 | CRUD de pendências, visualizar calendário, confirmar pagamento, enviar treino, logar no sistema | 03/02/2023 | 17/02/2023 |
+| Sprint 5 | Implementação do CRUD de exercício e envio de treino | 04/01/2023 | 18/01/2023 |
+| Sprint 6 | Implementação do CRUD de aula e do CRUD de pendências | 19/01/2023 | 02/02/2023 |
+| Sprint 7 | Confirmar pagamento, logar no sistema, alterar senha e visualizar calendário | 03/02/2023 | 09/02/2023 |
 
 ### 2.3 Matriz de Comunicação
 
@@ -89,19 +89,24 @@ O grupo deve se replanejar caso haja:
 * Ajuste nas datas, devendo analisar o que deve ser entregue na nova data e rever os ciclos
 
 ## 3 Processo de Desenvolvimento de Software
-Será adotado um ciclo de vida incremental para o processo de desenvolvimento, com ciclos curtos e iterativos, adotando também algumas propriedades do XP. Utilizaremos de um Product Backlog e Sprint Backlog para o planejamento, com procedimentos do processo ágil como: Sprint planning, Spring Review, com Pair Programming e Planning Poker.
+Será adotado um ciclo de vida incremental para o processo de desenvolvimento, com ciclos curtos e iterativos, adotando também algumas propriedades do XP e do SCRUM. Utilizaremos de um Product Backlog e Sprint Backlog para o planejamento, com procedimentos do processo ágil como: Sprint planning, Spring Review, com Pair Programming e Planning Poker.
 
-### 3.1 Práticas adotadas do XP 
+### 3.1 XP (Extreme Programming)
+O XP é um método ágil de desenvolvimento de software criado no final da década de 90 que se baseia na criação de sistemas de alta qualidade com base em princípios e práticas tais como interação próxima do cliente, testagem constante do código, ciclos curtos de desenvolvimento, programação em pares e ritmo de sustentável de desenvolvimento, por exemplo. No XP os requisitos são expressos na forma de histórias de usuários, que refletem as características que devem implementadas no sistema. Essas histórias serão dividas em um série de tarefas que devem ser cumpridas em cada sprint.
+
+![Processo de desenvolvimento do XP (Pressman)](./img/XP.jpg)
+
+### 3.2 Práticas adotadas do XP 
 
 - Pair Programming: Dois programadores trabalham juntos em uma máquina onde um codifica e o outro acompanha, fazendo críticas e dando sugestões. Os pares trocam de lugar periodicamente. 
 
 - Ritmo sustentável: Será adotado um ritmo de trabalho aceitável que não sobrecarrege a equipe de desenvolvimento, já que horas-extra de trabalho impactam na qualidade do código e na produtividade da equipe a longo prazo.
 
-- Projeto simples: Adoção de um projeto simples capaz de passar nos testes, não possuir duplicidade de funções, que seja fácil de refatorar e de implementar novas funcionalidades. 
+- Projeto simples: Adoção de um projeto simples capaz de passar nos testes, que não possua duplicidade de funções, que seja fácil de refatorar e de implementar novas funcionalidades. 
 
-- Refatoração: O código sofre manutenção onde podem ser feitas melhorias sem alteração das funcionalidades do sistema (refatoração), melhorando a qualidade do código.
+- Refatoração: Ocorrerá manutenções periódicas no código onde podem ser feitas melhorias sem alteração das funcionalidades do sistema (refatoração), melhorando a qualidade do código.
 
-- Testes: Serão implementados testes unitários e de aceitação. 
+- Testes: Serão implementados testes unitários, de integração e de aceitação. 
 
 ### 3.2 Planejamento
 
@@ -118,6 +123,9 @@ Será adotado um ciclo de vida incremental para o processo de desenvolvimento, c
 
 Percebeu-se a necessidade de comunicação ativa entre os integrantes da equipe, além do aprofundamento em relação às metodologias de desenvolvimento e estudo das técnologias.
 
+### 4.2 Unidade 2
+
+O grupo se integrou mais, havendo mais cooperação.
 ## 5 Referências bibliográficas
 PRESSMAN, ROGER S., Engenharia de Software- (6ª edição), São Paulo, Ed. McGrawHill, 2006.
 
