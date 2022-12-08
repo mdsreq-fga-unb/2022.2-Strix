@@ -25,4 +25,7 @@
 
 ## 2 Entrega da Unidade 2
 
-### 2.1 Links
+| Entregas | Links  |
+|----|----| 
+| Video de apresentação do documento de visão do produto (atualizações com relação a entrega 1) e documento de requisitos | [link](https://www.youtube.com/watch?v=fik7zeygVYo) |
+| Documento de requisitos | [link](./documento_de_requisitos.md) |
