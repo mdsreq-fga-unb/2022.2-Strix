@@ -48,9 +48,9 @@ Javascript, React, Node.js
 | ---- | ---- | ---- | ---- |
 | Sprint 1 | Definição do Produto | 31/10/2022 | 18/11/2022 |
 | Sprint 2 | Definição do Backlog do produto  | 19/11/2022 | 03/12/2022 |
-| Sprint 3 | Criação do protótipo e configuração de ambiente de desenvolvimento | 04/12/2022 | 19/12/2022 |
-| Sprint 4 | Implementação do CRUD de aluno | 20/12/2022 | 03/01/2023 |
-| Sprint 5 | Implementação do CRUD de exercício e envio de treino | 04/01/2023 | 18/01/2023 |
+| Sprint 3 | Criação do protótipo e configuração do ambiente de desenvolvimento | 04/12/2022 | 19/12/2022 |
+| Sprint 4 | Implementação do CRUD de alunos | 20/12/2022 | 03/01/2023 |
+| Sprint 5 | Implementação do CRUD de exercícios e envio de treino | 04/01/2023 | 18/01/2023 |
 | Sprint 6 | Implementação do CRUD de aula e do CRUD de pendências | 19/01/2023 | 02/02/2023 |
 | Sprint 7 | Confirmar pagamento, logar no sistema, alterar senha e visualizar calendário | 03/02/2023 | 09/02/2023 |
 
