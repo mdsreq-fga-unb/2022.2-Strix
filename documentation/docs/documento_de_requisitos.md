@@ -10,6 +10,8 @@
 | 30/11/22 | 0.2    | Elaboração do diagrama, elicitação dos requisitos funcionais | Beatriz
 | 01/12/22 | 0.3    | Elicitação dos requisitos não-funcionais e criação do rascunho dos User Stories | Guilherme, Pedro
 | 04/12/22 | 0.4    | Revisão dos User Stories e elaboração de seus Critérios de Aceite  | Beatriz
+| 06/12/22 | 0.5    | Documentação dos MVPs  | Mário
+| 07/12/22 | 0.6    | Re-organização do diagrama e refatoração dos requisitos funcionais  | Pedro
 
 ## 1. Introdução
 
@@ -45,8 +47,7 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 | 2.0.0 	| Administrar Alunos     	|
 | 3.0.0 	| Gerenciar Pagamentos   	|
 | 4.0.0 	| Administrar Exercícios 	|
-| 5.0.0 	| Criar Treinos          	|
-| 6.0.0 	| Realizar Autenticação  	|
+| 5.0.0 	| Autenticar Usuário        |
 
 #### 2.2.2 Features
 
@@ -58,8 +59,8 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 | 3.1.0 	| Registro de pendentes           	|
 | 3.2.0 	| Registro de pagamentos          	|
 | 4.1.0 	| Registro de exercícios          	|
-| 5.1.0 	| Montagem de treino              	|
-| 6.1.0 	| Login                           	|
+| 4.2.0 	| Registro de treino             	|
+| 5.1.0 	| Login                           	|
 
 #### 2.2.3 User Stories
 
@@ -82,8 +83,9 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 | 4.1.2 	| Visualizar exercício  	|  Eu, como usuário, desejo visualizar os dados de um exercício, para verificar se as instruções estão corretas.                            	| Deve permitir editar todos os dados do exercício e salvá-lo.                                                                                                                                                                                                                                                                                                                 	|
 | 4.1.3 	| Editar exercício      	| Eu, como usuário, desejo editar os dados de um exercício, para poder acrescentar ou remover instruções.                                   	| Deve permitir editar todos os dados do exercício e salvá-lo.                                                                                                                                                                                                                                                                                                                 	|
 | 4.1.4 	| Excluir exercício     	| Eu, como usuário, desejo remover do sistema um exercício previamente cadastrado, para não instruir mais este exercício aos alunos.        	| Deve permitir excluir o exercício selecionado após confirmação pelo modal;<br>Deve retirar o exercício excluído da listagem.                                                                                                                                                                                                                                                 	|
-| 5.1.1 	| Enviar treino         	| Eu, como usuário, desejo selecionar múltiplos exercícios, para definir o treino de um aluno.                                              	| Deve permitir a criação do treino por meio da seleção de exercícios e do aluno a recebê-lo. <br>Cada exercício deve ter associado a ele o preenchimento da quantidade de repetições e um campo de observações;<br>Deve permitir incluir qualquer quantidade de exercícios;<br>Deve enviar o treino ao email do aluno selecionado;                                            	|
-| 6.1.1 	| Logar no sistema      	| Eu, como usuário, desejo me autenticar no sistema com meu user e senha, poder utilizar das funcionalidades do sistema.                    	| Deve permitir realizar o login por meio do preenchimento de usuário e senha;<br>Não deve permitir o login caso alguma informação esteja incorreta;<br>O login deve expirar após 12 horas de inatividade, exigindo uma nova autenticação.                                                                                                                                     	|
+| 4.2.1 	| Enviar treino         	| Eu, como usuário, desejo selecionar múltiplos exercícios, para definir o treino de um aluno.                                              	| Deve permitir a criação do treino por meio da seleção de exercícios e do aluno a recebê-lo. <br>Cada exercício deve ter associado a ele o preenchimento da quantidade de repetições e um campo de observações;<br>Deve permitir incluir qualquer quantidade de exercícios;<br>Deve enviar o treino ao email do aluno selecionado;                                            	|
+| 5.1.1 	| Logar no sistema      	| Eu, como usuário, desejo me autenticar no sistema com meu user e senha, para poder utilizar das funcionalidades do sistema.                    	| Deve permitir realizar o login por meio do preenchimento de usuário e senha;<br>Não deve permitir o login caso alguma informação esteja incorreta;<br>O login deve expirar após 12 horas de inatividade, exigindo uma nova autenticação.                                                                                                                                     	|
+| 5.1.2 	| Alterar senha      	| Eu, como usuário, desejo redefinir a minha senha de login, para me autenticar novamente caso eu a esqueça.                    	| Deve permitir a redenifição de uma nova senha e confirmá-la;<br>Não deve permitir mais de uma alteração no período de 12 horas;                                                                                                                                     	|
 
 <br>
 
