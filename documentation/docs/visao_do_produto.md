@@ -126,8 +126,7 @@ Processo de desenvolvimento do XP (Pressman)
 
 - Back-end: O grupo irá utilizar o nodeJs aliado ao express e outras bibliotecas pra construção do back do sistema, adotando práticas como pair programming, testes e refatoração.
 
-- Testes: Será adota o pair programming para a implementação de testes tanto no back como no front utilizando Jest para a elaboração de testes unitários e integração. 
-
+- Testes: Será adotado o pair programming para a implementação de testes tanto no back como no front. Utilizaremos Jest para a elaboração de testes unitários e de integração. 
 
 ## 4 Lições aprendidas
 
