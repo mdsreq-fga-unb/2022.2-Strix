@@ -275,7 +275,7 @@
 </tr>
 <tr>
 <td>Sprint 7</td>
-<td>Confirmar pagamento, logar no sistema, alterar senha e visualizar calendário</td>
+<td>Confirmar pagamento, logar no sistema, alterar senha</td>
 <td>03/02/2023</td>
 <td>09/02/2023</td>
 </tr>
@@ -357,7 +357,8 @@
 <p>Será adotado um ciclo de vida incremental para o processo de desenvolvimento, com ciclos curtos e iterativos, adotando também algumas propriedades do XP e do SCRUM. Utilizaremos de um Product Backlog e Sprint Backlog para o planejamento, com procedimentos do processo ágil como: Sprint planning, Spring Review, com Pair Programming e Planning Poker.</p>
 <h3 id="31-xp-extreme-programming">3.1 XP (Extreme Programming)</h3>
 <p>O XP é um método ágil de desenvolvimento de software criado no final da década de 90 que se baseia na criação de sistemas de alta qualidade com base em princípios e práticas tais como interação próxima do cliente, testagem constante do código, ciclos curtos de desenvolvimento, programação em pares e ritmo sustentável de desenvolvimento, por exemplo. No XP os requisitos são expressos na forma de histórias de usuários, que refletem as características que devem ser implementadas no sistema. Essas histórias serão divididas em uma série de tarefas que devem ser cumpridas em cada sprint.</p>
-<p><img alt="Processo de desenvolvimento do XP (Pressman)" src="../img/XP.jpg" /></p>
+<p><img alt="Processo de desenvolvimento do XP (Pressman)" src="../img/XP.jpg" />
+Processo de desenvolvimento do XP (Pressman)</p>
 <h3 id="32-praticas-adotadas-do-xp">3.2 Práticas adotadas do XP</h3>
 <ul>
 <li>
@@ -375,8 +376,9 @@
 <li>
 <p>Testes: Serão implementados testes unitários, de integração e de aceitação. </p>
 </li>
+<li>Integração Contínua: Consiste em integrar o trabalho diversas vezes ao dia, assegurando que a base de código permaneça consistente ao final de cada integração.</li>
 </ul>
-<h3 id="32-planejamento">3.2 Planejamento</h3>
+<h3 id="33-planejamento">3.3 Planejamento</h3>
 <table>
 <thead>
 <tr>
@@ -413,6 +415,21 @@
 </tr>
 </tbody>
 </table>
+<h3 id="34-implementacao">3.4 Implementação</h3>
+<ul>
+<li>
+<p>Banco de dados: O grupo fará a modelagem do banco de dados utilizando o postgres aliado ao prisma (ORM) para realizar as migrações e as devidas manipulações das tabelas. </p>
+</li>
+<li>
+<p>Front-end: O grupo adotará o pair programming para a construção do front do sistema utilizando o NextJS (framework do React) para implementação.</p>
+</li>
+<li>
+<p>Back-end: O grupo irá utilizar o nodeJs aliado ao express e outras bibliotecas pra construção do back do sistema, adotando práticas como pair programming, testes e refatoração.</p>
+</li>
+<li>
+<p>Testes: Será adota o pair programming para a implementação de testes tanto no back como no front utilizando Jest para a elaboração de testes unitários e integração. </p>
+</li>
+</ul>
 <h2 id="4-licoes-aprendidas">4 Lições aprendidas</h2>
 <h3 id="41-unidade-1">4.1 Unidade 1</h3>
 <p>Percebeu-se a necessidade de comunicação ativa entre os integrantes da equipe, além do aprofundamento em relação às metodologias de desenvolvimento e estudo das técnologias.</p>
