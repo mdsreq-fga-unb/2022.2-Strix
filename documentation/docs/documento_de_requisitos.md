@@ -94,7 +94,7 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 
 | ID    | Categoria       | Descrição                                                                                                                                             | 
 |-------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| RNF01 | Implementação   | A API do sistema deve ser desenvolvida em NodeJS e se conectar a um banco de dados Postgres.                                                          |
+| RNF01 | Implementação   | A API do sistema deve ser desenvolvida em NodeJS.                                                          |
 | RNF02 | Implementação   | A API do sistema deve se conectar a um banco de dados Postgres.                                                                                       |
 | RNF03 | Implementação   | O front-end do sistema deve ser desenvolvido em NextJS.
 | RNF04 | Suportabilidade | O sistema web e todas as suas funcionalidades devem ser suportadas pelas últimas versões dos browsers modernos (Chrome v107 ou superior, Firefox v108 ou superior) |
