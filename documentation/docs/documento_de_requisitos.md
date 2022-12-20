@@ -12,29 +12,30 @@
 | 04/12/22 | 0.4    | Revisão dos User Stories e elaboração de seus Critérios de Aceite  | Beatriz
 | 06/12/22 | 0.5    | Documentação dos MVPs  | Mário
 | 07/12/22 | 0.6    | Re-organização do diagrama e refatoração dos requisitos funcionais  | Pedro
+| 19/12/22 | 0.7    | Alterações nos requisitos não-funcionais e remoção de textos desnecessários.  | Pedro
 
 ## 1. Introdução
 
-Este documento tem como objetivo apresentar uma descrição detalhada dos requisitos do STRIX, sistema de gerenciamento para Personal Trainers. Por meio deste documento, o cliente tomará conhecimento das funcionalidades do projeto e os desenvolvedores terão uma noção de como implementar tais funcionalidades.
+Este documento tem como objetivo apresentar os requisitos do STRIX, sistema de gerenciamento para Personal Trainers. Por meio deste documento, o cliente tomará conhecimento das funcionalidades do projeto e os desenvolvedores terão uma noção de como implementar tais funcionalidades.
 
 ### 1.1 Objetivos
 
-Dentre os objetivos deste documento estão o de listar, de forma mais clara possível, os requisitos funcionais e não funcionais do sistema em questão.
+Dentre os objetivos deste documento estão o de listar os requisitos funcionais e não funcionais do sistema em questão.
 
 ### 1.2 Escopo
 
-O presente documento visa ser escrito de forma abrangente e clara, para que possa ser utilizado por todos os membros da equipe responsável, e também compreendido pelo cliente. Serão abordados os requisitos funcionais com base na classificação do SAFe framework, e os requisitos não-funcionais com base na classificação FURPS+.
+Serão abordados os requisitos funcionais com base na classificação do SAFe framework, e os requisitos não-funcionais com base na classificação FURPS+.
 
 <br/>
 
 ## 2. Requisitos
 
-Esta seção apresenta em detalhe os requisitos elicitados de acordo com as estruturas de classificação especificadas acima.
+Esta seção apresenta os requisitos elicitados de acordo com as estruturas de classificação especificadas acima.
 
 
 ### 2.1 Requisitos Funcionais
 
-Os requisitos funcionais estão organizados hierarquicamente na estrutura de Épicos, Features e User Stories. Para sua rastreabilidade, o ID é dado no formato X.Y.Z, com X o ID do épico, Y o ID da feature, e Z o ID da user story. A organização dos requisitos se deu com base na elaboração do seguinte diagrama de hierarquia:
+Os requisitos funcionais estão organizados hierarquicamente na estrutura de Épicos, Features e User Stories. Para sua rastreabilidade, o ID é dado no formato X.Y.Z, com X o ID do épico, Y o ID da feature, e Z o ID da user story. A organização dos requisitos se deu com base na estrutura do SAFe.
 
 ![](./img/diagrama.png)
 
@@ -94,8 +95,9 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 | ID    | Categoria       | Descrição                                                                                                                                             | 
 |-------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | RNF01 | Implementação   | A API do sistema deve ser desenvolvida em NodeJS e se conectar a um banco de dados Postgres.                                                          |
-| RNF02 | Implementação   | O front-end do sistema deve ser desenvolvido em NextJS.                                                                                               |
-| RNF03 | Suportabilidade | O sistema web e todas as suas funcionalidades devem ser suportadas pelas últimas versões dos browsers modernos (Chrome, Firefox, Edge, Safari, Opera) |
+| RNF02 | Implementação   | A API do sistema deve se conectar a um banco de dados Postgres.                                                                                       |
+| RNF03 | Implementação   | O front-end do sistema deve ser desenvolvido em NextJS.
+| RNF04 | Suportabilidade | O sistema web e todas as suas funcionalidades devem ser suportadas pelas últimas versões dos browsers modernos (Chrome v107 ou superior, Firefox v108 ou superior) |
 
 ## 3. MVP: Minimum Viable Product
 
