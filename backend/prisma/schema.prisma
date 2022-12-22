@@ -9,3 +9,75 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+// Criar migration: yarn prisma migrate dev
+model User {
+  id String @id @default(uuid())
+  name String
+  email String
+  password String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+   @@map("users")
+   student Student[]
+}
+
+model Student {
+  id String @id @default(uuid())
+  name String
+  cpf String
+  email String
+  birthDate String
+  phone String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+   user User @relation(fields: [user_id], references: [id])
+
+  @@map("students")
+  training Training[]
+
+  user_id String
+}
+
+model Category {
+  id String @id @default(uuid())
+  name String
+  description String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  @@map("categories")
+  exercises Exercise[]
+}
+
+model Exercise {
+  id String @id @default(uuid())
+  name String
+  reps String?
+  time String?
+  observation String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  category Category @relation(fields: [category_id], references: [id])
+  training Training @relation(fields: [training_id], references: [id])
+
+  @@map("exercises")
+  category_id String
+  training_id String
+}
+
+model Training {
+  id String @id @default(uuid())
+  name String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  student Student @relation(fields: [student_id], references: [id])
+
+  @@map("training")
+  student_id String
+  exercise Exercise[]
+}
