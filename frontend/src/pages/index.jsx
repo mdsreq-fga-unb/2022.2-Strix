@@ -1,15 +1,35 @@
-import Button from '@mui/material/Button';
+//import { Password } from '@mui/icons-material';
 import Head from 'next/head';
+import styles from '../../styles/home.module.scss';
+import CustomizedInputs from '../components/ui/StyledInputs/CustomizedInputs';
+import { Button } from '../components/ui/Button';
+import Link from 'next/link';
 
 export default function Home() {
   return (
     <>
     <Head>
-      <title>WISE - Página Inicial</title>
+      <title>SujeitoPizza - Faça seu login</title>
     </Head>
-    <div>
-      <h1>WISE - Projeto de Requisitos :)</h1>
-      <Button variant="contained">Teste Botão - material ui</Button>
+
+    <div className={styles.containerCenter}>
+     
+      <div className={styles.login}> 
+
+        <Link href="/" className={styles.logo}>
+          WISE
+        </Link>
+
+        <form>
+          <CustomizedInputs size='small' label={'Digite seu email'} type={'text'} />
+          <CustomizedInputs size='small' type={'password'} label={'Senha'} />
+          <Button type='submit' loading={false}>Acessar</Button> 
+        </form>
+
+        <Link href="/" className={styles.text}>
+          Esqueci minha senha
+        </Link>
+      </div>
     </div>
     </>
   )
