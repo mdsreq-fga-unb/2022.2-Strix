@@ -4,13 +4,13 @@ import { styled } from '@mui/material/styles';
 
 const CssTextField = styled(TextField)({
   '& label.Mui-focused': {
-    color: '#D9D9D9',
+    color: 'var(--green-700)',
     backgroundColor: 'transparent',
     marginTop: '-10px',
   },
   '& .MuiInputLabel-shrink': {
     marginTop: '-7px',
-    color: 'var(--green-700)',
+    color: '#D9D9D9', 
   },
   '& .MuiInput-underline:after': {
     borderBottomColor: 'green',

@@ -1,4 +1,4 @@
-.containerCenter{
+  .containerCenter{
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -8,10 +8,23 @@
   }
   
   .logo{
-      color: #fff;
-      padding-bottom: 1rem;
-      font-size: 96px;
-      font-family:Arial, Helvetica, sans-serif;
+    color: #fff;
+    padding-bottom: 1rem;
+    font-size: 96px;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  .subtitulo{
+    color: #fff;
+    padding-bottom: 3rem;
+    font-size: 64px;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  .msg{
+    color: #D9D9D9;
+    padding-bottom: 0.2rem;
+    font-size: 11px;
   }
   
   .login{
@@ -30,7 +43,7 @@
     }
   
     form button{
-      height: 40px;
+      height: 48px;
       font-size: 1.2rem;
     }
   }
@@ -40,7 +53,7 @@
     color: var(--white);
     cursor: pointer;
   }
-  
+
   @media (max-width: 620px) {
     .login{
       width: 90%;
