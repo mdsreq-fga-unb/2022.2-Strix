@@ -1,11 +1,25 @@
-//import { Password } from '@mui/icons-material';
+import { useContext, useState } from 'react';
 import Head from 'next/head';
 import styles from '../../styles/Home.module.scss';
 import CustomizedInputs from '../components/ui/StyledInputs/CustomizedInputs';
 import { Button } from '../components/ui/Button';
 import Link from 'next/link';
+import { AuthContext } from '../contexts/AuthContext';
 
 export default function Home() {
+  const { signIn } = useContext(AuthContext)
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  async function handleLogin(event){
+    event.preventDefault();
+    let data = {
+      email,
+      password
+    }
+    await signIn(data);
+  }
+
   return (
     <>
     <Head>
@@ -20,9 +34,23 @@ export default function Home() {
           WISE
         </Link>
 
-        <form>
-          <CustomizedInputs size='small' label={'Digite seu email'} type={'text'} />
-          <CustomizedInputs size='small' type={'password'} label={'Senha'} />
+        <form onSubmit={handleLogin}>
+          <CustomizedInputs
+            size='small' 
+            label={'Digite seu email'} 
+            type={'text'} 
+            value={email}
+            onChange={ (e) => setEmail(e.target.value) }
+          />
+
+          <CustomizedInputs 
+            size='small' 
+            type={'password'} 
+            label={'Senha'}
+            value={password}
+            onChange={ (e) => setPassword(e.target.value) }
+          />
+
           <Button type='submit'>Acessar</Button> 
         </form>
 
