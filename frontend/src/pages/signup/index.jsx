@@ -24,11 +24,11 @@ export default function SignUp() {
         <CustomizedInputs size='small' label={'Nome completo'} type={'text'} required={true} />
           <CustomizedInputs 
           size='small' 
-          type={"date"} 
+          type={"text"} 
           label={'Data de nascimento'} 
-          InputLabelProps={{
-            shrink: true,
-          }}
+          // InputLabelProps={{
+          //   shrink: true,
+          // }}
           required={true} />
           <CustomizedInputs size='small' type={'text'} label={'Telefone'} required={true} />
           <CustomizedInputs size='small' type={'text'} label={'CPF'} required={true} />
