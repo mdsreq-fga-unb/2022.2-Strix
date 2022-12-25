@@ -1,0 +1,45 @@
+.alunosContainer {
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+}
+.alunosContainer h1 {
+  text-align: center;
+}
+.alunosTitle {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.alunosList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.alunoItem {
+  border: 0;
+  background: var(--green-700);
+  font-size: 1.2rem;
+  color: white;
+  height: 60px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: background 0.3s;
+  &:hover {
+    background: var(--green-600);
+  }
+}
+.addAlunoButton {
+  margin-top: 3rem;
+}
+.group {
+  height: 500px;
+  overflow-y: scroll;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}

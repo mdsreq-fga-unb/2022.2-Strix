@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <>
     <Head>
-      <title>WISE - Página Inicial</title>
+      <title>Strix - Página Inicial</title>
     </Head>
     <div>
-      <h1>WISE - Projeto de Requisitos :)</h1>
+      <h1 className={'title'}>WISE - Projeto de Requisitos :)</h1>
       <Button variant="contained">Teste Botão - material ui</Button>
     </div>
     </>
