@@ -84,9 +84,8 @@ export function AuthProvider({ children }){
                 user_id
             })
 
-            //alert('Aluno cadastrado com sucesso!')
             toast.success('Aluno cadastrado com sucesso!');
-            //Router.push('/registerStudent');
+            Router.push('/studentDash');
         }catch(err){
             toast.error("Erro ao cadastrar!");
             console.log("erro ao cadastrar aluno ", err)

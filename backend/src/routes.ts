@@ -8,6 +8,8 @@ import { DetailUserController } from './controllers/user/DetailUserController';
 // -- Student --
 import { CreateStudentController } from './controllers/student/CreateStudentController';
 import { ListStudentController } from './controllers/student/ListStudentController';
+import { RemoveStudentController } from './controllers/student/RemoveStudentController';
+import { EditStudentController } from './controllers/student/EditStudentController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
@@ -21,5 +23,7 @@ router.get('/me', isAuthenticated, new DetailUserController().handle)
 // -- Rotas Student --
 router.post('/students', isAuthenticated, new CreateStudentController().handle)
 router.get('/listStudents', isAuthenticated, new ListStudentController().handle)
+router.delete('/studentDelete', isAuthenticated, new RemoveStudentController().handle)
+router.put('/updateStudent', isAuthenticated, new EditStudentController().handle)
 
 export { router };
