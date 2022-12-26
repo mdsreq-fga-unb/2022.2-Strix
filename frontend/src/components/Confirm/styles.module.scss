@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background: #3AAFA1;
+  width: 400px;
+  height: 200px;
+  border-radius: 15px;
+  border: '2px solid #000';
+}
+.container h1 {
+  text-align: center;
+}
+.title {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  font-size: 2rem;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  justify-self: center;
+  align-items: center;
+}
+.button {
+  width: 150px;
+  height: 50px;
+  border-radius: 15px;
+  transition: background 0.3s;
+}
