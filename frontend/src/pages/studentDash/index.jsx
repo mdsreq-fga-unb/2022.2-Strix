@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button';
 //import styles from './styles.module.scss';
 import Head from 'next/head';
+import { canSSRAuth } from '../../../utils/canSSRAuth';
 
 export default function StudentDash() {
   return (
@@ -15,3 +16,9 @@ export default function StudentDash() {
     </>
   )
 }
+
+export const getServerSideProps = canSSRAuth(async (ctx) => {
+  return {
+      props: {}
+  }
+})

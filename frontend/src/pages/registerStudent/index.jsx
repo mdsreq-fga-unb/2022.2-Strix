@@ -6,6 +6,7 @@ import { Button } from '../../components/ui/Button';
 import Link from 'next/link';
 import { AuthContext } from '../../contexts/AuthContext';
 import { toast } from 'react-toastify';
+import { canSSRAuth } from '../../../utils/canSSRAuth';
 
 export default function RegisterStudent() {
   const { registerStudent } = useContext(AuthContext);
@@ -114,3 +115,9 @@ export default function RegisterStudent() {
     </>
   )
 }
+
+export const getServerSideProps = canSSRAuth(async (ctx) => {
+  return {
+      props: {}
+  }
+})

@@ -6,6 +6,7 @@ import { Button } from '../components/ui/Button';
 import Link from 'next/link';
 import { AuthContext } from '../contexts/AuthContext';
 import { toast } from 'react-toastify';
+import { canSSRGuest } from '../../utils/canSSRGuest';
 
 export default function Home() {
   const { signIn } = useContext(AuthContext)
@@ -71,3 +72,13 @@ export default function Home() {
     </>
   )
 }
+
+export const getServerSideProps = canSSRGuest(async (ctx) => {
+  return {
+    props: {}
+  }
+})
+
+/* 
+  - Quando executamos a função getServerSideProps, podemos fazer uma chamada a api como uma requisição http, retornar algo que vai pode ser acessado no componente através das props.
+*/
