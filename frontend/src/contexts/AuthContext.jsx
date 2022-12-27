@@ -65,7 +65,7 @@ export function AuthProvider({ children }){
             api.defaults.headers['Authorization'] = `Bearer ${token}`;
             toast.success('Logado com sucesso!');
 
-            Router.push('/studentDash');
+            Router.push('/students');
 
         }catch(err){
             toast.error("Erro ao acessar!");

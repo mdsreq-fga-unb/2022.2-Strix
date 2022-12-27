@@ -10,7 +10,7 @@ export function canSSRGuest(fn) {
         if (cookies['@nextauth.token']){
             return {
                 redirect:{
-                    destination: '/studentDash',
+                    destination: '/students',
                     permanent: false,
                 }
             }
