@@ -4,8 +4,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { setupAPIClient } from '../../services/api';
 import { canSSRAuth } from '../../../utils/canSSRAuth';
 import Button from '@mui/material/Button';
-
-
+import { Header } from '../../components/Header';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 90, editable: false },
@@ -72,7 +71,7 @@ const columns = [
   }
 ];
 
-export default function Teste({ students }) {
+export default function Students({ students }) {
   const[studentItem, setStudentItem] = useState('');
 
     const handleOnCellClick = (params) => {
@@ -83,7 +82,7 @@ export default function Teste({ students }) {
 
   return (
     <>
-    <h1>Lista de alunos</h1>
+    <Header />
     <div style={{ 
         height: 400, 
         width: '90%', 

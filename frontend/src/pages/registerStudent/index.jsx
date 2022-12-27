@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { AuthContext } from '../../contexts/AuthContext';
 import { toast } from 'react-toastify';
 import { canSSRAuth } from '../../../utils/canSSRAuth';
+import { Header } from '../../components/Header';
 
 export default function RegisterStudent() {
   const { registerStudent } = useContext(AuthContext);
@@ -45,11 +46,10 @@ export default function RegisterStudent() {
     <Head>
       <title>Strix - Faça seu cadastro</title>
     </Head>
-
-    <div className={styles.containerCenter}>
-     
+    <Header />
+    <div className={styles.containerCenterRegister}>
       <div className={styles.login}> 
-
+        
         <Link href="/" className={styles.subtitulo}>
           Cadastro de aluno
         </Link>

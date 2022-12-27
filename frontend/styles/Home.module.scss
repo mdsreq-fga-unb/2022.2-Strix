@@ -6,6 +6,15 @@
     flex-direction: column;
     //background-color: var(--gray-900);
   }
+
+  .containerCenterRegister{
+    //min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    //background-color: var(--gray-900);
+  }
   
   .logo{
     color: #fff;
