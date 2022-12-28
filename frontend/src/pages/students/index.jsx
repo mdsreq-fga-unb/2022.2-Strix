@@ -7,7 +7,7 @@ import { canSSRAuth } from '../../../utils/canSSRAuth';
 import { Header } from '../../components/Header';
 import { Button } from '../../components/ui/Button';
 import Router from 'next/router';
-import { flexbox } from '@mui/system';
+import styles from './styles.module.scss';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 90, editable: false },
@@ -71,7 +71,6 @@ const columns = [
   }
 ];
 
-
 export default function Students({ students }) {
   const[studentItem, setStudentItem] = useState('');
 
@@ -84,12 +83,10 @@ export default function Students({ students }) {
   function handleLink(){
     Router.push('/registerStudent');
   }
-
   return (
-    <>
-    <Header />
-    
-    <div>
+    <div className={styles.containerCenter}>
+      <Header />
+      <p className={styles.titulo}>Meus alunos</p>
       <DataGrid
         rows={students}
         columns={columns}
@@ -97,9 +94,8 @@ export default function Students({ students }) {
         rowsPerPageOptions={[5]}
         //checkboxSelection
         onCellClick={handleOnCellClick}
+
         sx={{
-          margin: '0 auto',
-          width: '90%',
           height: 400,
           backgroundColor: 'transparent',
           color: '#FFF',
@@ -118,23 +114,15 @@ export default function Students({ students }) {
           }
         }}
       />
-      </div>
         <Button onClick={handleLink} style={{ 
           backgroundColor: '#3A62AF',
-          margin: '0 3rem',
           height: '60px',
           width: '400px',
-          fontSize: '20px'
+          fontSize: '20px',
         }}>
           Adicionar novo aluno
         </Button> 
-   
-    {/* <p>{studentItem &&
-        `Último Campo Selecionado: id = ${studentItem.id}, Campo = ${studentItem.field}, valor: ${studentItem.value}`}</p> */}
-    {/* {studentItem &&
-        `Último Campo Selecionado: id = ${studentItem.id}, Campo = ${studentItem.field}, valor: ${studentItem.value}`}
-      {!studentItem && `Clique em uma coluna`} */}
-    </>
+      </div>
   );
 }
 
@@ -147,3 +135,12 @@ export const getServerSideProps = canSSRAuth(async (ctx) => {
         }
     }
 })
+
+
+
+// {/* <p>{studentItem &&
+//     `Último Campo Selecionado: id = ${studentItem.id}, Campo = ${studentItem.field}, valor: ${studentItem.value}`}</p> */}
+// {/* {studentItem &&
+//     `Último Campo Selecionado: id = ${studentItem.id}, Campo = ${studentItem.field}, valor: ${studentItem.value}`}
+//   {!studentItem && `Clique em uma coluna`} */}
+ 
