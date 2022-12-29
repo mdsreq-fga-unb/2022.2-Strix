@@ -6,6 +6,7 @@
 | 31/10/22 | 0.1 | Primeiro preenchimento do documento | Beatriz |
 | 08/11/22 | 0.2 | Ajustes iniciais sugeridos | Beatriz |
 | 15/11/22 | 0.3 | Definição do processo de desenvolvimento | Pedro, Guilherme, Mário, Beatriz, Israel |
+| 29/12/22 | 0.4 | Correção issues #1, #2 e #3 | Beatriz |
 
 ## 1 Visão Geral do Produto
 
@@ -26,7 +27,7 @@ O diferencial comparado a outros produtos disponíveis é a gratuidade independe
 
 ### 1.2 Objetivos do Produto
 
-O objetivo do sistema é facilitar ao personal trainer o envio dos treinos personalizados para seus alunos e o controle de pagamentos, ou seja, a automação do negócio do personal. 
+O STRIX é um sistema que visa auxiliar o personal trainer a gerir o seu negócio. No mercado hoje existem ferramentas que permitem realizar essa gestão, porém de forma limitada (em relação à quantidade de alunos) e custeada. Nesse cenário, o STRIX chega para oferecer um serviço sem limitações e com zero custo ao personal.
 
 ### 1.2 Tecnologias a Serem Utilizadas
 
@@ -47,12 +48,12 @@ Javascript, React, Node.js
 | Sprint | Produto (entrega) | Data Início | Data Fim |
 | ---- | ---- | ---- | ---- |
 | Sprint 1 | Definição do Produto | 31/10/2022 | 18/11/2022 |
-| Sprint 2 | Definição do Backlog do produto  | 19/11/2022 | 03/12/2022 |
-| Sprint 3 | Criação do protótipo e configuração do ambiente de desenvolvimento | 04/12/2022 | 19/12/2022 |
-| Sprint 4 | Implementação do CRUD de alunos | 20/12/2022 | 03/01/2023 |
-| Sprint 5 | Implementação do CRUD de exercícios e envio de treino | 04/01/2023 | 18/01/2023 |
-| Sprint 6 | Implementação do CRUD de aula e do CRUD de pendências | 19/01/2023 | 02/02/2023 |
-| Sprint 7 | Confirmar pagamento, logar no sistema, alterar senha | 03/02/2023 | 09/02/2023 |
+| Sprint 2 | Definição do Backlog do produto e elicitação de requisitos  | 19/11/2022 | 03/12/2022 |
+| Sprint 3 | Criação do protótipo, configuração do ambiente de desenvolvimento e estudo das linguagens | 04/12/2022 | 19/12/2022 |
+| Sprint 4 | Implementação das histórias pertencentes à feature 2.1.0 de alunos | 20/12/2022 | 03/01/2023 |
+| Sprint 5 | Implementação das histórias pertencentes à feature 4.1.0 de exercícios e 4.2.0 de envio de treino | 04/01/2023 | 18/01/2023 |
+| Sprint 6 | Implementação das histórias pertencentes à feature 3.1.0 de pendências e 3.2.0 de registro de pagamentos | 19/01/2023 | 02/02/2023 |
+| Sprint 7 | Implementação das histórias pertencentes à feature 5.1.0 de login | 03/02/2023 | 09/02/2023 |
 
 ### 2.3 Matriz de Comunicação
 
@@ -89,7 +90,7 @@ O grupo deve se replanejar caso haja:
 * Ajuste nas datas, devendo analisar o que deve ser entregue na nova data e rever os ciclos
 
 ## 3 Processo de Desenvolvimento de Software
-Será adotado um ciclo de vida incremental para o processo de desenvolvimento, com ciclos curtos e iterativos, adotando também algumas propriedades do XP e do SCRUM. Utilizaremos de um Product Backlog e Sprint Backlog para o planejamento, com procedimentos do processo ágil como: Sprint planning, Spring Review, com Pair Programming e Planning Poker.
+Será adotado um ciclo de vida incremental para o processo de desenvolvimento, com ciclos curtos e iterativos, adotando também algumas propriedades do XP e do SCRUM, processos escolhidos pois o cliente tem disponibilidade, os requisitos ainda estão sendo descobrertos e moldados e as entregas possuem prazos já delimitados, indicando assim o XP, e será necessário que ocorra uma gestão de projeto correspondente com a do Scrum. O detalhamento das práticas de cada processo adotado serão explanadas nos itens 3.1 e 3.2. Utilizaremos de um Product Backlog e Sprint Backlog para o planejamento, com procedimentos do processo ágil como: Sprint planning, Spring Review, com Pair Programming e Planning Poker.
 
 ### 3.1 XP (Extreme Programming)
 O XP é um método ágil de desenvolvimento de software criado no final da década de 90 que se baseia na criação de sistemas de alta qualidade com base em princípios e práticas tais como interação próxima do cliente, testagem constante do código, ciclos curtos de desenvolvimento, programação em pares e ritmo sustentável de desenvolvimento, por exemplo. No XP os requisitos são expressos na forma de histórias de usuários, que refletem as características que devem ser implementadas no sistema. Essas histórias serão divididas em uma série de tarefas que devem ser cumpridas em cada sprint.
@@ -108,9 +109,25 @@ Processo de desenvolvimento do XP (Pressman)
 - Refatoração: Ocorrerá manutenções periódicas no código onde podem ser feitas melhorias sem alteração das funcionalidades do sistema (refatoração), melhorando a qualidade do código.
 
 - Testes: Serão implementados testes unitários, de integração e de aceitação. 
+
 - Integração Contínua: Consiste em integrar o trabalho diversas vezes ao dia, assegurando que a base de código permaneça consistente ao final de cada integração.
 
-### 3.3 Planejamento
+### 3.3 Scrum
+Segundo o Scrum Guide, o Scrum, criado no início dos anos 90, é "um framework leve que ajuda pessoas, times e organizações a gerar valor por meio de soluções adaptativas para problemas complexos." Ele sugere uma série de eventos a serem realizados que são "projetados especificamente para permitir a transparência necessária", segundo o Guide, e "cada evento [...] é uma oportunidade formal para inspecionar e adaptar os artefatos do Scrum". 
+
+### 3.4 Eventos adotados do Scrum
+
+- Sprint: Será adotada a sprint quinzenal com o planejamento descrito no ite. 2.2.
+
+- Sprint planning: Será feito o planejamento da sprint antes do início da mesma quinzenalmente.
+
+- Daily: Ocorrerá diariamente por meio da conversa entre os mesmos do grupo para informarem seus feitos, planejamentos e impedimentos
+
+- Sprint review: Ocorrerá a cada final de sprint para os integrantes mostrarem e revisarem o que foi trabalhado durante a sprint a ser finalizada.
+
+- Sprint retrospective: Ocorrerá quinzenalmente ao final de cada sprint para serem levantados os aspectos de melhorias afim de melhorar a sua qualidade .
+
+### 3.5 Planejamento
 
 | Atividade | Método | Ferramenta | Entrega |
 | ---- | ---- | ---- | ---- |
@@ -119,7 +136,7 @@ Processo de desenvolvimento do XP (Pressman)
 | Sprint Review | Avaliação da Sprint e o cumprimento dos prazos e atividades propostas | Discord e Google Meets | Resumo da Sprint e progresso do produto |
 | Retrospectiva | Reunião dos integrantes para levantamento de dificuldades e sugestões para a equipe | Discord e Google Meets | Relatório da organização da equipe |
 
-### 3.4 Implementação
+### 3.6 Implementação
 - Banco de dados: O grupo fará a modelagem do banco de dados utilizando o postgres aliado ao prisma (ORM) para realizar as migrações e as devidas manipulações das tabelas. 
 
 - Front-end: O grupo adotará o pair programming para a construção do front do sistema utilizando o NextJS (framework do React) para implementação.
