@@ -11,6 +11,7 @@
 | 15/11/22 | 0.3 | Definição do processo de desenvolvimento | Pedro, Guilherme, Mário, Beatriz, Israel |
 | 29/12/22 | 0.4 | Correção issues #1, #2 e #3 | Beatriz |
 | 29/12/22 | 0.5 | Correção issues #3, #4 e #5 | Pedro |
+| 30/12/22 | 0.6 | Correção issue #6 | Beatriz |
 
 <br/>
 
@@ -172,11 +173,16 @@ Segundo o Scrum Guide, o Scrum, criado no início dos anos 90, é "um framework 
 
 ### 4.1 Unidade 1
 
-Percebeu-se a necessidade de comunicação ativa entre os integrantes da equipe, além do aprofundamento em relação às metodologias de desenvolvimento e estudo das técnologias.
+A equipe aprendeu que, diante da falha de comunicação, era necessário um maior comprometimento dos integrantes quanto a comunicação ativa no grupo do time, e que diante do que estaria por vir nas próximas sprints no que diz respeito ao desenvolvimento do sistema, também era necessário um aprofundamento em relação às metodologias a serem utilizadas e estudo das técnologias.
+
+Esses aprendizados são relevantes, pois sem uma comunicação efetiva as coisas não fluem bem na equipe e isso gera problemas, e se o time estiver preparado tecnicamente o desenvolvimento vai correr melhor e os impedimentos quanto a isso serão mitigados.
 
 ### 4.2 Unidade 2
 
-O grupo se integrou mais, havendo mais cooperação.
+A equipe percebeu que com os aprendizados da unidade 1 ela pôde melhorar nas questões apontados. A comunicação ocorreu bem diante dos pontos levantadas no grupo do time, havendo participação ativa dos integrantes e rápida resolução dos problemas. 
+
+O benefício disso é que os integrantes realmente melhoraram suas condutas diante do feedback da unidade anterior permitindo que os ajustes necessários fossem feitos e a equipe crescesse internamente com a cooperação de todos.
+
 ## 5 Referências bibliográficas
 PRESSMAN, ROGER S., Engenharia de Software- (6ª edição), São Paulo, Ed. McGrawHill, 2006.
 
