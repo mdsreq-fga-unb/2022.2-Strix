@@ -10,6 +10,7 @@ import { CreateStudentController } from './controllers/student/CreateStudentCont
 import { ListStudentController } from './controllers/student/ListStudentController';
 import { RemoveStudentController } from './controllers/student/RemoveStudentController';
 import { EditStudentController } from './controllers/student/EditStudentController';
+import { DetailStudentController } from './controllers/student/DetailStudentController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
@@ -25,5 +26,6 @@ router.post('/students', isAuthenticated, new CreateStudentController().handle)
 router.get('/listStudents', isAuthenticated, new ListStudentController().handle)
 router.delete('/studentDelete', isAuthenticated, new RemoveStudentController().handle)
 router.put('/updateStudent', isAuthenticated, new EditStudentController().handle)
+router.get('/student/detail', isAuthenticated, new DetailStudentController().handle)
 
 export { router };

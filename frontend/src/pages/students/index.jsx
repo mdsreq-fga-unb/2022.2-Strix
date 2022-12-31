@@ -1,88 +1,97 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useContext } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { setupAPIClient } from '../../services/api';
 import { canSSRAuth } from '../../../utils/canSSRAuth';
-//import Button from '@mui/material/Button';
 import { Header } from '../../components/Header';
 import { Button } from '../../components/ui/Button';
 import Router from 'next/router';
 import styles from './styles.module.scss';
-
-const columns = [
-  { field: 'id', headerName: 'ID', width: 90, editable: false },
-  {
-    field: 'name',
-    headerName: 'Name',
-    width: 150,
-    editable: false,
-  },
-  {
-    field: 'cpf',
-    headerName: 'CPF',
-    width: 150,
-    editable: false,
-  },
-  {
-    field: 'email',
-    headerName: 'Email',
-    width: 150,
-    editable: false,
-  },
-  {
-    field: 'birthDate',
-    headerName: 'Data de Nascimento',
-    width: 150,
-    editable: false,
-  },
-  {
-    field: 'phone',
-    headerName: 'Telefone',
-    width: 150,
-    editable: false,
-  },
-  {
-    field: "Editar",
-    headerName: "Editar",
-    sortable: false,
-    width: 130,
-    disableClickEventBubbling: true,
-    renderCell: () => {
-      return (
-        <Button >
-          Editar
-        </Button>
-      );
-    }
-  },
-  {
-    field: "Excluir",
-    headerName: "Excluir",
-    sortable: false,
-    width: 130,
-    disableClickEventBubbling: true,
-    renderCell: () => {
-      return (
-        <Button style={{ backgroundColor: 'var(--red-700)' }}>
-          Delete
-        </Button>
-      );
-    }
-  }
-];
+import { AuthContext } from '../../contexts/AuthContext';
 
 export default function Students({ students }) {
-  const[studentItem, setStudentItem] = useState('');
+  const { studentIdState } = useContext(AuthContext);
 
-  const handleOnCellClick = (params) => {
-      setStudentItem(params)
-      // console.log(studentItem &&
-      //     `Final clicked: id = ${studentItem.id}, Campo = ${studentItem.field}, valor do campo selecionado: ${studentItem.value}`)
-  }
+  const columns = [
+    { field: 'id', headerName: 'ID', width: 90, editable: false },
+    {
+      field: 'name',
+      headerName: 'Name',
+      width: 150,
+      editable: false,
+    },
+    {
+      field: 'cpf',
+      headerName: 'CPF',
+      width: 150,
+      editable: false,
+    },
+    {
+      field: 'email',
+      headerName: 'Email',
+      width: 150,
+      editable: false,
+    },
+    {
+      field: 'birthDate',
+      headerName: 'Data de Nascimento',
+      width: 150,
+      editable: false,
+    },
+    {
+      field: 'phone',
+      headerName: 'Telefone',
+      width: 150,
+      editable: false,
+    },
+    {
+      field: "Editar",
+      headerName: "Editar",
+      sortable: false,
+      width: 130,
+      disableClickEventBubbling: true,
+      renderCell: (params) => {
+        const onClick = (e) => {
+          e.stopPropagation();
+  
+          const api = params.api;
+          const thisRow = {};
+  
+          api
+            .getAllColumns()
+            .filter((c) => c.field !== '__check__' && !!c)
+            .forEach(
+              (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
+            );
+          let id = thisRow.id;
+          studentIdState(id);
+          Router.push('/editStudent');
+          return console.log(JSON.stringify(thisRow, null, 4));
+        };
+  
+        return <Button onClick={onClick}>Editar</Button>;
+      }
+    },
+    {
+      field: "Excluir",
+      headerName: "Excluir",
+      sortable: false,
+      width: 130,
+      disableClickEventBubbling: true,
+      renderCell: () => {
+        return (
+          <Button style={{ backgroundColor: 'var(--red-700)' }}>
+            Delete
+          </Button>
+        );
+      }
+    }
+  ];
 
-  function handleLink(){
+  function handleRegisterLink(){
     Router.push('/registerStudent');
   }
+
   return (
     <div className={styles.containerCenter}>
       <Header />
@@ -92,8 +101,6 @@ export default function Students({ students }) {
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
-        //checkboxSelection
-        onCellClick={handleOnCellClick}
 
         sx={{
           height: 400,
@@ -114,7 +121,7 @@ export default function Students({ students }) {
           }
         }}
       />
-        <Button onClick={handleLink} style={{ 
+        <Button onClick={handleRegisterLink} style={{ 
           backgroundColor: '#3A62AF',
           height: '60px',
           width: '400px',
@@ -135,12 +142,3 @@ export const getServerSideProps = canSSRAuth(async (ctx) => {
         }
     }
 })
-
-
-
-// {/* <p>{studentItem &&
-//     `Último Campo Selecionado: id = ${studentItem.id}, Campo = ${studentItem.field}, valor: ${studentItem.value}`}</p> */}
-// {/* {studentItem &&
-//     `Último Campo Selecionado: id = ${studentItem.id}, Campo = ${studentItem.field}, valor: ${studentItem.value}`}
-//   {!studentItem && `Clique em uma coluna`} */}
- 

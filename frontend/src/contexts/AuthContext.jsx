@@ -18,6 +18,7 @@ export function signOut() {
 export function AuthProvider({ children }){
     const [user, setUser] = useState();
     const isAuthenticated = !!user;
+    const [idState, setIdState] = useState('');
 
     useEffect(() => {
         // Tentar pegar algo no cookie
@@ -73,7 +74,7 @@ export function AuthProvider({ children }){
         }
     }
 
-    async function registerStudent({name, birthDate, phone, cpf, email, user_id}){
+    async function registerStudent({ name, birthDate, phone, cpf, email, user_id }){
         try{
             const response = await api.post('/students', {
                 name,
@@ -92,8 +93,12 @@ export function AuthProvider({ children }){
         }
     }
 
+    async function studentIdState(id){
+        setIdState(id);
+    }
+
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState }}>
             {children}
         </AuthContext.Provider>
     )
