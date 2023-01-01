@@ -97,8 +97,26 @@ export function AuthProvider({ children }){
         setIdState(id);
     }
 
+    async function updatedStudent({ name, email, cpf, phone, birthDate, id }){
+        try{
+            const response = await api.put('/updateStudent', {
+              name,
+              email,
+              cpf,
+              phone,
+              birthDate,
+              id
+            })
+            toast.success('Dados editado com sucesso!');
+            Router.push('/students');
+        }catch(error){
+          toast.error("Erro ao editar!");
+          console.log("erro ao cadastrar aluno ", error);
+        }
+    }
+    
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent }}>
             {children}
         </AuthContext.Provider>
     )

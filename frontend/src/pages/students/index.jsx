@@ -16,7 +16,7 @@ export default function Students({ students }) {
     { field: 'id', headerName: 'ID', width: 90, editable: false },
     {
       field: 'name',
-      headerName: 'Name',
+      headerName: 'Nome',
       width: 150,
       editable: false,
     },

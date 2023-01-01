@@ -17,7 +17,7 @@ export default function EditStudent() {
   const [cpf, setCpf] = useState('');
   const [email, setEmail] = useState('');
 
-  const { idState } = useContext(AuthContext);// puxando do contexto
+  const { idState, updatedStudent } = useContext(AuthContext);// puxando do contexto
 
   async function detailStudentRequest(x){
     try{
@@ -38,13 +38,27 @@ export default function EditStudent() {
       console.log('Erro ao tentar puxar os detalhes do aluno!')
     }
   }
-
-  detailStudentRequest(idState);
+  useEffect(() => {
+    detailStudentRequest(idState);
+  }, [])
 
   async function handleEditStudent(event){
     event.preventDefault();
+
+    let data = {
+      "id": idState,
+      name,
+      birthDate,
+      phone,
+      cpf,
+      email
+    }
+
+    console.log(data)
+
+    await updatedStudent(data);
   }
-  
+
   return (
     <>
     <Head>
