@@ -12,6 +12,9 @@ import { RemoveStudentController } from './controllers/student/RemoveStudentCont
 import { EditStudentController } from './controllers/student/EditStudentController';
 import { DetailStudentController } from './controllers/student/DetailStudentController';
 
+// -- Category --
+import { CreateCategoryController } from './controllers/category/CreateCategoryController';
+
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
 const router = Router();
@@ -27,5 +30,8 @@ router.get('/listStudents', isAuthenticated, new ListStudentController().handle)
 router.delete('/studentDelete', isAuthenticated, new RemoveStudentController().handle)
 router.put('/updateStudent', isAuthenticated, new EditStudentController().handle)
 router.get('/student/detail', isAuthenticated, new DetailStudentController().handle)
+
+// -- Rotas Category --
+router.post('/categories', isAuthenticated, new CreateCategoryController().handle)
 
 export { router };
