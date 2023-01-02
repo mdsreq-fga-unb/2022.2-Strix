@@ -129,9 +129,23 @@ export function AuthProvider({ children }){
             console.log('Erro ao remover aluno.', error)
         }
     }
+
+    async function registerCategories({ name, description}){
+        try{
+            const response = await api.post('/categories', {
+                name,
+                description
+            })
+
+            toast.success('Categoria cadastrada com sucesso!');
+        }catch(err){
+            toast.error("Erro ao cadastrar categoria!");
+            console.log("erro ao cadastrar categoria ", err)
+        }
+    }
     
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories }}>
             {children}
         </AuthContext.Provider>
     )
