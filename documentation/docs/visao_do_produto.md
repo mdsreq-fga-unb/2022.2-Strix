@@ -1,11 +1,19 @@
 # Visão do Produto e Projeto
 
 ## Histórico de revisão
+
+<br/>
+
 | Data | Versão | Descrição | Autor |
 | ---- | ---- | ---- | ---- |
 | 31/10/22 | 0.1 | Primeiro preenchimento do documento | Beatriz |
 | 08/11/22 | 0.2 | Ajustes iniciais sugeridos | Beatriz |
 | 15/11/22 | 0.3 | Definição do processo de desenvolvimento | Pedro, Guilherme, Mário, Beatriz, Israel |
+| 29/12/22 | 0.4 | Correção issues #1, #2 e #3 | Beatriz |
+| 29/12/22 | 0.5 | Correção issues #3, #4 e #5 | Pedro |
+| 30/12/22 | 0.6 | Correção issue #6 | Beatriz |
+
+<br/>
 
 ## 1 Visão Geral do Produto
 
@@ -24,15 +32,17 @@ O diferencial comparado a outros produtos disponíveis é a gratuidade independe
 | Ao contrário | Do Mobitrainer |
 | Nosso produto | É totalmente gratuito, não importa quantos alunos o profissional tenha e possibilita uma gestão completa do negócio |
 
+
 ### 1.2 Objetivos do Produto
+O STRIX é um sistema que visa auxiliar o personal trainer a gerir o seu negócio. No mercado hoje existem ferramentas que permitem realizar essa gestão, porém de forma limitada (em relação à quantidade de alunos) e custeada. Nesse cenário, o STRIX chega para oferecer um serviço sem limitações e com zero custo ao personal.
 
-O objetivo do sistema é facilitar ao personal trainer o envio dos treinos personalizados para seus alunos e o controle de pagamentos, ou seja, a automação do negócio do personal. 
-
-### 1.2 Tecnologias a Serem Utilizadas
-
+### 1.3 Tecnologias a Serem Utilizadas
 Javascript, React, Node.js
 
+<br/>
+
 ## 2 Visão Geral do Produto
+
 ### 2.1 Organização do Projeto
 
 | Papel| Atribuições | Responsável | Participantes |
@@ -47,23 +57,23 @@ Javascript, React, Node.js
 | Sprint | Produto (entrega) | Data Início | Data Fim |
 | ---- | ---- | ---- | ---- |
 | Sprint 1 | Definição do Produto | 31/10/2022 | 18/11/2022 |
-| Sprint 2 | Definição do Backlog do produto  | 19/11/2022 | 03/12/2022 |
-| Sprint 3 | Criação do protótipo e configuração do ambiente de desenvolvimento | 04/12/2022 | 19/12/2022 |
-| Sprint 4 | Implementação do CRUD de alunos | 20/12/2022 | 03/01/2023 |
-| Sprint 5 | Implementação do CRUD de exercícios e envio de treino | 04/01/2023 | 18/01/2023 |
-| Sprint 6 | Implementação do CRUD de aula e do CRUD de pendências | 19/01/2023 | 02/02/2023 |
-| Sprint 7 | Confirmar pagamento, logar no sistema, alterar senha | 03/02/2023 | 09/02/2023 |
+| Sprint 2 | Definição do Backlog do produto e elicitação de requisitos  | 19/11/2022 | 03/12/2022 |
+| Sprint 3 | Criação do protótipo, configuração do ambiente de desenvolvimento e estudo das linguagens | 04/12/2022 | 19/12/2022 |
+| Sprint 4 | Implementação das histórias pertencentes à feature 2.1.0 de alunos | 20/12/2022 | 03/01/2023 |
+| Sprint 5 | Implementação das histórias pertencentes à feature 4.1.0 de exercícios e 4.2.0 de envio de treino | 04/01/2023 | 18/01/2023 |
+| Sprint 6 | Implementação das histórias pertencentes à feature 3.1.0 de pendências e 3.2.0 de registro de pagamentos | 19/01/2023 | 02/02/2023 |
+| Sprint 7 | Implementação das histórias pertencentes à feature 5.1.0 de login | 03/02/2023 | 09/02/2023 |
 
 ### 2.3 Matriz de Comunicação
 
 | Descrição | Área/Envolvidos | Periodicidade | Produtos Gerados |
 | ---- | ---- | ---- | ---- |
-| Comunicação sobre a situação das atividades sendo executadas (Daily) | Equipe do Projeto | Diária | Resumo da reunião |
-| Acompanhamento das atividades em desenvolvimento (Sprint Review) | Equipe do Projeto | Quinzenal | Resumo da reunião |
-| Análise dos riscos, planejamento de próximas atividades (Sprint Planning) | Equipe do Projeto | Quinzenal | Relatório de situação do projeto e resumo da reunião |
+| Comunicação sobre a situação das atividades executadas no dia | Equipe do Projeto | Diária | Resumo da reunião |
+| Acompanhamento das atividades em desenvolvimento | Equipe do Projeto | Quinzenal | Resumo da reunião, validação do atendimento aos requisitos |
+| Análise dos riscos, planejamento de próximas atividades | Equipe do Projeto | Quinzenal | Relatório de situação do projeto e resumo da reunião |
 | Retrospectiva | Equipe do Projeto | Quinzenal | Relatório sobre situação da equipe e dificuldades |
 | Comunicar situação do projeto | Equipe do Projeto, Professor | Semanal | Resumo da reunião e feedback do professor |
-| Reunião com o cliente | Equipe do Projeto | Quinzenal | Feedback do cliente |
+| Reunião com o cliente | Equipe do Projeto, cliente | Quinzenal | Feedback do cliente, refinamento de requisitos |
 
 ### 2.4 Gerenciamento de Riscos 
 Os riscos identificados são:
@@ -88,8 +98,10 @@ O grupo deve se replanejar caso haja:
 * Desfalque do grupo, devendo ajustar os ciclos de acordo com a capacidade do time
 * Ajuste nas datas, devendo analisar o que deve ser entregue na nova data e rever os ciclos
 
+<br/>
+
 ## 3 Processo de Desenvolvimento de Software
-Será adotado um ciclo de vida incremental para o processo de desenvolvimento, com ciclos curtos e iterativos, adotando também algumas propriedades do XP e do SCRUM. Utilizaremos de um Product Backlog e Sprint Backlog para o planejamento, com procedimentos do processo ágil como: Sprint planning, Spring Review, com Pair Programming e Planning Poker.
+Será adotado um ciclo de vida incremental para o processo de desenvolvimento, com ciclos curtos e iterativos, adotando também algumas propriedades do XP e do SCRUM, processos escolhidos pois o cliente tem disponibilidade, os requisitos ainda estão sendo descobrertos e moldados e as entregas possuem prazos já delimitados, indicando assim o XP, e será necessário que ocorra uma gestão de projeto correspondente com a do Scrum. O detalhamento das práticas de cada processo adotado serão explanadas nos itens 3.1 e 3.2. Utilizaremos de um Product Backlog e Sprint Backlog para o planejamento, com procedimentos do processo ágil como: Sprint planning, Spring Review, com Pair Programming e Planning Poker.
 
 ### 3.1 XP (Extreme Programming)
 O XP é um método ágil de desenvolvimento de software criado no final da década de 90 que se baseia na criação de sistemas de alta qualidade com base em princípios e práticas tais como interação próxima do cliente, testagem constante do código, ciclos curtos de desenvolvimento, programação em pares e ritmo sustentável de desenvolvimento, por exemplo. No XP os requisitos são expressos na forma de histórias de usuários, que refletem as características que devem ser implementadas no sistema. Essas histórias serão divididas em uma série de tarefas que devem ser cumpridas em cada sprint.
@@ -97,7 +109,7 @@ O XP é um método ágil de desenvolvimento de software criado no final da déca
 ![Processo de desenvolvimento do XP (Pressman)](./img/XP.jpg)
 Processo de desenvolvimento do XP (Pressman)
 
-### 3.2 Práticas adotadas do XP 
+#### 3.1.1 Práticas adotadas do XP 
 
 - Pair Programming: Dois programadores trabalham juntos em uma máquina onde um codifica e o outro acompanha, fazendo críticas e dando sugestões. Os pares trocam de lugar periodicamente. 
 
@@ -108,35 +120,69 @@ Processo de desenvolvimento do XP (Pressman)
 - Refatoração: Ocorrerá manutenções periódicas no código onde podem ser feitas melhorias sem alteração das funcionalidades do sistema (refatoração), melhorando a qualidade do código.
 
 - Testes: Serão implementados testes unitários, de integração e de aceitação. 
+
 - Integração Contínua: Consiste em integrar o trabalho diversas vezes ao dia, assegurando que a base de código permaneça consistente ao final de cada integração.
 
-### 3.3 Planejamento
+### 3.2 Scrum
+Segundo o Scrum Guide, o Scrum, criado no início dos anos 90, é "um framework leve que ajuda pessoas, times e organizações a gerar valor por meio de soluções adaptativas para problemas complexos." Ele sugere uma série de eventos a serem realizados que são "projetados especificamente para permitir a transparência necessária", segundo o Guide, e "cada evento [...] é uma oportunidade formal para inspecionar e adaptar os artefatos do Scrum". 
+
+#### 3.2.1 Eventos adotados do Scrum
+
+- Sprint: Será adotada a sprint quinzenal com o planejamento descrito no ite. 2.2.
+
+- Sprint planning: Será feito o planejamento da sprint antes do início da mesma quinzenalmente.
+
+- Daily: Ocorrerá diariamente por meio da conversa entre os mesmos do grupo para informarem seus feitos, planejamentos e impedimentos
+
+- Sprint review: Ocorrerá a cada final de sprint para os integrantes mostrarem e revisarem o que foi trabalhado durante a sprint a ser finalizada.
+
+- Sprint retrospective: Ocorrerá quinzenalmente ao final de cada sprint para serem levantados os aspectos de melhorias da equipe, afim de melhorar a sua qualidade de desenvolvimento.
+
+### 3.3 Atividades
+
+#### 3.3.1 Sprint Planning
 
 | Atividade | Método | Ferramenta | Entrega |
 | ---- | ---- | ---- | ---- |
-| Daily | Reunião para informar o progresso feito no dia por cada integrante | Discord e Whatsapp | Atualização diária do progresso das atividades |
-| Sprint Planning | Avaliação do backlog e definição de atividades para integrantes da equipe | Trello, Discord, Google Meets | Planejamento de atividades da sprint |
-| Sprint Review | Avaliação da Sprint e o cumprimento dos prazos e atividades propostas | Discord e Google Meets | Resumo da Sprint e progresso do produto |
-| Retrospectiva | Reunião dos integrantes para levantamento de dificuldades e sugestões para a equipe | Discord e Google Meets | Relatório da organização da equipe |
+| Elicitação de requisitos | Brainstorming, Construção de User Story | Meets, Trello e Whatsapp | Levantamento das atividades a serem desenvolvidas e suas prioridades. | 
+| Validação e Verificação | Brainstorming, reunião com cliente | Meets e Whatsapp | Alinhamento das atividades levantadas ao objetivo do produto/MVP |
 
-### 3.4 Implementação
-- Banco de dados: O grupo fará a modelagem do banco de dados utilizando o postgres aliado ao prisma (ORM) para realizar as migrações e as devidas manipulações das tabelas. 
+#### 3.3.2 Sprint
 
-- Front-end: O grupo adotará o pair programming para a construção do front do sistema utilizando o NextJS (framework do React) para implementação.
+| Atividade | Método | Ferramenta | Entrega |
+| ---- | ---- | ---- | ---- |
+| Construção/Refinamento de protótipo | Prototipação | Figma | Desenvolvimento de protótipo com base nas atividades elicitadas no backlog. | 
+| Desenvolvimento de atividades | Pair Programming | VSCode, Webstorm IDE | Incrementos no produto com base nas atividades elicitadas. |
+| Testes e garantia de qualidade | Testes unitários e Testes Manuais | VSCode, Webstorm IDE | codificação de testes unitários para assegurar a qualidade, e testes manuais para garantir funcionamento da interface. |
 
-- Back-end: O grupo irá utilizar o nodeJs aliado ao express e outras bibliotecas pra construção do back do sistema, adotando práticas como pair programming, testes e refatoração.
+#### 3.3.3 Sprint Review
 
-- Testes: Será adotado o pair programming para a implementação de testes tanto no back como no front. Utilizaremos Jest para a elaboração de testes unitários e de integração. 
+| Atividade | Método | Ferramenta | Entrega |
+| ---- | ---- | ---- | ---- |
+| Análise de progresso | Apresentação | Meets | Identificação do progresso obtido durante a sprint e validação em relação aos requisitos. | 
+
+#### 3.3.4 Sprint Retrospective
+
+| Atividade | Método | Ferramenta | Entrega |
+| ---- | ---- | ---- | ---- |
+| Avaliação da equipe | Brainstorming | Meets | Reorganização da equipe com relação às dificuldades encontradas ao longo da sprint. |
+
+<br/>
 
 ## 4 Lições aprendidas
 
 ### 4.1 Unidade 1
 
-Percebeu-se a necessidade de comunicação ativa entre os integrantes da equipe, além do aprofundamento em relação às metodologias de desenvolvimento e estudo das técnologias.
+A equipe aprendeu que, diante da falha de comunicação, era necessário um maior comprometimento dos integrantes quanto a comunicação ativa no grupo do time, e que diante do que estaria por vir nas próximas sprints no que diz respeito ao desenvolvimento do sistema, também era necessário um aprofundamento em relação às metodologias a serem utilizadas e estudo das técnologias.
+
+Esses aprendizados são relevantes, pois sem uma comunicação efetiva as coisas não fluem bem na equipe e isso gera problemas, e se o time estiver preparado tecnicamente o desenvolvimento vai correr melhor e os impedimentos quanto a isso serão mitigados.
 
 ### 4.2 Unidade 2
 
-O grupo se integrou mais, havendo mais cooperação.
+A equipe percebeu que com os aprendizados da unidade 1 ela pôde melhorar nas questões apontados. A comunicação ocorreu bem diante dos pontos levantadas no grupo do time, havendo participação ativa dos integrantes e rápida resolução dos problemas. 
+
+O benefício disso é que os integrantes realmente melhoraram suas condutas diante do feedback da unidade anterior permitindo que os ajustes necessários fossem feitos e a equipe crescesse internamente com a cooperação de todos.
+
 ## 5 Referências bibliográficas
 PRESSMAN, ROGER S., Engenharia de Software- (6ª edição), São Paulo, Ed. McGrawHill, 2006.
 
