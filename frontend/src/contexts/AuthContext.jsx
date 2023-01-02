@@ -86,7 +86,7 @@ export function AuthProvider({ children }){
             })
 
             toast.success('Aluno cadastrado com sucesso!');
-            Router.push('/studentDash');
+            Router.push('/students');
         }catch(err){
             toast.error("Erro ao cadastrar!");
             console.log("erro ao cadastrar aluno ", err)
@@ -114,9 +114,24 @@ export function AuthProvider({ children }){
           console.log("erro ao cadastrar aluno ", error);
         }
     }
+
+    async function deleteStudent({ student_id }){
+        try{
+            const response = await api.delete('/studentDelete', {
+                params:{
+                    student_id: student_id,
+                }
+            })
+            toast.success('Aluno deletado com sucesso!');
+            Router.push('/students');
+        }catch(error){
+            toast.error("Erro ao deletar aluno.");
+            console.log('Erro ao remover aluno.', error)
+        }
+    }
     
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent }}>
             {children}
         </AuthContext.Provider>
     )

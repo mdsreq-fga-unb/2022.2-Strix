@@ -72,20 +72,6 @@ export default function Students({ students }) {
         return <Button onClick={onClick}>Editar</Button>;
       }
     },
-    {
-      field: "Excluir",
-      headerName: "Excluir",
-      sortable: false,
-      width: 130,
-      disableClickEventBubbling: true,
-      renderCell: () => {
-        return (
-          <Button style={{ backgroundColor: 'var(--red-700)' }}>
-            Delete
-          </Button>
-        );
-      }
-    }
   ];
 
   function handleRegisterLink(){
@@ -124,7 +110,7 @@ export default function Students({ students }) {
         <Button onClick={handleRegisterLink} style={{ 
           backgroundColor: '#3A62AF',
           height: '60px',
-          width: '400px',
+          width: '480px',
           fontSize: '20px',
         }}>
           Adicionar novo aluno

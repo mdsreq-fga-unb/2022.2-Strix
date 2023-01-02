@@ -56,6 +56,27 @@
       font-size: 1.2rem;
     }
   }
+
+  .delete{
+    max-width: 600px;
+    background-color: var(--red-700);
+     border: 0;
+    padding: 0.4rem;
+    color: var(--white);
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    transition: filter 0.2s;
+    &[disabled]{
+        cursor: not-allowed;
+        svg{
+            animation: animate 2s infinite;
+        }
+    }
+
+    &:hover{
+       filter: brightness(1.08); 
+    }
+  }
   
   .text{
     margin-top: 1rem;

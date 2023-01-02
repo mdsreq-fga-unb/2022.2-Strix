@@ -17,7 +17,7 @@ export default function EditStudent() {
   const [cpf, setCpf] = useState('');
   const [email, setEmail] = useState('');
 
-  const { idState, updatedStudent } = useContext(AuthContext);// puxando do contexto
+  const { idState, updatedStudent, deleteStudent } = useContext(AuthContext);// puxando do contexto
 
   async function detailStudentRequest(x){
     try{
@@ -57,6 +57,13 @@ export default function EditStudent() {
     console.log(data)
 
     await updatedStudent(data);
+  }
+
+  async function handleDelete(){
+    let data = {
+      "student_id": idState,
+    }
+    await deleteStudent(data);
   }
 
   return (
@@ -114,8 +121,9 @@ export default function EditStudent() {
           />
 
           <p className={styles.msg}>* Campo Obrigatório</p>
-          <Button type='submit'>Salvar</Button> 
-        </form>
+          <Button type='submit'>Salvar</Button>
+          <Button type='button' className={styles.delete} onClick={ handleDelete}>Deletar</Button>  
+        </form> 
       </div>
     </div>
     </>
