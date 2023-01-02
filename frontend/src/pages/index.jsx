@@ -41,7 +41,7 @@ export default function Home() {
       <div className={styles.login}> 
 
         <Link href="/" className={styles.logo}>
-          WISE
+          STRIX
         </Link>
 
         <form onSubmit={handleLogin}>

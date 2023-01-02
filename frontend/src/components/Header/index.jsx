@@ -12,7 +12,7 @@ export function Header() {
         <Fragment>
             <header className={styles.headerContainer}>
                 <div className={styles.headerContent}>
-                    <h1 className={styles.headerTitle}>WISE</h1>
+                    <h1 className={styles.headerTitle}>STRIX</h1>
                     <nav className={styles.menuNav}>
                         <Link href={'/financas'}>
                             Finanças
