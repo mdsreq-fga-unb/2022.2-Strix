@@ -48,7 +48,7 @@ model Category {
   updated_at DateTime? @default(now())
 
   @@map("categories")
-  exercises Exercise[]
+  //exercises Exercise[]
 }
 
 model Exercise {
@@ -57,13 +57,14 @@ model Exercise {
   reps String?
   time String?
   observation String
+  category_name String
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
 
-  category Category @relation(fields: [category_id], references: [id])
+  //category Category @relation(fields: [category_id], references: [id])
 
   @@map("exercises")
-  category_id String
+  //category_id String
 }
 
 model Training {

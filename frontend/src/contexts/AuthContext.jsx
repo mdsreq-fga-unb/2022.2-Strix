@@ -143,9 +143,27 @@ export function AuthProvider({ children }){
             console.log("erro ao cadastrar categoria ", err)
         }
     }
+
+    async function registerExercise({ name, reps, time, observation, category_name }){
+        try{
+            const response = await api.post('/exercises', {
+                name,
+                reps,
+                time,
+                observation,
+                category_name
+            })
+
+            toast.success('Exercício cadastrado com sucesso!');
+        }catch(err){
+            toast.error("Erro ao cadastrar exercício!");
+            console.log("erro ao cadastrar exercício ", err)
+        }
+    }
+
     
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise }}>
             {children}
         </AuthContext.Provider>
     )

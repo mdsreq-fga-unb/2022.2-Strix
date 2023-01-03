@@ -5,12 +5,12 @@ interface ExerciseRequest{
     reps: string;
     time: string;
     observation: string;
-    category_id: string;
+    category_name: string;
 }
 
 class CreateExerciseService{
-    async execute({ name, reps, time, observation, category_id }: ExerciseRequest){
-        if(!name || !reps || !time || !observation || !category_id){
+    async execute({ name, reps, time, observation, category_name }: ExerciseRequest){
+        if(!name || !reps || !time || !observation || !category_name){
             throw new Error("incorrect data");
         }
 
@@ -30,14 +30,14 @@ class CreateExerciseService{
                 reps: reps,
                 time: time,
                 observation: observation,
-                category_id: category_id
+                category_name: category_name
             },
             select:{
                 id: true,
                 name: true,
                 time: true,
                 observation: true,
-                category_id: true
+                category_name: true
             }
         })
 

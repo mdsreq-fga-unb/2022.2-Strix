@@ -3,7 +3,7 @@ import { CreateExerciseService } from "../../services/exercise/CreateExerciseSer
 
 class CreateExerciseController {
     async handle(req: Request, res: Response){
-        const { name, reps, time, observation, category_id } = req.body;
+        const { name, reps, time, observation, category_name } = req.body;
 
         const createExerciseService = new CreateExerciseService();
         const exercise = await createExerciseService.execute({
@@ -11,7 +11,7 @@ class CreateExerciseController {
             reps,
             time,
             observation,
-            category_id
+            category_name
         });
 
         return res.json(exercise);
