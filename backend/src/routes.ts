@@ -14,6 +14,7 @@ import { DetailStudentController } from './controllers/student/DetailStudentCont
 
 // -- Category --
 import { CreateCategoryController } from './controllers/category/CreateCategoryController';
+import { DetailCategoryController } from './controllers/category/DetailCategoryController';
 
 // -- Exercise --
 import { CreateExerciseController } from './controllers/exercise/CreateExerciseController';
@@ -36,6 +37,7 @@ router.get('/student/detail', isAuthenticated, new DetailStudentController().han
 
 // -- Rotas Category --
 router.post('/categories', isAuthenticated, new CreateCategoryController().handle)
+router.get('/category/detail', isAuthenticated, new DetailCategoryController().handle)
 
 // -- Rota Exercise --
 router.post('/exercises', isAuthenticated, new CreateExerciseController().handle)
