@@ -37,7 +37,7 @@ Esta seção apresenta os requisitos elicitados de acordo com as estruturas de c
 
 Os requisitos funcionais estão organizados hierarquicamente na estrutura de Épicos, Features e User Stories. Para sua rastreabilidade, o ID é dado no formato X.Y.Z, com X o ID do épico, Y o ID da feature, e Z o ID da user story. A organização dos requisitos se deu com base na estrutura do SAFe.
 
-![](./img/diagrama.png)
+![](./img/novo_diagrama.jpg)
 
 #### 2.1.1 Épicos
 
