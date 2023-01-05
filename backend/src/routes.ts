@@ -21,6 +21,9 @@ import { ListCategoryController } from './controllers/category/ListCategoryContr
 import { CreateExerciseController } from './controllers/exercise/CreateExerciseController';
 import { ListExerciseController } from './controllers/exercise/ListExerciseController';
 
+// -- Training -- 
+import { CreateTrainingController } from './controllers/training/CreateTrainingController';
+
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
 const router = Router();
@@ -42,8 +45,11 @@ router.post('/categories', isAuthenticated, new CreateCategoryController().handl
 router.get('/category/detail', isAuthenticated, new DetailCategoryController().handle)
 router.get('/listCategories', isAuthenticated, new ListCategoryController().handle)
 
-// -- Rota Exercise --
+// -- Rotas Exercise --
 router.post('/exercises', isAuthenticated, new CreateExerciseController().handle)
 router.get('/listExercises', isAuthenticated, new ListExerciseController().handle)
+
+// -- Rotas Training --
+router.post('/training', isAuthenticated, new CreateTrainingController().handle)
 
 export { router };

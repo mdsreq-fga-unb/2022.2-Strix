@@ -23,7 +23,7 @@ export function Header() {
                         <Link href={'/students'}>
                             Alunos
                         </Link>
-                        <Link href={'/treinos'}>
+                        <Link href={'/createTraining'}>
                             Treino
                         </Link>
                         <Button variant={'text'} color={'inherit'} onClick={signOut}>

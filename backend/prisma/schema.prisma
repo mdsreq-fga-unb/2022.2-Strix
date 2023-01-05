@@ -70,6 +70,7 @@ model Exercise {
 model Training {
   id String @id @default(uuid())
   name String
+  exercise_id String[]
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
 
