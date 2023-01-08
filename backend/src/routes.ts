@@ -20,9 +20,12 @@ import { ListCategoryController } from './controllers/category/ListCategoryContr
 // -- Exercise --
 import { CreateExerciseController } from './controllers/exercise/CreateExerciseController';
 import { ListExerciseController } from './controllers/exercise/ListExerciseController';
+import { DetailExerciseController } from './controllers/exercise/DetailExerciseController';
 
 // -- Training -- 
 import { CreateTrainingController } from './controllers/training/CreateTrainingController';
+import { DetailTrainingController } from './controllers/training/DetailTrainingController';
+import { ListTrainingController } from './controllers/training/ListTrainingController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
@@ -48,8 +51,11 @@ router.get('/listCategories', isAuthenticated, new ListCategoryController().hand
 // -- Rotas Exercise --
 router.post('/exercises', isAuthenticated, new CreateExerciseController().handle)
 router.get('/listExercises', isAuthenticated, new ListExerciseController().handle)
+router.get('/exercise/detail', isAuthenticated, new DetailExerciseController().handle)
 
 // -- Rotas Training --
 router.post('/training', isAuthenticated, new CreateTrainingController().handle)
+router.get('/training/detail', isAuthenticated, new DetailTrainingController().handle)
+router.get('/listTraining', isAuthenticated, new ListTrainingController().handle)
 
 export { router };

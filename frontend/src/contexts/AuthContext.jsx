@@ -160,7 +160,6 @@ export function AuthProvider({ children }){
             console.log("erro ao cadastrar exercício ", err)
         }
     }
-
     
     return(
         <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise }}>
