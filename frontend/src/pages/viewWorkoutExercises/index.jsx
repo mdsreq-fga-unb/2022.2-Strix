@@ -1,37 +1,69 @@
 import * as React from 'react';
-import { useState, useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { setupAPIClient } from '../../services/api';
 import { canSSRAuth } from '../../../utils/canSSRAuth';
 import { Header } from '../../components/Header';
 import { Button } from '../../components/ui/Button';
+
 import styles from './styles.module.scss';
 import { AuthContext } from '../../contexts/AuthContext';
-import Router from 'next/router';
+import { useState } from 'react';
 
-export default function ViewTraining({ training }) {
-  //const [exercises, setExercises] = useState([]);
-  const { exerciseListIdState } = useContext(AuthContext);
+export default function viewWorkoutExercises({ exercises }) {
+  const { listIdExercise } = useContext(AuthContext);
+  const [state, setState] = useState([]);
+
+  useEffect(() => {
+    let new_arr = [];
+    for (let a = 0; a < exercises.length; a++){
+        for (let b = 0; b < listIdExercise.length; b++){
+            if(exercises[a].id === listIdExercise[b]){
+                new_arr.push(exercises[a]);
+                //setState([...state, exercises[a]])
+            }
+        }
+    }
+    new_arr && setState(new_arr)
+  }, [])
 
   const columns = [
-    { field: 'id', headerName: 'ID', width: 350, editable: false },
+    { field: 'id', headerName: 'ID', width: 90, editable: false },
     {
       field: 'name',
       headerName: 'Nome',
-      width: 350,
+      width: 150,
       editable: false,
     },
     {
-      field: 'exercise_id',
-      headerName: 'Id dos exercícios',
-      width: 350,
+      field: 'reps',
+      headerName: 'Repetições',
+      width: 150,
       editable: false,
     },
     {
-      field: "Visualizar treino",
-      headerName: "Visualizar treino",
+      field: 'time',
+      headerName: 'Duração',
+      width: 150,
+      editable: false,
+    },
+    {
+      field: 'observation',
+      headerName: 'Observações',
+      width: 150,
+      editable: false,
+    },
+    {
+      field: 'category_name',
+      headerName: 'Categoria',
+      width: 150,
+      editable: false,
+    },
+    {
+      field: "Editar",
+      headerName: "Editar",
       sortable: false,
-      width: 272,
+      width: 130,
       disableClickEventBubbling: true,
       renderCell: (params) => {
         const onClick = (e) => {
@@ -46,15 +78,10 @@ export default function ViewTraining({ training }) {
             .forEach(
               (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
             );
-
-          let exercise_id = thisRow.exercise_id;
-          exerciseListIdState(exercise_id);
-          //console.log(exercise_id);
-          Router.push('/viewWorkoutExercises');
-          return console.log(JSON.stringify(thisRow, null, 4));
+          //return console.log(JSON.stringify(thisRow, null, 4));
         };
-
-        return <Button onClick={onClick}>Visualizar treino</Button>;
+  
+        return <Button onClick={onClick}>Editar</Button>;
       }
     },
   ];
@@ -62,9 +89,9 @@ export default function ViewTraining({ training }) {
   return (
     <div className={styles.containerCenter}>
       <Header />
-      <p className={styles.titulo}>Meus Treinos</p>
+      <p className={styles.titulo}>Exercícios do treino</p>
       <DataGrid
-        rows={training}
+        rows={state}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
@@ -88,16 +115,16 @@ export default function ViewTraining({ training }) {
           }
         }}
       />
-    </div>
+      </div>
   );
 }
 
 export const getServerSideProps = canSSRAuth(async (ctx) => {
-    const apiClient = setupAPIClient(ctx);
-    const response = await apiClient.get('/listTraining');
+  const apiClient = setupAPIClient(ctx);
+  const response = await apiClient.get('/listExercises');
     return {
         props: {
-            training: response.data
+          exercises: response.data
         }
     }
 })

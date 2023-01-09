@@ -19,6 +19,7 @@ export function AuthProvider({ children }){
     const [user, setUser] = useState();
     const isAuthenticated = !!user;
     const [idState, setIdState] = useState('');
+    const [listIdExercise, setListIdExercise] = useState([]);
 
     useEffect(() => {
         // Tentar pegar algo no cookie
@@ -160,9 +161,13 @@ export function AuthProvider({ children }){
             console.log("erro ao cadastrar exercício ", err)
         }
     }
+
+    async function exerciseListIdState(id){
+        setListIdExercise(id);
+    }
     
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise }}>
             {children}
         </AuthContext.Provider>
     )
