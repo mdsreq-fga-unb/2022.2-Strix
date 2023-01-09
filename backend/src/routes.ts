@@ -12,6 +12,21 @@ import { RemoveStudentController } from './controllers/student/RemoveStudentCont
 import { EditStudentController } from './controllers/student/EditStudentController';
 import { DetailStudentController } from './controllers/student/DetailStudentController';
 
+// -- Category --
+import { CreateCategoryController } from './controllers/category/CreateCategoryController';
+import { DetailCategoryController } from './controllers/category/DetailCategoryController';
+import { ListCategoryController } from './controllers/category/ListCategoryController';
+
+// -- Exercise --
+import { CreateExerciseController } from './controllers/exercise/CreateExerciseController';
+import { ListExerciseController } from './controllers/exercise/ListExerciseController';
+import { DetailExerciseController } from './controllers/exercise/DetailExerciseController';
+
+// -- Training -- 
+import { CreateTrainingController } from './controllers/training/CreateTrainingController';
+import { DetailTrainingController } from './controllers/training/DetailTrainingController';
+import { ListTrainingController } from './controllers/training/ListTrainingController';
+
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
 const router = Router();
@@ -27,5 +42,20 @@ router.get('/listStudents', isAuthenticated, new ListStudentController().handle)
 router.delete('/studentDelete', isAuthenticated, new RemoveStudentController().handle)
 router.put('/updateStudent', isAuthenticated, new EditStudentController().handle)
 router.get('/student/detail', isAuthenticated, new DetailStudentController().handle)
+
+// -- Rotas Category --
+router.post('/categories', isAuthenticated, new CreateCategoryController().handle)
+router.get('/category/detail', isAuthenticated, new DetailCategoryController().handle)
+router.get('/listCategories', isAuthenticated, new ListCategoryController().handle)
+
+// -- Rotas Exercise --
+router.post('/exercises', isAuthenticated, new CreateExerciseController().handle)
+router.get('/listExercises', isAuthenticated, new ListExerciseController().handle)
+router.get('/exercise/detail', isAuthenticated, new DetailExerciseController().handle)
+
+// -- Rotas Training --
+router.post('/training', isAuthenticated, new CreateTrainingController().handle)
+router.get('/training/detail', isAuthenticated, new DetailTrainingController().handle)
+router.get('/listTraining', isAuthenticated, new ListTrainingController().handle)
 
 export { router };

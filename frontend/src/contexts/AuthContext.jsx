@@ -19,6 +19,7 @@ export function AuthProvider({ children }){
     const [user, setUser] = useState();
     const isAuthenticated = !!user;
     const [idState, setIdState] = useState('');
+    const [listIdExercise, setListIdExercise] = useState([]);
 
     useEffect(() => {
         // Tentar pegar algo no cookie
@@ -129,9 +130,44 @@ export function AuthProvider({ children }){
             console.log('Erro ao remover aluno.', error)
         }
     }
+
+    async function registerCategories({ name, description}){
+        try{
+            const response = await api.post('/categories', {
+                name,
+                description
+            })
+
+            toast.success('Categoria cadastrada com sucesso!');
+        }catch(err){
+            toast.error("Erro ao cadastrar categoria!");
+            console.log("erro ao cadastrar categoria ", err)
+        }
+    }
+
+    async function registerExercise({ name, reps, time, observation, category_name }){
+        try{
+            const response = await api.post('/exercises', {
+                name,
+                reps,
+                time,
+                observation,
+                category_name
+            })
+
+            toast.success('Exercício cadastrado com sucesso!');
+        }catch(err){
+            toast.error("Erro ao cadastrar exercício!");
+            console.log("erro ao cadastrar exercício ", err)
+        }
+    }
+
+    async function exerciseListIdState(id){
+        setListIdExercise(id);
+    }
     
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise }}>
             {children}
         </AuthContext.Provider>
     )
