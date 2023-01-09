@@ -1,36 +1,55 @@
 import * as React from 'react';
-import { useContext } from 'react';
+import { useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { setupAPIClient } from '../../services/api';
 import { canSSRAuth } from '../../../utils/canSSRAuth';
 import { Header } from '../../components/Header';
 import { Button } from '../../components/ui/Button';
-import styles from './styles.module.scss';
-import { AuthContext } from '../../contexts/AuthContext';
 import Router from 'next/router';
+import styles from './styles.module.scss';
+import { toast } from 'react-toastify';
+import CustomizedInputs from '../../components/ui/StyledInputs/CustomizedInputs';
+import { api } from '../../services/apiClient';
 
-export default function ViewTraining({ training }) {
-  const { exerciseListIdState } = useContext(AuthContext);
+export default function ViewExercises({ exercises }) {
 
   const columns = [
+    { field: 'id', headerName: 'ID', width: 90, editable: false },
     {
       field: 'name',
-      headerName: 'Nome do treino',
-      width: 350,
-      editable: false,
-    },
-    { field: 'id', headerName: 'ID do treino', width: 300, editable: false },
-    {
-      field: 'exercise_id',
-      headerName: 'Id dos exercícios',
-      width: 350,
+      headerName: 'Nome',
+      width: 150,
       editable: false,
     },
     {
-      field: "Visualizar treino",
-      headerName: "Visualizar treino",
+      field: 'reps',
+      headerName: 'Repetições',
+      width: 150,
+      editable: false,
+    },
+    {
+      field: 'time',
+      headerName: 'Duração',
+      width: 150,
+      editable: false,
+    },
+    {
+      field: 'observation',
+      headerName: 'Observações',
+      width: 150,
+      editable: false,
+    },
+    {
+      field: 'category_name',
+      headerName: 'Categorias',
+      width: 150,
+      editable: false,
+    },
+    {
+      field: "Editar",
+      headerName: "Editar",
       sortable: false,
-      width: 200,
+      width: 150,
       disableClickEventBubbling: true,
       renderCell: (params) => {
         const onClick = (e) => {
@@ -45,28 +64,25 @@ export default function ViewTraining({ training }) {
             .forEach(
               (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
             );
-
-          let exercise_id = thisRow.exercise_id;
-          exerciseListIdState(exercise_id);
-          Router.push('/viewWorkoutExercises');
-          return console.log(JSON.stringify(thisRow, null, 4));
+        let id = thisRow.id;
+        return console.log(JSON.stringify(thisRow, null, 4));
         };
-
-        return <Button onClick={onClick}>Visualizar treino</Button>;
+  
+        return <Button onClick={onClick}>Editar</Button>;
       }
     },
   ];
 
   function handleRegisterLink(){
-    Router.push('/createTraining');
+    Router.push('/registerExercise');
   }
 
   return (
     <div className={styles.containerCenter}>
       <Header />
-      <p className={styles.titulo}>Meus Treinos</p>
+      <p className={styles.titulo}>Meus Exercícios</p>
       <DataGrid
-        rows={training}
+        rows={exercises}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
@@ -91,24 +107,24 @@ export default function ViewTraining({ training }) {
         }}
       />
 
-      <Button onClick={handleRegisterLink} style={{ 
+        <Button onClick={handleRegisterLink} style={{ 
           backgroundColor: '#3A62AF',
           height: '60px',
           width: '480px',
           fontSize: '20px',
         }}>
-          Montar novo treino
+          Adicionar novo exercício
         </Button> 
-    </div>
+      </div>
   );
 }
 
 export const getServerSideProps = canSSRAuth(async (ctx) => {
     const apiClient = setupAPIClient(ctx);
-    const response = await apiClient.get('/listTraining');
+    const response = await apiClient.get('/listExercises');
     return {
         props: {
-            training: response.data
+            exercises: response.data
         }
     }
 })

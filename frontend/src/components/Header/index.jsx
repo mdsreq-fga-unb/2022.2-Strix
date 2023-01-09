@@ -17,13 +17,13 @@ export function Header() {
                         <Link href={'/financas'}>
                             Finanças
                         </Link>
-                        <Link href={'/exercicios'}>
+                        <Link href={'/viewExercises'}>
                             Exercícios
                         </Link>
                         <Link href={'/students'}>
                             Alunos
                         </Link>
-                        <Link href={'/createTraining'}>
+                        <Link href={'/viewTraining'}>
                             Treino
                         </Link>
                         <Button variant={'text'} color={'inherit'} onClick={signOut}>

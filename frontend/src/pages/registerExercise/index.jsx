@@ -10,6 +10,7 @@ import { canSSRAuth } from '../../../utils/canSSRAuth';
 import { Header } from '../../components/Header';
 import { setupAPIClient } from '../../services/api';
 import MenuItem from '@mui/material/MenuItem';
+import Router from 'next/router';
 
 export default function RegisterExercise({ listCategories }) {
 
@@ -45,6 +46,10 @@ export default function RegisterExercise({ listCategories }) {
     setReps('');
     setTime('');
     setCategory_name('');
+  }
+
+  function handleRegisterLink(){
+    Router.push('/registerCategory');
   }
   
   return (
@@ -124,7 +129,12 @@ export default function RegisterExercise({ listCategories }) {
 
           <p className={styles.msg}>* Campo Obrigatório</p>
           <Button type='submit'>Cadastrar Exercício</Button> 
+          <Button onClick={handleRegisterLink} type='button' style={{ 
+          backgroundColor: '#AF3A3A',
+          marginTop: '2rem'
+        }}>Cadastrar Nova Categoria</Button> 
         </form>
+        
       </div>
     </div>
     </>
