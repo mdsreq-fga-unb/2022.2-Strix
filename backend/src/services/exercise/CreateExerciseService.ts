@@ -35,6 +35,7 @@ class CreateExerciseService{
             select:{
                 id: true,
                 name: true,
+                reps: true,
                 time: true,
                 observation: true,
                 category_name: true
