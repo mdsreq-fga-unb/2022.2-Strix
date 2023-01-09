@@ -1,8 +1,10 @@
 # Entregas
-## 1 Entrega da unidade 1
+
+## 1. Unidade 1
 
 ### 1.1 Links
-|  |  |
+
+| Título | URL |
 |----|----| 
 | Video de apresentação do documento de visão do produto e projeto | [link](https://www.youtube.com/watch?v=EjtqzDgSy_w) |
 | Material do seminário de processos e ciclos de vida (espiral) | [link](https://docs.google.com/presentation/d/1UiUgiFNUzba7ayCEBlZnpJ7UEB7uvV8o4FU8TWKbIn4/edit#slide=id.gc6f90357f_0_47) |
@@ -23,9 +25,16 @@
 12. ![](./img/slide_12.jpg)
 13. ![](./img/slide_13.jpg)
 
-## 2 Entrega da Unidade 2
+## 2. Unidade 2
 
-| Entregas | Links  |
+| Título | URL  |
 |----|----| 
 | Video de apresentação do documento de visão do produto (atualizações com relação a entrega 1) e documento de requisitos | [link](https://www.youtube.com/watch?v=fik7zeygVYo) |
 | Documento de requisitos | [link](./documento_de_requisitos.md) |
+
+## 3. Unidade 3
+
+| Título | URL  |
+|----|----|
+| Review da entrega 1 com o Cliente (Parte 1) | [link](https://www.youtube.com/watch?v=GEU_4u1T_5g) |
+| Review da entrega 1 com o Cliente (Parte 2) | [link](https://www.youtube.com/watch?v=JMds2XTMALA) |
