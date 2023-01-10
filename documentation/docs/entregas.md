@@ -43,3 +43,5 @@
 | Link da aplicação (MVP1) | [link](https://2022-2-strix.vercel.app/) |
 | Sprint planning | [link](./sprint_planning.md) |
 | Sprint retrospective | [link](./sprint_retrospective.md) |
+
+1. Quadro Kambam ![](./img/trello.jpg)
