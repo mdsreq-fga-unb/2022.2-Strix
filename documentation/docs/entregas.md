@@ -38,3 +38,8 @@
 |----|----|
 | Review da entrega 1 com o Cliente (Parte 1) | [link](https://www.youtube.com/watch?v=GEU_4u1T_5g) |
 | Review da entrega 1 com o Cliente (Parte 2) | [link](https://www.youtube.com/watch?v=JMds2XTMALA) |
+| Documento de requisitos (Atualizado) | [link](./documento_de_requisitos.md) |
+| Documento de visão de produto e projeto (atualizado) | [link](./visao_do_produto.md) |
+| Link da aplicação (MVP1) | [link](https://2022-2-strix.vercel.app/) |
+| Sprint planning | [link](./sprint_planning.md) |
+| Sprint retrospective | [link](./sprint_retrospective.md) |
