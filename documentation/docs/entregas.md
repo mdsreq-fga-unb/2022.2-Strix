@@ -46,6 +46,5 @@
 | PBB, USM e BDDs | [link](https://miro.com/app/board/uXjVP5RsYIU=/?share_link_id=755010508584) |
 
 1. Quadro Kambam ![](./img/trello.jpg)
-2. BDD ![](./img/BDD.pdf)
-3. BDD ![](./img/PBB.pdf)
-4. BDD ![](./img/USM.pdf)
+2. PBB e BDD ![](./img/pbb.jpg)
+3. USM ![](./img/US.jpg)
