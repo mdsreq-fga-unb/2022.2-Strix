@@ -45,6 +45,8 @@
 | Sprint retrospective | [link](./sprint_retrospective.md) |
 | PBB, USM e BDDs | [link](https://miro.com/app/board/uXjVP5RsYIU=/?share_link_id=755010508584) |
 
+| Video de apresentação | [link](https://www.youtube.com/watch?v=qel0khWSWgc) |
+
 1. Quadro Kambam ![](./img/trello.jpg)
 2. PBB e BDD ![](./img/pbb.jpg)
 3. USM ![](./img/US.jpg)
