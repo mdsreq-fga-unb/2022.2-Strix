@@ -14,7 +14,7 @@ class CreateExerciseService{
             throw new Error("incorrect data");
         }
 
-        const exerciseAlreadyExists = await prismaClient.category.findFirst({
+        const exerciseAlreadyExists = await prismaClient.exercise.findFirst({
             where:{
                 name: name
             }
