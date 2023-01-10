@@ -183,6 +183,12 @@ A equipe percebeu que com os aprendizados da unidade 1 ela pôde melhorar nas qu
 
 O benefício disso é que os integrantes realmente melhoraram suas condutas diante do feedback da unidade anterior permitindo que os ajustes necessários fossem feitos e a equipe crescesse internamente com a cooperação de todos.
 
+### 4.3 Unidade 3
+
+A equipe concluiu que teve um grande avanço desde a última unidade, principalmente no comprometimento dos integrantes do grupo com a entrega a ser feita e com a comunicação entre si. Todos trabalharam e se dedicaram ao projeto e estiveram ativos no grupo do time para se comunicar.
+
+Essas mudanças são de grande ganho pra equipe, pois deixa o processo mais flúido e rápido, permitindo a atuação de todos os membros e a conclusão das tarefas a serem realizadas.
+
 ## 5 Referências bibliográficas
 PRESSMAN, ROGER S., Engenharia de Software- (6ª edição), São Paulo, Ed. McGrawHill, 2006.
 
