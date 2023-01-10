@@ -71,9 +71,8 @@ Javascript, React, Node.js
 | Comunicação sobre a situação das atividades executadas no dia | Equipe do Projeto | Diária | Resumo da reunião |
 | Acompanhamento das atividades em desenvolvimento | Equipe do Projeto | Quinzenal | Resumo da reunião, validação do atendimento aos requisitos |
 | Análise dos riscos, planejamento de próximas atividades | Equipe do Projeto | Quinzenal | Relatório de situação do projeto e resumo da reunião |
-| Retrospectiva | Equipe do Projeto | Quinzenal | Relatório sobre situação da equipe e dificuldades |
-| Comunicar situação do projeto | Equipe do Projeto, Professor | Semanal | Resumo da reunião e feedback do professor |
-| Reunião com o cliente | Equipe do Projeto, cliente | Quinzenal | Feedback do cliente, refinamento de requisitos |
+| Retrospectiva | Equipe do Projeto | Mensal | Relatório sobre situação da equipe e dificuldades |
+| Reunião com o cliente | Equipe do Projeto, cliente | Mensal | Feedback do cliente, refinamento de requisitos |
 
 ### 2.4 Gerenciamento de Riscos 
 Os riscos identificados são:
