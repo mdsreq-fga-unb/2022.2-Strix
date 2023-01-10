@@ -161,6 +161,18 @@
 <td>Alterações nos requisitos não-funcionais e remoção de textos desnecessários.</td>
 <td>Pedro</td>
 </tr>
+<tr>
+<td>09/01/23</td>
+<td>0.8</td>
+<td>Atualização do diagrama</td>
+<td>Mário</td>
+</tr>
+<tr>
+<td>09/01/23</td>
+<td>0.9</td>
+<td>Correção referente a issue #10 e ajustes referentes ao novo diagrama</td>
+<td>Beatriz</td>
+</tr>
 </tbody>
 </table>
 <h2 id="1-introducao">1. Introdução</h2>
@@ -194,15 +206,11 @@
 </tr>
 <tr>
 <td>3.0.0</td>
-<td>Gerenciar Pagamentos</td>
-</tr>
-<tr>
-<td>4.0.0</td>
 <td>Administrar Exercícios</td>
 </tr>
 <tr>
-<td>5.0.0</td>
-<td>Autenticar Usuário</td>
+<td>4.0.0</td>
+<td>Realizar Autenticação</td>
 </tr>
 </tbody>
 </table>
@@ -228,23 +236,23 @@
 <td>Gerenciamento de alunos</td>
 </tr>
 <tr>
-<td>3.1.0</td>
+<td>2.2.0</td>
 <td>Registro de pendentes</td>
 </tr>
 <tr>
-<td>3.2.0</td>
-<td>Registro de pagamentos</td>
+<td>3.1.0</td>
+<td>Registro de categoria</td>
 </tr>
 <tr>
-<td>4.1.0</td>
+<td>3.2.0</td>
 <td>Registro de exercícios</td>
 </tr>
 <tr>
-<td>4.2.0</td>
-<td>Registro de treino</td>
+<td>3.3.0</td>
+<td>Registro de treinos</td>
 </tr>
 <tr>
-<td>5.1.0</td>
+<td>4.1.0</td>
 <td>Login</td>
 </tr>
 </tbody>
@@ -285,6 +293,12 @@
 <td>Deve listar as aulas registradas no calendário, cada dia deve conter as aulas marcadas em ordem crescente de horário;<br>Deve mostrar apenas as aulas que ainda irão acontecer, não deve aparecer as dos dias passados;</td>
 </tr>
 <tr>
+<td>1.2.2</td>
+<td>Enviar convite aos alunos</td>
+<td>Eu como personal, <br>Quero enviar o convite de aula ao aluno, <br>Para que ele receba o mesmo em seu próprio calendário e possa se planejar para a aula.</td>
+<td>Deve realizar o envio de convite da aula ao calendário do email do(s) aluno(s) registrado(s) naquela aula.</td>
+</tr>
+<tr>
 <td>2.1.1</td>
 <td>Adicionar aluno</td>
 <td>Eu como personal,<br>Quero adicionar um aluno,<br>Para gerenciar suas aulas e pagamentos.</td>
@@ -305,80 +319,122 @@
 <tr>
 <td>2.1.4</td>
 <td>Excluir aluno</td>
-<td>Eu, como usuário, desejo remover do sistema um aluno previamente adicionado, para lidar com a desistência de alunos.</td>
+<td>Eu, como usuário, desejo remover um aluno previamente adicionado, para lidar com a desistência de alunos.</td>
 <td>Deve permitir a exclusão do aluno selecionado após a confirmação da exclusão por meio de modal;<br>Deve retirar o aluno excluído do calendário.</td>
 </tr>
 <tr>
-<td>3.1.1</td>
+<td>2.2.1</td>
 <td>Adicionar pendência</td>
 <td>Eu como personal,<br>Quero adicionar uma pendência,<br>Para estar sempre ciente dos pagamentos a serem feitos.</td>
-<td>Deve permitir adicionar uma pendência de pagamento ao preencher os campos de valor, data de vencimento, tĩtulo, aluno e status.<br>Deve permitir adicionar apenas 1 aluno já registrado;<br>Deve exibir a máscara nos campos de valor e data;<br>O status pode ser “em aberto” ou “pago”.</td>
+<td>Deve permitir adicionar uma pendência de pagamento ao preencher os campos de valor, data de vencimento, título, aluno e status.<br>Deve permitir adicionar apenas 1 aluno já registrado;<br>Deve exibir a máscara nos campos de valor e data;<br>O status pode ser “em aberto” ou “pago”.</td>
 </tr>
 <tr>
-<td>3.1.2</td>
+<td>2.2.2</td>
 <td>Visualizar pendência</td>
 <td>Eu como personal,<br>Quero visualizar as pendências de pagamento,<br>Para me organizar financeiramente.</td>
 <td>Deve listar todas as pendências cadastradas;</td>
 </tr>
 <tr>
-<td>3.1.3</td>
+<td>2.2.3</td>
 <td>Editar pendência</td>
 <td>Eu com personal,<br>Quero editar uma pendência registrada,<br>Para manter a mesma atualizada.</td>
 <td>Deve permitir editar todos os dados da pendência;<br>Os campos devem seguir as mesmas regras da inclusão de pendência.</td>
 </tr>
 <tr>
-<td>3.1.4</td>
+<td>2.2.4</td>
 <td>Excluir pendência</td>
 <td>Eu como personal,<br>Quero excluir uma pendência,<br>Para caso a pendência não exista mais.</td>
 <td>Deve permitir excluir a pendência após a confirmação por meio de modal;<br>Deve retirar a pendência da listagem.</td>
 </tr>
 <tr>
+<td>3.1.1</td>
+<td>Adicionar categoria</td>
+<td>Eu como personal,<br>Quero adicionar uma categoria,<br>Para poder vincular os exercícios a ela classificando-os.</td>
+<td>Deve permitir adicionar uma categoria  ao preencher os campos de nome e descrição.<br>Ambos os campos são de preenchimento obrigatórios.</td>
+</tr>
+<tr>
+<td>3.1.2</td>
+<td>Visualizar categoria</td>
+<td>Eu como personal,<br>Quero visualizar as categorias cadastradas,<br>Para conferir se elas estão corretas ou se necessitam de alteração.</td>
+<td>Deve permitir a visualização da lista de categorias adicionadas.</td>
+</tr>
+<tr>
+<td>3.1.3</td>
+<td>Excluir categoria</td>
+<td>Eu como personal,<br>Quero excluir uma categoria cadastradas,<br>Para não aparecer mais nas opções de seleção.</td>
+<td>Deve permitir excluir a categoria selecionada após confirmação pelo modal; <br>Deve retirar a categoria excluída da listagem.</td>
+</tr>
+<tr>
 <td>3.2.1</td>
-<td>Confirmar pagamento</td>
-<td>Eu como personal,<br>Quero confirmar o pagamento,<br>Para saber que a pendência foi paga.</td>
-<td>Deve permitir mudar o status da pendência para “pago”;<br>Deve alterar o status na listagem.</td>
-</tr>
-<tr>
-<td>4.1.1</td>
 <td>Adicionar exercício</td>
-<td>Eu, como usuário, desejo criar um novo exercício e adicioná-lo ao sistema, para poder cadastrar os exercícios que eu enviarei aos alunos.</td>
-<td>Deve permitir adicionar um exercício ao preencher os campos de nome e descrição.</td>
+<td>Eu, como usuário,<br> Quero criar um novo exercício,<b>Para poder cadastrar os exercícios que eu enviarei aos alunos.</td>
+<td>Deve permitir adicionar um exercício ao preencher os campos de nome, repetições, duração, categoria e observação; <br>Todos os campos devem ser obrigatórios.</td>
 </tr>
 <tr>
-<td>4.1.2</td>
+<td>3.2.2</td>
 <td>Visualizar exercício</td>
-<td>Eu, como usuário, desejo visualizar os dados de um exercício, para verificar se as instruções estão corretas.</td>
+<td>Eu, como usuário,<br> Quero visualizar os dados de um exercício,<br>Para verificar se as instruções estão corretas.</td>
 <td>Deve permitir editar todos os dados do exercício e salvá-lo.</td>
 </tr>
 <tr>
-<td>4.1.3</td>
+<td>3.2.3</td>
 <td>Editar exercício</td>
-<td>Eu, como usuário, desejo editar os dados de um exercício, para poder acrescentar ou remover instruções.</td>
+<td>Eu, como usuário,<br>Quero editar os dados de um exercício,<br>Para poder modificar alguma instrução.</td>
 <td>Deve permitir editar todos os dados do exercício e salvá-lo.</td>
 </tr>
 <tr>
-<td>4.1.4</td>
+<td>3.2.4</td>
 <td>Excluir exercício</td>
-<td>Eu, como usuário, desejo remover do sistema um exercício previamente cadastrado, para não instruir mais este exercício aos alunos.</td>
+<td>Eu, como usuário,<br>Quero remover do sistema um exercício previamente cadastrado,<br>Para não instruir mais este exercício aos alunos.</td>
 <td>Deve permitir excluir o exercício selecionado após confirmação pelo modal;<br>Deve retirar o exercício excluído da listagem.</td>
 </tr>
 <tr>
-<td>4.2.1</td>
+<td>3.3.1</td>
+<td>Adicionar treino</td>
+<td>Eu, como usuário,<br>Quero criar um novo treino e adicioná-lo ao sistema,<br>Para poder guardá-los e enviar mais facilmente aos alunos.</td>
+<td>Deve permitir criar um treino ao selecionar os exercícios desejados e escrever o nome do treino;<br> É obrigatório selecionar ao menos um exercício e escrever o nome.</td>
+</tr>
+<tr>
+<td>3.3.2</td>
+<td>Visualizar treino</td>
+<td>Eu como personal,<br>Quero visualizar os treinos prontos,<br>Para analisar qual irei enviar ao meu aluno.</td>
+<td>Deve listar todos os treinos cadastrados.</td>
+</tr>
+<tr>
+<td>3.3.3</td>
+<td>Editar treino</td>
+<td>Eu como persosnal,<br>Quero editar um treino,<br>Para manter o mesmo atualizado.</td>
+<td>Deve permitir editar os dados do treino;<br>Os campos devem seguir as mesmas regras da inclusão do treino.</td>
+</tr>
+<tr>
+<td>3.3.4</td>
+<td>Excluir treino</td>
+<td>Eu como personal,<br>Quero excluir um treino,<br>Para caso ele não sirva mais.</td>
+<td>Deve permitir excluir o treino após a confirmação por meio de modal;<br>Deve retirar o treino da listagem.</td>
+</tr>
+<tr>
+<td>3.3.5</td>
 <td>Enviar treino</td>
-<td>Eu, como usuário, desejo selecionar múltiplos exercícios, para definir o treino de um aluno.</td>
-<td>Deve permitir a criação do treino por meio da seleção de exercícios e do aluno a recebê-lo. <br>Cada exercício deve ter associado a ele o preenchimento da quantidade de repetições e um campo de observações;<br>Deve permitir incluir qualquer quantidade de exercícios;<br>Deve enviar o treino ao email do aluno selecionado;</td>
+<td>Eu, como usuário,<br>Quero selecionar um treino,<br>Para enviá-lo a um aluno.</td>
+<td>Deve permitir o envio do treino por meio da seleção do mesmo e do(s) aluno(s) a recebê-lo; <br>Deve enviar o treino ao e-mail do(s) aluno(s) selecionado(s);</td>
 </tr>
 <tr>
-<td>5.1.1</td>
+<td>4.1.1</td>
 <td>Logar no sistema</td>
-<td>Eu, como usuário, desejo me autenticar no sistema com meu user e senha, para poder utilizar das funcionalidades do sistema.</td>
-<td>Deve permitir realizar o login por meio do preenchimento de usuário e senha;<br>Não deve permitir o login caso alguma informação esteja incorreta;<br>O login deve expirar após 12 horas de inatividade, exigindo uma nova autenticação.</td>
+<td>Eu, como usuário,<br>Quero que o sistema possua autenticação,<br>Para a segurança dos dados contidos nele.</td>
+<td>Deve permitir realizar o login por meio do preenchimento de usuário e senha;<br>Não deve permitir o login caso alguma informação esteja incorreta;<br>O login deve expirar após 1 mês de realizado, exigindo uma nova autenticação.</td>
 </tr>
 <tr>
-<td>5.1.2</td>
+<td>4.1.2</td>
+<td>Deslocar no sistema</td>
+<td>Eu como usuário,<br>Quero deslogar do sistema,<br>Para que os dados dos alunos continuem protegidos ao mudar de computador.</td>
+<td>Deve deslogar o usuário e voltar à tela de login.</td>
+</tr>
+<tr>
+<td>4.1.3</td>
 <td>Alterar senha</td>
-<td>Eu, como usuário, desejo redefinir a minha senha de login, para me autenticar novamente caso eu a esqueça.</td>
-<td>Deve permitir a redenifição de uma nova senha e confirmá-la;<br>Não deve permitir mais de uma alteração no período de 12 horas;</td>
+<td>Eu, como usuário,<br>Quero redefinir a minha senha de login,<br>Para me autenticar novamente caso eu a esqueça.</td>
+<td>Deve permitir a redenifição de uma nova senha e confirmá-la após a pergunta de segurança ser respondida com sucesso;<br>Não deve permitir mais de uma alteração no período de 12 horas;</td>
 </tr>
 </tbody>
 </table>
