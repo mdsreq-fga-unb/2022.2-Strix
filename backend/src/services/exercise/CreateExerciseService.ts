@@ -6,6 +6,7 @@ interface ExerciseRequest{
     time: string;
     observation: string;
     category_name: string;
+    [key: string]: string;
 }
 
 class CreateExerciseService{
