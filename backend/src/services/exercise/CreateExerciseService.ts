@@ -39,7 +39,7 @@ class CreateExerciseService{
                 reps: true,
                 time: true,
                 observation: true,
-                category_name: true
+                category_name: true,
             }
         })
 
