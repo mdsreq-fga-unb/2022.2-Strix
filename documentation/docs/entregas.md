@@ -44,9 +44,9 @@
 | Sprint planning | [link](./sprint_planning.md) |
 | Sprint retrospective | [link](./sprint_retrospective.md) |
 | PBB, USM e BDDs | [link](https://miro.com/app/board/uXjVP5RsYIU=/?share_link_id=755010508584) |
-
 | Video de apresentação | [link](https://www.youtube.com/watch?v=qel0khWSWgc) |
 | Video de feedback do cliente | [link](https://www.youtube.com/watch?v=BO6qKlfV3aY) |
+| Link do trello | [link](https://trello.com/invite/b/R8Zmkse0/ATTIdd9bd4fce7c773190e8ee12d6103073907830A80/requisitos) |
 
 1. Quadro Kambam ![](./img/trello.jpg)
 2. PBB e BDD ![](./img/pbb.jpg)
