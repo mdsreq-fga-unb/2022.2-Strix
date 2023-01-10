@@ -46,6 +46,7 @@
 | PBB, USM e BDDs | [link](https://miro.com/app/board/uXjVP5RsYIU=/?share_link_id=755010508584) |
 
 | Video de apresentação | [link](https://www.youtube.com/watch?v=qel0khWSWgc) |
+| Video de feedback do cliente | [link](https://www.youtube.com/watch?v=BO6qKlfV3aY) |
 
 1. Quadro Kambam ![](./img/trello.jpg)
 2. PBB e BDD ![](./img/pbb.jpg)
