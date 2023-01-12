@@ -109,6 +109,22 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 
 ### 3.1 MVP 1
 
+#### 3.1.1 Versão Inicial (desatualizado)
+
+| User Story                   | Sprint   |
+|------------------------------|----------|
+| [2.1.1] Adicionar aluno      | Sprint 4 |
+| [2.1.2] Visualizar aluno     | Sprint 4 |
+| [2.1.3] Editar aluno         | Sprint 4 |
+| [2.1.4] Excluir aluno        | Sprint 4 |
+| [4.1.1] Adicionar exercício  | Sprint 5 |
+| [4.1.2] Visualizar exercício | Sprint 5 |
+| [4.1.4] Editar exercício     | Sprint 5 |
+| [4.1.4] Excluir exercício    | Sprint 5 |
+| [4.2.1] Enviar treino        | Sprint 5 |
+
+### 3.1.2 Versão Final
+
 | User Story                   |  Sprint  |
 |------------------------------|:--------:|
 | [2.1.1] Adicionar aluno      | Sprint 4 |
@@ -123,7 +139,25 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 | [3.3.1] Adicionar treino     | Sprint 5 |
 | [3.3.2] Visualizar treino    | Sprint 5 |
 
+
 ### 3.2 MVP 2
+
+#### 3.2.1 Versão inicial
+
+| User Story                   | Sprint   |
+|------------------------------|----------|
+| [1.1.1] Adicionar aula       | Sprint 6 |
+| [1.1.2] Editar aula          | Sprint 6 |
+| [1.1.3] Excluir aula         | Sprint 6 |
+| [3.1.1] Adicionar pendência  | Sprint 6 |
+| [3.1.2] Visualizar pendência | Sprint 6 |
+| [3.1.3] Editar pendência     | Sprint 6 |
+| [3.1.4] Excluir pendência    | Sprint 6 |
+| [3.2.1] Confirmar pagamento  | Sprint 7 |
+| [5.1.1] Logar no sistema     | Sprint 7 |
+| [5.1.2] Alterar senha        | Sprint 7 |
+
+#### 3.2.2 Versão 2
 
 | User Story | Sprint |
 | ---- | ---- |
