@@ -127,6 +127,9 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 
 | User Story | Sprint |
 | ---- | ---- |
+| [3.2.3] Editar exercício | Sprint 5 |
+| [3.2.4] Excluir exercício | Sprint 5 |
+| [3.3.5] Enviar treino | Sprint 5 |
 | [1.1.1] Adicionar aula | Sprint 6 |
 | [1.1.2] Editar aula | Sprint 6 |
 | [1.1.3] Excluir aula | Sprint 6 |
