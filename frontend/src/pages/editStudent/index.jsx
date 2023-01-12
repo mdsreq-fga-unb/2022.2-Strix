@@ -22,6 +22,12 @@ export default function EditStudent() {
 
   const { idState, updatedStudent, deleteStudent } = useContext(AuthContext);// puxando do contexto
 
+  const [openModal, setOpenModal] = useState(false)
+  const handleOpenModal = () => setOpenModal(true)
+  const handleCloseModal = () => setOpenModal(false)
+
+  const [invalidBirthDate, setnvalidBirthdDate] = useState(false);
+
   async function detailStudentRequest(x){
     try{
       const response = await api.get('/student/detail', {
@@ -49,10 +55,6 @@ export default function EditStudent() {
     event.preventDefault();
 
     let invalid = false
-    if (name.length < 2) {
-      toast.error("Nome muito curto, mínimo de duas letras!")
-      invalid = true
-    }
     if (invalidBirthDate) {
       toast.error("Data de nascimento inválida!")
       invalid = true
@@ -99,11 +101,6 @@ export default function EditStudent() {
     return true
   }
 
-  const [openModal, setOpenModal] = useState(false)
-  const handleOpenModal = () => setOpenModal(true)
-  const handleCloseModal = () => setOpenModal(false)
-
-  const [invalidBirthDate, setnvalidBirthdDate] = useState(false);
   useEffect(() => {
     if (birthDate.length == 0 || birthDate.length == 10) {
       setnvalidBirthdDate(false)
@@ -161,7 +158,7 @@ export default function EditStudent() {
               type={'text'} 
               label={'Telefone'} 
               required
-              error={phone.length > 0 && phone.length < 15 ? true : false}
+              error={phone.length > 0 && phone.length < 15}
             />}
           </InputMask>
 
