@@ -123,7 +123,7 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 | [4.1.4] Excluir exercício    | Sprint 5 |
 | [4.2.1] Enviar treino        | Sprint 5 |
 
-### 3.1.2 Versão Final
+#### 3.1.2 Versão Final
 
 | User Story                   |  Sprint  |
 |------------------------------|:--------:|
@@ -142,7 +142,7 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 
 ### 3.2 MVP 2
 
-#### 3.2.1 Versão inicial
+#### 3.2.1 Versão inicial (desatualizado)
 
 | User Story                   | Sprint   |
 |------------------------------|----------|
