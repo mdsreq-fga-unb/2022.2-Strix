@@ -16,7 +16,7 @@ export default function ViewTraining({ training }) {
     {
       field: 'name',
       headerName: 'Nome do treino',
-      width: 350,
+      width: 786,
       editable: false,
     },
     { field: 'id', headerName: 'ID do treino', width: 300, editable: false },
@@ -30,7 +30,7 @@ export default function ViewTraining({ training }) {
       field: "Visualizar treino",
       headerName: "Visualizar treino",
       sortable: false,
-      width: 200,
+      width: 186,
       disableClickEventBubbling: true,
       renderCell: (params) => {
         const onClick = (e) => {
@@ -70,6 +70,11 @@ export default function ViewTraining({ training }) {
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
+        columnVisibilityModel={{
+          id: false,
+          exercise_id: false
+        } 
+      }
 
         sx={{
           height: 400,

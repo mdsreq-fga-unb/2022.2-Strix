@@ -32,38 +32,38 @@ export default function viewWorkoutExercises({ exercises }) {
     {
       field: 'name',
       headerName: 'Nome',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: 'reps',
       headerName: 'Repetições',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: 'time',
       headerName: 'Duração',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: 'observation',
       headerName: 'Observações',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: 'category_name',
       headerName: 'Categoria',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: "Editar",
       headerName: "Editar",
       sortable: false,
-      width: 130,
+      width: 133,
       disableClickEventBubbling: true,
       renderCell: (params) => {
         const onClick = (e) => {
@@ -95,6 +95,10 @@ export default function viewWorkoutExercises({ exercises }) {
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
+        columnVisibilityModel={{
+          id: false
+        } 
+      }
 
         sx={{
           height: 400,
