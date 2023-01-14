@@ -63,7 +63,7 @@ export default function viewWorkoutExercises({ exercises }) {
       field: "Editar",
       headerName: "Editar",
       sortable: false,
-      width: 133,
+      width: 122,
       disableClickEventBubbling: true,
       renderCell: (params) => {
         const onClick = (e) => {
