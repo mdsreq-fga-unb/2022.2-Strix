@@ -27,6 +27,9 @@ import { CreateTrainingController } from './controllers/training/CreateTrainingC
 import { DetailTrainingController } from './controllers/training/DetailTrainingController';
 import { ListTrainingController } from './controllers/training/ListTrainingController';
 
+// -- GeneratePdf --
+import { GeneratePdfController } from './controllers/generatePdf/GeneratePdfController';
+
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
 const router = Router();
@@ -57,5 +60,8 @@ router.get('/exercise/detail', isAuthenticated, new DetailExerciseController().h
 router.post('/training', isAuthenticated, new CreateTrainingController().handle)
 router.get('/training/detail', isAuthenticated, new DetailTrainingController().handle)
 router.get('/listTraining', isAuthenticated, new ListTrainingController().handle)
+
+// -- Rotas GeneratePdf --
+router.get('/generatePdf', isAuthenticated, new GeneratePdfController().handle)
 
 export { router };

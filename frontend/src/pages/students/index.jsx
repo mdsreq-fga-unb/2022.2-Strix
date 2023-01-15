@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useContext } from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { setupAPIClient } from '../../services/api';
 import { canSSRAuth } from '../../../utils/canSSRAuth';
 import { Header } from '../../components/Header';
@@ -91,6 +91,8 @@ export default function Students({ students }) {
             id: false
           } 
         }
+
+        components={{ Toolbar: GridToolbar }}
 
         sx={{
           height: 400,
