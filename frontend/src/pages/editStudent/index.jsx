@@ -9,6 +9,9 @@ import { toast } from 'react-toastify';
 import { canSSRAuth } from '../../../utils/canSSRAuth';
 import { Header } from '../../components/Header';
 import { api } from '../../services/apiClient';
+import { Excluir } from '../../components/Confirm';
+import SpringModal from '../../components/Modal';
+import InputMask from 'react-input-mask';
 
 export default function EditStudent() {
   const [name, setName] = useState(''); 
@@ -45,6 +48,23 @@ export default function EditStudent() {
   async function handleEditStudent(event){
     event.preventDefault();
 
+    let invalid = false
+    if (name.length < 2) {
+      toast.error("Nome muito curto, mínimo de duas letras!")
+      invalid = true
+    }
+    if (invalidBirthDate) {
+      toast.error("Data de nascimento inválida!")
+      invalid = true
+    }
+    if (phone.length < 15) {
+      toast.error("Telefone inválido!")
+      invalid = true
+    }
+    if (invalid) {
+      return
+    }
+
     let data = {
       "id": idState,
       name,
@@ -66,6 +86,32 @@ export default function EditStudent() {
     await deleteStudent(data);
   }
 
+  const validateName = (text) => {
+    let nome = ""
+    nome = nome.concat(text)
+    let tam = nome.length
+    const letraspermitidas="ABCEDFGHIJKLMNOPQRSTUVXWYZ abcdefghijklmnopqrstuvxwyzáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ"
+    while (tam--) {
+      if(!letraspermitidas.includes(nome.charAt(tam))) {
+        return false
+      }
+    }
+    return true
+  }
+
+  const [openModal, setOpenModal] = useState(false)
+  const handleOpenModal = () => setOpenModal(true)
+  const handleCloseModal = () => setOpenModal(false)
+
+  const [invalidBirthDate, setnvalidBirthdDate] = useState(false);
+  useEffect(() => {
+    if (birthDate.length == 0 || birthDate.length == 10) {
+      setnvalidBirthdDate(false)
+    } else {
+      setnvalidBirthdDate(true)
+    }
+  }, [birthDate])
+
   return (
     <>
     <Head>
@@ -85,24 +131,39 @@ export default function EditStudent() {
             label={'Nome Completo'} 
             type={'text'} 
             value={name}
-            onChange={ (e) => setName(e.target.value) }
+            required
+            onChange={ (e) => validateName(e.target.value) ? setName(e.target.value) : null }
           />
 
-          <CustomizedInputs 
-            size='small' 
-            type={"text"} 
-            label={'Data de Nascimento'} 
+          <InputMask 
+            mask="99/99/9999"
+            maskChar=""
             value={birthDate}
             onChange={ (e) => setBirthdDate(e.target.value) }
-          />
+          >
+            {() => <CustomizedInputs 
+              size='small' 
+              type={"text"} 
+              label={'Data de Nascimento'}
+              required
+              error={invalidBirthDate}
+            />}
+          </InputMask>
 
-          <CustomizedInputs 
-            size='small' 
-            type={'text'} 
-            label={'Telefone'} 
+          <InputMask 
+            mask="(99) 99999-9999"
+            maskChar=""
             value={phone}
             onChange={ (e) => setPhone(e.target.value) }
-          />
+          >
+            {() => <CustomizedInputs 
+              size='small' 
+              type={'text'} 
+              label={'Telefone'} 
+              required
+              error={phone.length > 0 && phone.length < 15 ? true : false}
+            />}
+          </InputMask>
 
           <CustomizedInputs
             size='small' 
@@ -110,20 +171,31 @@ export default function EditStudent() {
             label={'CPF'} 
             value={cpf}
             onChange={ (e) => setCpf(e.target.value) }
+            required
+            disabled
           />
 
           <CustomizedInputs 
             size='small' 
             type={'email'} 
-            label={'email'} 
+            label={'E-mail'} 
             value={email}
             onChange={ (e) => setEmail(e.target.value) }
+            required
           />
 
           <p className={styles.msg}>* Campo Obrigatório</p>
-          <Button type='submit'>Salvar</Button>
-          <Button type='button' className={styles.delete} onClick={ handleDelete}>Deletar</Button>  
-        </form> 
+          <div className={styles.buttons}>
+            <Button type='submit' style={{width: '170px', marginTop: '2rem'}}>Salvar</Button>
+            <Button type='button' style={{width: '170px'}} className={styles.delete} onClick={handleOpenModal}>Excluir Aluno</Button>
+          </div>
+          
+          <SpringModal
+            open={openModal}
+            handleClose={handleCloseModal}
+            component={<Excluir funcNo={handleCloseModal} funcYes={handleDelete}/>}
+          />
+        </form>
       </div>
     </div>
     </>
