@@ -28,7 +28,8 @@ import { DetailTrainingController } from './controllers/training/DetailTrainingC
 import { ListTrainingController } from './controllers/training/ListTrainingController';
 
 // -- GeneratePdf --
-import { GeneratePdfController } from './controllers/generatePdf/GeneratePdfController';
+//import { GeneratePdfController } from './controllers/generatePdf/GeneratePdfController';
+import { GeneratePdf } from './utils/generatePdf';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
@@ -62,6 +63,6 @@ router.get('/training/detail', isAuthenticated, new DetailTrainingController().h
 router.get('/listTraining', isAuthenticated, new ListTrainingController().handle)
 
 // -- Rotas GeneratePdf --
-router.get('/generatePdf', isAuthenticated, new GeneratePdfController().handle)
+router.get('/generatePdf', new GeneratePdf().handle)
 
 export { router };
