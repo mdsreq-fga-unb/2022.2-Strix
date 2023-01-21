@@ -92,7 +92,7 @@ export default function Students({ students }) {
           } 
         }
 
-        components={{ Toolbar: GridToolbar }}
+        //components={{ Toolbar: GridToolbar }}
 
         sx={{
           height: 400,
