@@ -31,10 +31,18 @@ class SendEmail {
       },
     });
 
+    transporter.verify(function (error, success) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Servidor pronto para enviar email");
+      }
+    });
+
     let info = await transporter.sendMail({
       from: emailUsername,
       to: studentEmail,
-      subject: "Treino de musculação",
+      subject: "Treino de musculaçãao",
       text: "Segue em anexo o arquivo PDF do seu treino.",
       attachments: [
         {
@@ -42,8 +50,7 @@ class SendEmail {
         },
       ],
     });
-
-    console.log("email %s enviado", info.messageId);
+    return res.json(info);
   }
 }
 
