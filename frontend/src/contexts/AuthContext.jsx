@@ -85,12 +85,10 @@ export function AuthProvider({ children }){
                 email,
                 user_id
             })
-
             toast.success('Aluno cadastrado com sucesso!');
             Router.push('/students');
         }catch(err){
-            toast.error("Erro ao cadastrar!");
-            console.log("erro ao cadastrar aluno ", err)
+            toast.error("Erro ao cadastrar: " + err.response.data.error);
         }
     }
 
@@ -111,8 +109,8 @@ export function AuthProvider({ children }){
             toast.success('Dados editado com sucesso!');
             Router.push('/students');
         }catch(error){
-          toast.error("Erro ao editar!");
-          console.log("erro ao cadastrar aluno ", error);
+          toast.error("Erro ao editar: " + error.response.data.error);
+          console.log("erro ao cadastrar aluno ", error.response.data);
         }
     }
 

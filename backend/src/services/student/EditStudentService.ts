@@ -15,6 +15,25 @@ class EditStudentService{
             throw new Error("invalid Data");
         }
 
+        const emailAlreadyExists = await prismaClient.student.findFirst({
+            where: {
+                email: email,
+            },
+        });
+      
+        const phoneAlreadyExists = await prismaClient.student.findFirst({
+            where: {
+                phone: phone,
+            },
+        });
+      
+        if (emailAlreadyExists && emailAlreadyExists.id != id) {
+            throw new Error("Email já cadastrado.");
+        }
+        if (phoneAlreadyExists && phoneAlreadyExists.id != id) {
+            throw new Error("Telefone já cadastrado.");
+        }
+
         const student = await prismaClient.student.update({
             where:{
                 id: id
