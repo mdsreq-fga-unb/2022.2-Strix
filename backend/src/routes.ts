@@ -26,6 +26,7 @@ import { DetailExerciseController } from './controllers/exercise/DetailExerciseC
 import { CreateTrainingController } from './controllers/training/CreateTrainingController';
 import { DetailTrainingController } from './controllers/training/DetailTrainingController';
 import { ListTrainingController } from './controllers/training/ListTrainingController';
+import { EditExerciseController } from './controllers/exercise/EditExerciseController';
 
 // -- GeneratePdf --
 //import { GeneratePdfController } from './controllers/generatePdf/GeneratePdfController';
@@ -56,6 +57,7 @@ router.get('/listCategories', isAuthenticated, new ListCategoryController().hand
 router.post('/exercises', isAuthenticated, new CreateExerciseController().handle)
 router.get('/listExercises', isAuthenticated, new ListExerciseController().handle)
 router.get('/exercise/detail', isAuthenticated, new DetailExerciseController().handle)
+router.put('/updateExercise', isAuthenticated, new EditExerciseController().handle)
 
 // -- Rotas Training --
 router.post('/training', isAuthenticated, new CreateTrainingController().handle)
