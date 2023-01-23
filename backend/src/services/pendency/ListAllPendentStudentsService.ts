@@ -15,9 +15,8 @@ export class ListAllPendentStudentsService {
       const nome = p.name;
       const valor = p.total_value;
       const qtd = p.qt_pendencies;
-      res.push({"nome": nome, "qtd_pendencias":qtd, "saldo_devedor":valor});
+      res.push({"id": p.id, "nome": nome, "qtd_pendencias":qtd, "saldo_devedor":valor});
     })
-    console.log(res);
     return res;
   }
 }
