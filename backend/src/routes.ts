@@ -28,6 +28,7 @@ import { DetailTrainingController } from './controllers/training/DetailTrainingC
 import { ListTrainingController } from './controllers/training/ListTrainingController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
+import { CreatePendencyController } from './controllers/pendency/CreatePendencyController';
 
 const router = Router();
 
@@ -57,5 +58,8 @@ router.get('/exercise/detail', isAuthenticated, new DetailExerciseController().h
 router.post('/training', isAuthenticated, new CreateTrainingController().handle)
 router.get('/training/detail', isAuthenticated, new DetailTrainingController().handle)
 router.get('/listTraining', isAuthenticated, new ListTrainingController().handle)
+
+// -- Rotas Pendências --
+router.post('/pendency', isAuthenticated, new CreatePendencyController().handle)
 
 export { router };
