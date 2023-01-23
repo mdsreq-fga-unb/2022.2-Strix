@@ -5,14 +5,19 @@ import { setupAPIClient } from "../../services/api";
 import { DataGrid } from "@mui/x-data-grid";
 import { Button } from "../../components/ui/Button";
 import Router from 'next/router';
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function FinancasPage({ pendentStudents }) {
+  const { studentPendenciesState } = useContext(AuthContext);
+
   function handleNewPendencyClick() {
     Router.push("/registerPendency");
   }
 
   const columns = [
     { field: "nome", headerName: "Nome", width: 150, editable: false },
+    { field: "studentId", headerName: "ID", width: 150, editable: false, hide: true },
     {
       field: "qtd_pendencias",
       headerName: "Quantidade de pendências",
@@ -44,7 +49,9 @@ export default function FinancasPage({ pendentStudents }) {
             .forEach(
               (c) => (thisRow[c.field] = params.getValue(params.id, c.field))
             );
-          let id = thisRow.id;
+          let student_id = thisRow.studentId;
+          studentPendenciesState(student_id);
+          Router.push('/detailPendency');
           return console.log(JSON.stringify(thisRow, null, 4));
         };
 

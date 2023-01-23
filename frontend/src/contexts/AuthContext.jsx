@@ -20,6 +20,7 @@ export function AuthProvider({ children }){
     const isAuthenticated = !!user;
     const [idState, setIdState] = useState('');
     const [listIdExercise, setListIdExercise] = useState([]);
+    const [pendencyStudentId, setPendencyStudentId] = useState('');
 
     useEffect(() => {
         // Tentar pegar algo no cookie
@@ -177,12 +178,16 @@ export function AuthProvider({ children }){
         }
     }
 
+    async function studentPendenciesState(id) {
+        setPendencyStudentId(id);
+    }
+
     async function exerciseListIdState(id){
         setListIdExercise(id);
     }
     
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, registerPendency }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, registerPendency, studentPendenciesState, pendencyStudentId }}>
             {children}
         </AuthContext.Provider>
     )
