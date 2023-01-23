@@ -93,10 +93,11 @@ model Pendency {
 }
 
 model PendentStudent {
-  id          String   @id @default(uuid())
-  name        String
-  total_value Float
-  pendencyIds String[]
+  id            String @id @default(uuid())
+  name          String
+  total_value   Float
+  studentId     String @unique
+  qt_pendencies Int
 
   @@map("pendentStudents")
 }

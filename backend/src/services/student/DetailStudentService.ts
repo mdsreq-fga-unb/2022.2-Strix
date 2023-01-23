@@ -31,6 +31,14 @@ class DetailStudentService {
         }
         
     }
+
+    async getAllWithPendency() {
+        const students = await prismaClient.student.findMany({
+            where: { pendencies: { some: {} } }
+        });
+        return students;
+    }
+
 }
 
 export { DetailStudentService }
