@@ -91,3 +91,12 @@ model Pendency {
 
   @@map("pendencies")
 }
+
+model PendentStudent {
+  id          String   @id @default(uuid())
+  name        String
+  total_value Float
+  pendencyIds String[]
+
+  @@map("pendentStudents")
+}
