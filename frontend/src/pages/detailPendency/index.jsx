@@ -12,6 +12,7 @@ import { useState } from 'react';
 
 export default function DetailPendencyPage({pendencies}) {
   const {pendencyStudentId} = useContext(AuthContext);
+  const {pendencyStudentName} = useContext(AuthContext);
   const [state, setState] = useState([]);
 
   useEffect(() => {
@@ -69,7 +70,7 @@ export default function DetailPendencyPage({pendencies}) {
   return (
     <div className={styles.containerCenter}>
       <Header />
-      <p className={styles.titulo}>Pendências do aluno</p>
+      <p className={styles.titulo}>Pendências do {pendencyStudentName}</p>
       <DataGrid
         rows={state}
         columns={columns}

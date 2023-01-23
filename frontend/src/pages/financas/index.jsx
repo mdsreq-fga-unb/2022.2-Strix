@@ -10,6 +10,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 export default function FinancasPage({ pendentStudents }) {
   const { studentPendenciesState } = useContext(AuthContext);
+  const {studentName} = useContext(AuthContext);
 
   function handleNewPendencyClick() {
     Router.push("/registerPendency");
@@ -50,7 +51,9 @@ export default function FinancasPage({ pendentStudents }) {
               (c) => (thisRow[c.field] = params.getValue(params.id, c.field))
             );
           let student_id = thisRow.studentId;
+          let nome = thisRow.nome;
           studentPendenciesState(student_id);
+          studentName(nome);
           Router.push('/detailPendency');
           return console.log(JSON.stringify(thisRow, null, 4));
         };
