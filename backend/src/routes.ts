@@ -21,12 +21,14 @@ import { ListCategoryController } from './controllers/category/ListCategoryContr
 import { CreateExerciseController } from './controllers/exercise/CreateExerciseController';
 import { ListExerciseController } from './controllers/exercise/ListExerciseController';
 import { DetailExerciseController } from './controllers/exercise/DetailExerciseController';
+import { EditExerciseController } from './controllers/exercise/EditExerciseController';
+import { RemoveExerciseController } from './controllers/exercise/RemoveExerciseController';
 
 // -- Training -- 
 import { CreateTrainingController } from './controllers/training/CreateTrainingController';
 import { DetailTrainingController } from './controllers/training/DetailTrainingController';
 import { ListTrainingController } from './controllers/training/ListTrainingController';
-import { EditExerciseController } from './controllers/exercise/EditExerciseController';
+
 
 // -- GeneratePdf --
 //import { GeneratePdfController } from './controllers/generatePdf/GeneratePdfController';
@@ -58,6 +60,7 @@ router.post('/exercises', isAuthenticated, new CreateExerciseController().handle
 router.get('/listExercises', isAuthenticated, new ListExerciseController().handle)
 router.get('/exercise/detail', isAuthenticated, new DetailExerciseController().handle)
 router.put('/updateExercise', isAuthenticated, new EditExerciseController().handle)
+router.delete('/exerciseDelete', isAuthenticated, new RemoveExerciseController().handle)
 
 // -- Rotas Training --
 router.post('/training', isAuthenticated, new CreateTrainingController().handle)
