@@ -1,11 +1,16 @@
 import { Header } from "../../components/Header";
 import styles from "./styles.module.scss";
-import { canSSRAuth } from '../../../utils/canSSRAuth';
-import { setupAPIClient } from '../../services/api';
-import { DataGrid } from '@mui/x-data-grid';
-import { Button } from '../../components/ui/Button';
+import { canSSRAuth } from "../../../utils/canSSRAuth";
+import { setupAPIClient } from "../../services/api";
+import { DataGrid } from "@mui/x-data-grid";
+import { Button } from "../../components/ui/Button";
+import Router from 'next/router';
 
 export default function FinancasPage({ pendentStudents }) {
+  function handleNewPendencyClick() {
+    Router.push("/registerPendency");
+  }
+
   const columns = [
     { field: "nome", headerName: "Nome", width: 150, editable: false },
     {
@@ -48,7 +53,6 @@ export default function FinancasPage({ pendentStudents }) {
     },
   ];
 
-
   return (
     <div className={styles.containerCenter}>
       <Header />
@@ -58,26 +62,37 @@ export default function FinancasPage({ pendentStudents }) {
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
-
         sx={{
           height: 400,
-          backgroundColor: 'transparent',
-          color: '#FFF',
+          backgroundColor: "transparent",
+          color: "#FFF",
           border: 0,
-          borderRadius: '10px',
-          '& .MuiDataGrid-cell:hover': {
-            color: '#48577E',
-            backgroundColor: '#3AAFA1;'
+          borderRadius: "10px",
+          "& .MuiDataGrid-cell:hover": {
+            color: "#48577E",
+            backgroundColor: "#3AAFA1;",
           },
-          '& .MuiDataGrid-row:hover': {
-            backgroundColor: '#3AAFA1',
-            color: '#FFF'
+          "& .MuiDataGrid-row:hover": {
+            backgroundColor: "#3AAFA1",
+            color: "#FFF",
           },
-          '& .MuiDataGrid-row': {
-            background: '#3AAFA1',
-          }
+          "& .MuiDataGrid-row": {
+            background: "#3AAFA1",
+          },
         }}
       />
+
+      <Button
+        onClick={handleNewPendencyClick}
+        style={{
+          backgroundColor: "#3A62AF",
+          height: "60px",
+          width: "480px",
+          fontSize: "20px",
+        }}
+      >
+        Adicionar nova pendência
+      </Button>
     </div>
   );
 }

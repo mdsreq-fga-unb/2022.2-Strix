@@ -162,12 +162,27 @@ export function AuthProvider({ children }){
         }
     }
 
+    async function registerPendency({price, description, studentId}) {
+        try {
+            price = parseFloat(price);
+            const res = await api.post('/pendency', {
+                price,
+                description,
+                studentId
+            })
+            toast.success("Pendência registrada com sucesso!");
+        } catch (err) {
+            toast.error("Erro ao cadastrar pendência." + err);
+            console.log(err)
+        }
+    }
+
     async function exerciseListIdState(id){
         setListIdExercise(id);
     }
     
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, registerPendency }}>
             {children}
         </AuthContext.Provider>
     )
