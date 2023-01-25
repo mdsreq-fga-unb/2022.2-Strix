@@ -31,6 +31,7 @@ import { isAuthenticated } from './middlewares/isAuthenticated';
 import { CreatePendencyController } from './controllers/pendency/CreatePendencyController';
 import { ListAllPendentStudentsController } from './controllers/pendency/ListAllPendentStudentsController';
 import { ListPendencyController } from './controllers/pendency/ListPendencyController';
+import { DetailPendencyController } from './controllers/pendency/DetailPendencyController';
 
 const router = Router();
 
@@ -65,5 +66,6 @@ router.get('/listTraining', isAuthenticated, new ListTrainingController().handle
 router.post('/pendency', isAuthenticated, new CreatePendencyController().handle)
 router.get('/listPendentStudents', isAuthenticated, new ListAllPendentStudentsController().handle)
 router.get('/listAllPendencies', isAuthenticated, new ListPendencyController().handle)
+router.get('/pendency/detail', isAuthenticated, new DetailPendencyController().handle)
 
 export { router };
