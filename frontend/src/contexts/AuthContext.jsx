@@ -202,6 +202,7 @@ export function AuthProvider({ children }){
                 studentId
             })
             toast.success("Pendência registrada com sucesso!");
+            Router.push('/financas')
         } catch (err) {
             toast.error("Erro ao cadastrar pendência." + err);
             console.log(err)
