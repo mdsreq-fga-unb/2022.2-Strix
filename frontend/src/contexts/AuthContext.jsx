@@ -22,6 +22,7 @@ export function AuthProvider({ children }){
     const [listIdExercise, setListIdExercise] = useState([]);
     const [pendencyStudentId, setPendencyStudentId] = useState('');
     const [pendencyStudentName, setPendencyStudentName] = useState('');
+    const [pendencyId, setPendencyId] = useState('');
 
     useEffect(() => {
         // Tentar pegar algo no cookie
@@ -133,6 +134,34 @@ export function AuthProvider({ children }){
         }
     }
 
+    async function updatePendency({ pendencyId, valor, descricao }){
+        try{
+            const response = await api.put('/updatePendency', {
+              pendencyId, valor, descricao
+            })
+            toast.success('Dados editado com sucesso!');
+            Router.push('/financas');
+        }catch(error){
+          toast.error("Erro ao editar!");
+          console.log("erro ao editar pendencia ", error);
+        }
+    }
+
+    async function deletePendency( id ){
+        try{
+            const response = await api.delete('/deletePendency', {
+                params:{
+                    pendencyId: id,
+                }
+            })
+            toast.success('Pendência deletado com sucesso!');
+            Router.push('/financas');
+        }catch(error){
+            toast.error("Erro ao deletar Pendencia.");
+            console.log('Erro ao remover pendencia.', error)
+        }
+    }
+
     async function registerCategories({ name, description}){
         try{
             const response = await api.post('/categories', {
@@ -173,6 +202,7 @@ export function AuthProvider({ children }){
                 studentId
             })
             toast.success("Pendência registrada com sucesso!");
+            Router.push('/financas')
         } catch (err) {
             toast.error("Erro ao cadastrar pendência." + err);
             console.log(err)
@@ -190,11 +220,15 @@ export function AuthProvider({ children }){
     async function exerciseListIdState(id){
         setListIdExercise(id);
     }
+
+    async function setDetailedPendency(id) {
+        setPendencyId(id);
+    }
     
     return(
         <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent,
          deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, registerPendency,
-          studentPendenciesState, pendencyStudentId, studentName, pendencyStudentName }}>
+          studentPendenciesState, pendencyStudentId,updatePendency, studentName, pendencyStudentName, deletePendency, pendencyId, setDetailedPendency }}>
             {children}
         </AuthContext.Provider>
     )
