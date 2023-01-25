@@ -4,7 +4,7 @@ import { DetailPendencyService } from "../../services/pendency/DetailPendencySer
 export class DetailPendencyController {
   async handle(req: Request, res: Response) {
     const service = new DetailPendencyService();
-    const {pendencyId} = req.body;
+    const pendencyId = req.query.pendencyId as string;
     return res.json(await service.execute(pendencyId));
   }
 }
