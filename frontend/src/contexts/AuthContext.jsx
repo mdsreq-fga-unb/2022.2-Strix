@@ -20,6 +20,7 @@ export function AuthProvider({ children }){
     const isAuthenticated = !!user;
     const [idState, setIdState] = useState('');
     const [listIdExercise, setListIdExercise] = useState([]);
+    const [idExercise, setIdExercise] = useState('');
 
     useEffect(() => {
         // Tentar pegar algo no cookie
@@ -165,9 +166,32 @@ export function AuthProvider({ children }){
     async function exerciseListIdState(id){
         setListIdExercise(id);
     }
+
+    async function pickUpIdExercise(id){
+        setIdExercise(id);
+    }
+
+    async function updatedExercise({ id, name, reps, time, observation, category_name }){
+        try{
+            const response = await api.put('/updateExercise', {
+              id,
+              name,
+              reps,
+              time,
+              observation,
+              category_name
+              
+            })
+            toast.success('Dados atualizados com sucesso!');
+            Router.push('/viewExercises');
+        }catch(error){
+          toast.error("Erro ao editar!");
+          console.log("Erro ao atualizar os dados do exercício ", error);
+        }
+    }
     
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, pickUpIdExercise, idExercise, updatedExercise }}>
             {children}
         </AuthContext.Provider>
     )

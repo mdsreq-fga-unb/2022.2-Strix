@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { setupAPIClient } from '../../services/api';
 import { canSSRAuth } from '../../../utils/canSSRAuth';
@@ -10,8 +10,10 @@ import styles from './styles.module.scss';
 import { toast } from 'react-toastify';
 import CustomizedInputs from '../../components/ui/StyledInputs/CustomizedInputs';
 import { api } from '../../services/apiClient';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export default function ViewExercises({ exercises }) {
+  const { pickUpIdExercise } = useContext(AuthContext);
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 90, editable: false },
@@ -65,6 +67,8 @@ export default function ViewExercises({ exercises }) {
               (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
             );
         let id = thisRow.id;
+        pickUpIdExercise(id);
+        Router.push('/editExercise');
         return console.log(JSON.stringify(thisRow, null, 4));
         };
   

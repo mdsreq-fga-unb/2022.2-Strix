@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import Head from 'next/head';
 import styles from '../../../styles/Home.module.scss';
 import CustomizedInputs from '../../components/ui/StyledInputs/CustomizedInputs';
@@ -11,10 +11,11 @@ import { Header } from '../../components/Header';
 import { setupAPIClient } from '../../services/api';
 import MenuItem from '@mui/material/MenuItem';
 import Router from 'next/router';
+import { api } from '../../services/apiClient';
 
 export default function EditExercise({ listCategories }) {
 
-  const { } = useContext(AuthContext);
+  const { idExercise, updatedExercise  } = useContext(AuthContext);
 
   const [name, setName] = useState(''); 
   const [reps, setReps] = useState('');
@@ -22,26 +23,47 @@ export default function EditExercise({ listCategories }) {
   const [observation, setObservation] = useState('');
   const [category_name, setCategory_name] = useState('');
 
-  async function detailExerciseRequest(){
-    if(name === '' || reps === '' || time === '' || category_name === '' || observation === '') {
-      toast.error("Preencha os campos!");
-      return;
-    }
+  async function detailExerciseRequest(x){
+    try {
+      const response = await api.get('/exercise/detail', {
+        params:{
+          id: x
+        }
+      });
 
-    let data = {
-        name,
-        reps,
-        time,
-        category_name,
-        observation
+      const { name,  reps, time, observation, category_name } = response.data;
+      setName(name);
+      setReps(reps);
+      setTime(time);
+      setObservation(observation);
+      setCategory_name(category_name);
+      console.log('detalhes do exercício pego com sucesso!')
+    } catch (error) {
+      console.log('Erro ao tentar puxar os detalhes do exercício!', error);
     }
-
-    console.log(data)
   }
 
-  function handleEditExercise(event){
+  useEffect(() => {
+    detailExerciseRequest(idExercise);
+  }, []);
+
+  async function handleEditExercise(event){
     event.preventDefault();
-    alert('Salvar edição!');
+
+    let data = {
+      "id": idExercise,
+      name,
+      reps,
+      time,
+      observation,
+      category_name
+    }
+
+    console.log(data);
+
+    await updatedExercise(data);
+
+    //alert('Salvar edição!');
   }
 
   function handleDeleteExercise(){
