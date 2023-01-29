@@ -189,9 +189,24 @@ export function AuthProvider({ children }){
           console.log("Erro ao atualizar os dados do exercício ", error);
         }
     }
+
+    async function deleteExercise({ exercise_id }){
+        try{
+            const response = await api.delete('/exerciseDelete', {
+                params:{
+                    exercise_id: exercise_id,
+                }
+            })
+            toast.success('Exercício deletado com sucesso!');
+            Router.push('/viewExercises');
+        }catch(error){
+            toast.error("Erro ao deletar Exercício.");
+            console.log('Erro ao remover Exercício.', error)
+        }
+    }
     
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, pickUpIdExercise, idExercise, updatedExercise }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, pickUpIdExercise, idExercise, updatedExercise, deleteExercise }}>
             {children}
         </AuthContext.Provider>
     )

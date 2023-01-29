@@ -15,7 +15,7 @@ import { api } from '../../services/apiClient';
 
 export default function EditExercise({ listCategories }) {
 
-  const { idExercise, updatedExercise  } = useContext(AuthContext);
+  const { idExercise, updatedExercise, deleteExercise  } = useContext(AuthContext);
 
   const [name, setName] = useState(''); 
   const [reps, setReps] = useState('');
@@ -66,8 +66,13 @@ export default function EditExercise({ listCategories }) {
     //alert('Salvar edição!');
   }
 
-  function handleDeleteExercise(){
-    alert('Deletar exercício');
+  async function handleDeleteExercise(){
+    //alert('Deletar exercício');
+    let data = {
+      "exercise_id": idExercise
+    }
+
+    await deleteExercise(data);
     
   }
   
