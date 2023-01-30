@@ -21,38 +21,38 @@ export default function SetUpTraining({ exercises }) {
     {
       field: 'name',
       headerName: 'Nome',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: 'reps',
       headerName: 'Repetições',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: 'time',
       headerName: 'Duração',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: 'observation',
       headerName: 'Observações',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: 'category_name',
       headerName: 'Categorias',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: "Adicionar ao treino",
       headerName: "Adicionar ao treino",
       sortable: false,
-      width: 150,
+      width: 140,
       disableClickEventBubbling: true,
       renderCell: (params) => {
         const onClick = (e) => {
@@ -100,7 +100,7 @@ export default function SetUpTraining({ exercises }) {
     event.preventDefault();
     setNameDefinido(name);
     toast.success('Nome definido com sucesso!')
-    setName('');
+    //setName('');
   }
 
   return (
@@ -112,6 +112,10 @@ export default function SetUpTraining({ exercises }) {
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
+        columnVisibilityModel={{ // Para esconder a coluna id
+          id: false
+        } 
+      }
 
         sx={{
           height: 400,
