@@ -11,17 +11,22 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { useState } from 'react';
 import CustomizedInputs from '../../components/ui/StyledInputs/CustomizedInputs';
 import { MenuItem } from '@mui/material';
+import { api } from '../../services/apiClient';
 
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
+import { toast } from 'react-toastify';
+
+//import { URLSearchParams } from "url";
 
 export default function viewWorkoutExercises({ exercises, students }) {
-  const { listIdExercise } = useContext(AuthContext);
+  const { listIdExercise, trainingName } = useContext(AuthContext);
   const [state, setState] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState('');
+  const [nameReq, setNameReq] = useState('');
 
   useEffect(() => {
     let new_arr = [];
@@ -34,6 +39,7 @@ export default function viewWorkoutExercises({ exercises, students }) {
         }
     }
     new_arr && setState(new_arr)
+    //setNameReq(trainingName);
   }, [])
 
 
@@ -160,8 +166,9 @@ export default function viewWorkoutExercises({ exercises, students }) {
     { field: 'id', headerName: 'ID', width: 90, editable: false },
     {
       field: 'name',
-      headerName: 'Nome do treino',
+      headerName: 'Nome',
       width: 170,
+      //width: 194,
       editable: false,
       renderCell: renderCellExpand,
     },
@@ -169,6 +176,7 @@ export default function viewWorkoutExercises({ exercises, students }) {
       field: 'reps',
       headerName: 'Repetições',
       width: 170,
+      //width: 194,
       editable: false,
       renderCell: renderCellExpand,
     },
@@ -176,6 +184,7 @@ export default function viewWorkoutExercises({ exercises, students }) {
       field: 'time',
       headerName: 'Duração',
       width: 170,
+      //width: 194,
       editable: false,
       renderCell: renderCellExpand,
     },
@@ -183,6 +192,7 @@ export default function viewWorkoutExercises({ exercises, students }) {
       field: 'observation',
       headerName: 'Observações',
       width: 170,
+      //width: 194,
       editable: false,
       renderCell: renderCellExpand,
     },
@@ -190,6 +200,7 @@ export default function viewWorkoutExercises({ exercises, students }) {
       field: 'category_name',
       headerName: 'Categoria',
       width: 170,
+      //width: 194,
       editable: false,
       renderCell: renderCellExpand,
     },
@@ -224,10 +235,46 @@ export default function viewWorkoutExercises({ exercises, students }) {
     alert('Treino enviado')
   }
 
+  async function handleWorkoutView(){
+    //alert('Visualizar treino')
+    //alert("O aluno selecionado é: " + selectedStudent);
+    //console.log(typeof(selectedStudent));
+
+    // let data = {
+    //   name: trainingName,
+    //   student: selectedStudent,
+    //   listExercises: state
+    // }
+
+    // console.log(data);
+
+    //var URL = require('url').URL;
+
+    //const params = new URL.URLSearchParams(data);
+
+    try {
+      //const nameString = trainingName.toString();
+      //const nameString = nameReq.toString();
+      //console.log(typeof(nameString))
+      const response = await api.get('/generatePdf', {
+        params:{
+          name: trainingName
+        }
+      })
+      //const response = await api.put('/generatePdf', data);
+      //window.location.href = 'http://localhost:3333/generatePdf'
+      window.open("http://localhost:3333/generatePdf");
+      toast.success('Pdf gerado com sucesso!');
+    } catch (error) {
+      toast.error('Erro ao gerar o pdf');
+      console.log('Erro ao gerar o pdf', error);
+    }
+  }
+
   return (
     <div className={styles.containerCenter}>
       <Header />
-      <p className={styles.titulo}>Detalhes do treino</p>
+      <p className={styles.titulo}>Envio de treino</p>
       <p className={styles.textGrid}>Exercícios do treino</p>
       <DataGrid
         rows={state}
@@ -283,7 +330,7 @@ export default function viewWorkoutExercises({ exercises, students }) {
               ))}
           </CustomizedInputs>
 
-          <Button style={{ 
+          <Button onClick={handleWorkoutView} style={{ 
             backgroundColor: '#3AAFA1',
             height: '40px',
             width: '120px',
@@ -301,12 +348,7 @@ export default function viewWorkoutExercises({ exercises, students }) {
         }}>
           Enviar treino
         </Button>
-
-        
       </div>
-
-
-
   );
 }
 

@@ -5,11 +5,15 @@ import { TDocumentDefinitions } from 'pdfmake/interfaces';
 
 class GeneratePdf {
     async handle(req: Request, res: Response) {
-        //const exercise = await prismaClient.exercise.findMany();
+        // const name = req.query.name as string
+        // const student = req.query.student as string
+        // const listExercises = req.query.listExercises as Array<;
+        //const { name, student, listExercises } = req.query
+        const name = req.query.name as string;
+        console.log('O nome é: ' + name + ' e o tipo é: ' + typeof(name));
 
-        //const { name, listExercises, student }  = req.body;
-
-        const name = 'Exercício com bicicleta';
+        // Dados fictícios
+        // const name = 'Exercício com bicicleta';
 
         const student = 'Ricado Silva'
 
@@ -62,6 +66,7 @@ class GeneratePdf {
                 {
                     columns: [
                         { text: `${name}`, style: "header" },
+                        // { text: name, style: "header" },
                         { text: `Aluno: ${student}\n\n`, style: "header" },
                     ],
                 },

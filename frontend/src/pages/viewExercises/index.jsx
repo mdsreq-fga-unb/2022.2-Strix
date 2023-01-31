@@ -12,7 +12,6 @@ import CustomizedInputs from '../../components/ui/StyledInputs/CustomizedInputs'
 import { api } from '../../services/apiClient';
 import { AuthContext } from '../../contexts/AuthContext';
 
-
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';

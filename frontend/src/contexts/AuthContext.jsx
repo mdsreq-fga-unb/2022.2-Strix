@@ -21,6 +21,7 @@ export function AuthProvider({ children }){
     const [idState, setIdState] = useState('');
     const [listIdExercise, setListIdExercise] = useState([]);
     const [idExercise, setIdExercise] = useState('');
+    const [trainingName, setTrainingName] = useState('');
 
     useEffect(() => {
         // Tentar pegar algo no cookie
@@ -204,9 +205,13 @@ export function AuthProvider({ children }){
             console.log('Erro ao remover Exercício.', error)
         }
     }
-    
+
+    async function pickUpNameTraining(name){
+        setTrainingName(name);
+    }
+
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, pickUpIdExercise, idExercise, updatedExercise, deleteExercise }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, pickUpIdExercise, idExercise, updatedExercise, deleteExercise, pickUpNameTraining, trainingName }}>
             {children}
         </AuthContext.Provider>
     )
