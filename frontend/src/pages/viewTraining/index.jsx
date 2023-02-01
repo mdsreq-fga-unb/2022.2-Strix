@@ -28,7 +28,7 @@ export default function ViewTraining({ training }) {
     },
     {
       field: "Visualizar treino",
-      headerName: "Visualizar treino",
+      headerName: "Enviar treino",
       sortable: false,
       width: 186,
       disableClickEventBubbling: true,
