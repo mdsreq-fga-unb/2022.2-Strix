@@ -13,12 +13,15 @@ export default function DetailPendencyPage({ pendencies }) {
   const { pendencyStudentId } = useContext(AuthContext);
   const { pendencyStudentName } = useContext(AuthContext);
   const [state, setState] = useState([]);
-  const { setDetailedPendency } = useContext(AuthContext)
+  const { setDetailedPendency } = useContext(AuthContext);
 
   useEffect(() => {
     let new_arr = [];
     for (let i = 0; i < pendencies.length; i++) {
-      console.log(pendencies[i].studentId);
+      console.log(
+        "id do student da pendencia atual: %s",
+        pendencies[i].studentId
+      );
       if (pendencies[i].studentId === pendencyStudentId) {
         new_arr.push(pendencies[i]);
       }
@@ -104,10 +107,10 @@ export default function DetailPendencyPage({ pendencies }) {
 
 export const getServerSideProps = canSSRAuth(async (ctx) => {
   const apiClient = setupAPIClient(ctx);
-  const response = await apiClient.get("/listAllPendencies");
+  console.log("mandando request no detailPendency getSSP");
   return {
     props: {
-      pendencies: response.data,
+      pendencies: await (await apiClient.get("/listAllPendencies")).data,
     },
   };
 });
