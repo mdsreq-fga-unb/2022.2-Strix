@@ -18,6 +18,8 @@ export default function DetailPendencyPage({ pendencies }) {
   useEffect(() => {
     let new_arr = [];
     console.log("total de pendencias existentes: %d", pendencies.length);
+    console.log("id do student vindo do props: %s", pendencyStudentId);
+    console.log("nome: %s", pendencyStudentName);
     for (let i = 0; i < pendencies.length; i++) {
       console.log(
         "id do student da pendencia atual: %s",
