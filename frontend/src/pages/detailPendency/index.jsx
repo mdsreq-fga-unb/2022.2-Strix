@@ -17,16 +17,18 @@ export default function DetailPendencyPage({ pendencies }) {
 
   useEffect(() => {
     let new_arr = [];
+    console.log("total de pendencias existentes: %d", pendencies.length);
     for (let i = 0; i < pendencies.length; i++) {
       console.log(
         "id do student da pendencia atual: %s",
         pendencies[i].studentId
       );
       if (pendencies[i].studentId === pendencyStudentId) {
+        console.log("pendencia %d achada pro aluno", i);
         new_arr.push(pendencies[i]);
       }
     }
-    new_arr && setState(new_arr);
+    setState(new_arr);
   }, []);
 
   const columns = [
