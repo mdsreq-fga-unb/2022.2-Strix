@@ -44,6 +44,16 @@ export function AuthProvider({ children }){
 
     }, [])
 
+    async function editPassword({ password }){
+        try{
+            toast.success('Senha alterada com sucesso!');
+            Router.push('/')
+
+        }catch(err){
+            toast.error("Erro ao alterar senha!");
+        }
+    }
+
     async function signIn({ email, password }){
         //if (typeof email === 'string' && typeof password === 'string'){}
         try{
@@ -226,7 +236,7 @@ export function AuthProvider({ children }){
     }
     
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent,
+        <AuthContext.Provider value={{ user, isAuthenticated, editPassword, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent,
          deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, registerPendency,
           studentPendenciesState, pendencyStudentId,updatePendency, studentName, pendencyStudentName, deletePendency, pendencyId, setDetailedPendency }}>
             {children}
