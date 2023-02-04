@@ -8,6 +8,7 @@ import Router from "next/router";
 import styles from "./styles.module.scss";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useState } from "react";
+import { api } from "../../services/apiClient";
 
 export default function DetailPendencyPage({ pendencies }) {
   const { pendencyStudentId } = useContext(AuthContext);
@@ -112,9 +113,11 @@ export default function DetailPendencyPage({ pendencies }) {
 export const getServerSideProps = canSSRAuth(async (ctx) => {
   const apiClient = setupAPIClient(ctx);
   console.log("mandando request no detailPendency getSSP");
+  const res = await apiClient.get("/listAllPendencies");
+  console.log("response from detailPendency: " + res);
   return {
     props: {
-      pendencies: await (await apiClient.get("/listAllPendencies")).data,
+      pendencies: await res.data,
     },
   };
 });
