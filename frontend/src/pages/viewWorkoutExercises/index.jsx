@@ -18,15 +18,12 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
-import { toast } from 'react-toastify';
-
-//import { URLSearchParams } from "url";
 
 export default function viewWorkoutExercises({ exercises, students }) {
   const { listIdExercise, trainingName } = useContext(AuthContext);
   const [state, setState] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState('');
-  const [nameReq, setNameReq] = useState('');
+  //const [nameReq, setNameReq] = useState('');
 
   useEffect(() => {
     let new_arr = [];
@@ -34,12 +31,10 @@ export default function viewWorkoutExercises({ exercises, students }) {
         for (let b = 0; b < listIdExercise.length; b++){
             if(exercises[a].id === listIdExercise[b]){
                 new_arr.push(exercises[a]);
-                //setState([...state, exercises[a]])
             }
         }
     }
     new_arr && setState(new_arr)
-    //setNameReq(trainingName);
   }, [])
 
 
@@ -236,39 +231,28 @@ export default function viewWorkoutExercises({ exercises, students }) {
   }
 
   async function handleWorkoutView(){
-    //alert('Visualizar treino')
-    //alert("O aluno selecionado é: " + selectedStudent);
-    //console.log(typeof(selectedStudent));
-
-    // let data = {
-    //   name: trainingName,
-    //   student: selectedStudent,
-    //   listExercises: state
-    // }
-
-    // console.log(data);
-
-    //var URL = require('url').URL;
-
-    //const params = new URL.URLSearchParams(data);
-
-    try {
-      //const nameString = trainingName.toString();
-      //const nameString = nameReq.toString();
-      //console.log(typeof(nameString))
-      const response = await api.get('/generatePdf', {
-        params:{
-          name: trainingName
-        }
-      })
-      //const response = await api.put('/generatePdf', data);
-      //window.location.href = 'http://localhost:3333/generatePdf'
-      window.open("http://localhost:3333/generatePdf");
-      toast.success('Pdf gerado com sucesso!');
-    } catch (error) {
-      toast.error('Erro ao gerar o pdf');
-      console.log('Erro ao gerar o pdf', error);
+    const data = {
+      name: trainingName,
+      student: selectedStudent,
+      listExercises: state
     }
+
+    function displayPDF(buffer){
+      const blob = new Blob([buffer], { type: 'application/pdf' });
+      const objectURL = URL.createObjectURL(blob);
+      window.open(objectURL);
+    }
+
+    api.post('/generatePdf', data, {
+      responseType: 'arraybuffer'
+    })
+    .then(response => {
+      const buffer = new Uint8Array(response.data);
+      displayPDF(buffer);
+    })
+    .catch(error => {
+      console.log(error);
+    });
   }
 
   return (
@@ -285,7 +269,6 @@ export default function viewWorkoutExercises({ exercises, students }) {
           id: false
         } 
       }
-      //getRowHeight={() => 'auto'}
 
         sx={{
           height: 400,
@@ -345,6 +328,7 @@ export default function viewWorkoutExercises({ exercises, students }) {
           height: '60px',
           width: '480px',
           fontSize: '20px',
+          marginBottom: '50px'
         }}>
           Enviar treino
         </Button>

@@ -118,6 +118,7 @@ export default function Students({ students }) {
           height: '60px',
           width: '480px',
           fontSize: '20px',
+          marginBottom: '50px'
         }}>
           Adicionar novo aluno
         </Button> 

@@ -103,6 +103,7 @@ export default function ViewTraining({ training }) {
           height: '60px',
           width: '480px',
           fontSize: '20px',
+          marginBottom: '50px'
         }}>
           Montar novo treino
         </Button> 

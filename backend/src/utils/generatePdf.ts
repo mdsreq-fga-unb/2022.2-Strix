@@ -1,40 +1,10 @@
 import { Request, Response } from "express";
 import PdfPrinter from 'pdfmake';
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
-//import prismaClient from "../prisma";
 
 class GeneratePdf {
     async handle(req: Request, res: Response) {
-        // const name = req.query.name as string
-        // const student = req.query.student as string
-        // const listExercises = req.query.listExercises as Array<;
-        //const { name, student, listExercises } = req.query
-        const name = req.query.name as string;
-        console.log('O nome é: ' + name + ' e o tipo é: ' + typeof(name));
-
-        // Dados fictícios
-        // const name = 'Exercício com bicicleta';
-
-        const student = 'Ricado Silva'
-
-        const listExercises = [
-            {
-                "id": "53e6f92e-2c90-4c5c-9e57-486579407186",
-                "name": "Biclicleta",
-                "reps": "1",
-                "time": "1h",
-                "observation": "Seção de 1h com carga moderada.",
-                "category_name": "Exercícios Aeróbicos" 
-            },
-            {
-                "id": "c703bf7a-0eb0-40f8-ba80-37d2b8d6d274",
-                "name": "bicicleta ergométrica",
-                "reps": "1",
-                "time": "50 min",
-                "observation": "carga moderada",
-                "category_name": "Exercícios Aeróbicos"
-            },
-        ]
+        const { name, student, listExercises } = req.body;
 
         const fonts = {
             Helvetica: {
@@ -65,9 +35,8 @@ class GeneratePdf {
             content: [
                 {
                     columns: [
-                        { text: `${name}`, style: "header" },
-                        // { text: name, style: "header" },
-                        { text: `Aluno: ${student}\n\n`, style: "header" },
+                        { text: `Treino: ${name}`, style: "header" },
+                        { text: `Aluno(a): ${student}\n\n`, style: "header" },
                     ],
                 },
                 {
@@ -103,7 +72,7 @@ class GeneratePdf {
         }
 
         const pdfDoc = printer.createPdfKitDocument(docDefinitions);
-
+        
         const chunks = [];
 
         pdfDoc.on("data", (chunk) => {
@@ -114,7 +83,8 @@ class GeneratePdf {
 
         pdfDoc.on("end", () => {
             const result = Buffer.concat(chunks);
-            res.end(result) 
+            res.end(result)
+            //res.send(result)
         });
     }
 }

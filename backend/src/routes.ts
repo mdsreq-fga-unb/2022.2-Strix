@@ -68,6 +68,5 @@ router.get('/training/detail', isAuthenticated, new DetailTrainingController().h
 router.get('/listTraining', isAuthenticated, new ListTrainingController().handle)
 
 // -- Rotas GeneratePdf --
-router.get('/generatePdf', new GeneratePdf().handle)
-
+router.post('/generatePdf', new GeneratePdf().handle)
 export { router };

@@ -163,6 +163,7 @@ export default function SetUpTraining({ exercises }) {
           height: '60px',
           width: '480px',
           fontSize: '20px',
+          marginBottom: '50px'
         }}>
           Criar treino
         </Button> 
