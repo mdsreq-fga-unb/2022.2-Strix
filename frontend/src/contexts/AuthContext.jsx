@@ -20,6 +20,9 @@ export function AuthProvider({ children }){
     const isAuthenticated = !!user;
     const [idState, setIdState] = useState('');
     const [listIdExercise, setListIdExercise] = useState([]);
+    const [pendencyStudentId, setPendencyStudentId] = useState('');
+    const [pendencyStudentName, setPendencyStudentName] = useState('');
+    const [pendencyId, setPendencyId] = useState('');
     const [idExercise, setIdExercise] = useState('');
     const [trainingName, setTrainingName] = useState('');
 
@@ -133,6 +136,34 @@ export function AuthProvider({ children }){
         }
     }
 
+    async function updatePendency({ pendencyId, valor, descricao }){
+        try{
+            const response = await api.put('/updatePendency', {
+              pendencyId, valor, descricao
+            })
+            toast.success('Dados editado com sucesso!');
+            Router.push('/financas');
+        }catch(error){
+          toast.error("Erro ao editar!");
+          console.log("erro ao editar pendencia ", error);
+        }
+    }
+
+    async function deletePendency( id ){
+        try{
+            const response = await api.delete('/deletePendency', {
+                params:{
+                    pendencyId: id,
+                }
+            })
+            toast.success('Pendência deletado com sucesso!');
+            Router.push('/financas');
+        }catch(error){
+            toast.error("Erro ao deletar Pendencia.");
+            console.log('Erro ao remover pendencia.', error)
+        }
+    }
+
     async function registerCategories({ name, description}){
         try{
             const response = await api.post('/categories', {
@@ -162,6 +193,30 @@ export function AuthProvider({ children }){
             toast.error("Erro ao cadastrar exercício!");
             console.log("erro ao cadastrar exercício ", err)
         }
+    }
+
+    async function registerPendency({price, description, studentId}) {
+        try {
+            price = parseFloat(price);
+            const res = await api.post('/pendency', {
+                price,
+                description,
+                studentId
+            })
+            toast.success("Pendência registrada com sucesso!");
+            Router.push('/financas')
+        } catch (err) {
+            toast.error("Erro ao cadastrar pendência." + err);
+            console.log(err)
+        }
+    }
+
+    async function studentPendenciesState(id) {
+        setPendencyStudentId(id);
+    }
+
+    async function studentName(name) {
+        setPendencyStudentName(name);
     }
 
     async function exerciseListIdState(id){
@@ -210,8 +265,15 @@ export function AuthProvider({ children }){
         setTrainingName(name);
     }
 
+
+    async function setDetailedPendency(id) {
+        setPendencyId(id);
+    }
+    
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent, deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, pickUpIdExercise, idExercise, updatedExercise, deleteExercise, pickUpNameTraining, trainingName }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent,
+         deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, registerPendency,
+          studentPendenciesState, pendencyStudentId,updatePendency, studentName, pendencyStudentName, deletePendency, pendencyId, setDetailedPendency, pickUpIdExercise, idExercise, updatedExercise, deleteExercise, pickUpNameTraining, trainingName }}>
             {children}
         </AuthContext.Provider>
     )

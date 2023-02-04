@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import Head from 'next/head';
 import styles from '../../../styles/Home.module.scss';
 import CustomizedInputs from '../../components/ui/StyledInputs/CustomizedInputs';
@@ -8,6 +8,8 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { toast } from 'react-toastify';
 import { canSSRAuth } from '../../../utils/canSSRAuth';
 import { Header } from '../../components/Header';
+import * as cpfValidator from "cpf-cnpj-validator";
+import InputMask from 'react-input-mask';
 
 export default function RegisterStudent() {
   const { registerStudent } = useContext(AuthContext);
@@ -18,6 +20,8 @@ export default function RegisterStudent() {
   const [cpf, setCpf] = useState('');
   const [email, setEmail] = useState('');
 
+  const [cpfValid, setCpfValid] = useState(true)
+
   async function handleRegisterStudent(event){
     event.preventDefault();
 
@@ -25,6 +29,23 @@ export default function RegisterStudent() {
       toast.error("Preencha os campos!");
       //alert('Preencha todos os campos!')
       return;
+    }
+    let invalid = false
+
+    if (birthDate.length < 10) {
+      toast.error("Data de nascimento inválida!")
+      invalid = true
+    }
+    if (phone.length < 15) {
+      toast.error("Telefone inválido!")
+      invalid = true
+    }
+    if (!cpfValid) {
+      toast.error("CPF inválido!")
+      invalid = true
+    }
+    if (invalid) {
+      return
     }
 
     const user_id = "8675c6c7-ec90-45ab-928b-fb9b60510e81"; // Como só temos um usuário, esse id é único
@@ -40,6 +61,23 @@ export default function RegisterStudent() {
       }
 
       await registerStudent(data);
+  }
+
+  useEffect(() => {
+    setCpfValid(cpfValidator.cpf.isValid(cpf))
+  }, [cpf])
+  
+  const validateName = (text) => {
+    let nome = ""
+    nome = nome.concat(text)
+    let tam = nome.length
+    const letraspermitidas="ABCEDFGHIJKLMNOPQRSTUVXWYZ abcdefghijklmnopqrstuvxwyzáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ"
+    while (tam--) {
+      if(!letraspermitidas.includes(nome.charAt(tam))) {
+        return false
+      }
+    }
+    return true
   }
   
   return (
@@ -60,46 +98,61 @@ export default function RegisterStudent() {
             size='small' 
             label={'Nome completo'} 
             type={'text'} 
-            //required={true} 
+            required 
             value={name}
-            onChange={ (e) => setName(e.target.value) }
+            onChange={ (e) => validateName(e.target.value) ? setName(e.target.value) : null }
           />
 
-          <CustomizedInputs 
+          <InputMask 
+            mask="99/99/9999"
+            maskChar=""
+            value={birthDate}
+            onChange={ (e) => setBirthdDate(e.target.value) }
+          >
+          {() => <CustomizedInputs 
             size='small' 
             type={"text"} 
             label={'Data de nascimento'} 
-            // InputLabelProps={{
-            //   shrink: true,
-            // }}
-            //required={true} 
-            value={birthDate}
-            onChange={ (e) => setBirthdDate(e.target.value) }
-          />
+            required 
+            error={birthDate.length > 0 && birthDate.length < 10}
+          />}
+        </InputMask>
 
-          <CustomizedInputs 
-            size='small' 
-            type={'text'} 
-            label={'Telefone'} 
-            //required={true} 
+          <InputMask 
+            mask="(99) 99999-9999"
+            maskChar=""
             value={phone}
             onChange={ (e) => setPhone(e.target.value) }
-          />
+          >
+            {() => <CustomizedInputs 
+              size='small' 
+              type={'text'} 
+              label={'Telefone'} 
+              required
+              error={phone.length > 0 && phone.length < 15}
+            />}
+          </InputMask>
 
-          <CustomizedInputs
-            size='small' 
-            type={'text'} 
-            label={'CPF'} 
-            //required={true} 
+          <InputMask 
+            mask="999.999.999-99"
+            maskChar=""
             value={cpf}
             onChange={ (e) => setCpf(e.target.value) }
-          />
+          >
+            {() => <CustomizedInputs
+              size='small' 
+              type={'text'} 
+              label={'CPF'} 
+              required
+              error={!cpfValid && cpf.length > 0}
+            />}
+          </InputMask>
 
           <CustomizedInputs 
             size='small' 
             type={'email'} 
             label={'E-mail'} 
-            //required={true} 
+            required
             value={email}
             onChange={ (e) => setEmail(e.target.value) }
           />

@@ -89,3 +89,13 @@
       width: 90%;
     }
   }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
+    padding-inline: 3rem;
+  }
+  

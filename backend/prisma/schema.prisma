@@ -6,74 +6,98 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 // Criar migration: yarn prisma migrate dev
 model User {
-  id String @id @default(uuid())
-  name String
-  email String
-  password String
+  id         String    @id @default(uuid())
+  name       String
+  email      String
+  password   String
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
+  student    Student[]
 
-   @@map("users")
-   student Student[]
+  @@map("users")
 }
 
 model Student {
-  id String @id @default(uuid())
-  name String
-  cpf String
-  email String
-  birthDate String
-  phone String
+  id         String    @id @default(uuid())
+  name       String
+  cpf        String
+  email      String
+  birthDate  String
+  phone      String
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
 
-   user User @relation(fields: [user_id], references: [id])
-
-  @@map("students")
+  user User @relation(fields: [user_id], references: [id])
 
   user_id String
+
+  pendencies Pendency[]
+
+  @@map("students")
 }
 
 model Category {
-  id String @id @default(uuid())
-  name String
+  id          String    @id @default(uuid())
+  name        String
   description String
-  created_at DateTime? @default(now())
-  updated_at DateTime? @default(now())
+  created_at  DateTime? @default(now())
+  updated_at  DateTime? @default(now())
+  //exercises Exercise[]
 
   @@map("categories")
-  //exercises Exercise[]
 }
 
 model Exercise {
-  id String @id @default(uuid())
-  name String
-  reps String?
-  time String?
-  observation String
+  id            String    @id @default(uuid())
+  name          String
+  reps          String?
+  time          String?
+  observation   String
   category_name String
-  created_at DateTime? @default(now())
-  updated_at DateTime? @default(now())
+  created_at    DateTime? @default(now())
+  updated_at    DateTime? @default(now())
 
   //category Category @relation(fields: [category_id], references: [id])
+  //category_id String
 
   @@map("exercises")
-  //category_id String
 }
 
 model Training {
-  id String @id @default(uuid())
-  name String
+  id          String    @id @default(uuid())
+  name        String
   exercise_id String[]
-  created_at DateTime? @default(now())
-  updated_at DateTime? @default(now())
+  created_at  DateTime? @default(now())
+  updated_at  DateTime? @default(now())
 
   @@map("training")
+}
+
+model Pendency {
+  id          String    @id @default(uuid())
+  price       Float
+  startDate   DateTime? @default(now())
+  description String
+
+  student   Student @relation(fields: [studentId], references: [id])
+  studentId String
+
+  @@map("pendencies")
+}
+
+model PendentStudent {
+  id            String @id @default(uuid())
+  name          String
+  total_value   Float
+  studentId     String @unique
+  qt_pendencies Int
+
+  @@map("pendentStudents")
 }

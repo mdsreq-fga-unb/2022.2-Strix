@@ -2,7 +2,7 @@ import { Box, Button } from "@mui/material";
 import { Fragment } from "react"
 import styles from './styles.module.scss';
 
-const style = {
+const BoxStyle = {
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -11,11 +11,11 @@ const style = {
     p: 4,
 }
 
-export const Excluir = ({message, funcNo, funcYes}) => {
+export const Excluir = ({funcNo, funcYes}) => {
     return (
         <Fragment>
-            <Box sx={style} className={styles.container}>
-                <h1 className={styles.title}>{message}</h1>
+            <Box sx={BoxStyle} className={styles.container}>
+                <h1 className={styles.title}>Confirmar exclusão?</h1>
                 <div className={styles.buttons}>
                     <Button
                         variant={'contained'}
@@ -31,6 +31,7 @@ export const Excluir = ({message, funcNo, funcYes}) => {
                         color={'error'}
                         className={styles.button}
                         size={'large'}
+                        onClick={funcYes}
                     >
                         Sim
                     </Button>

@@ -35,6 +35,12 @@ import { ListTrainingController } from './controllers/training/ListTrainingContr
 import { GeneratePdf } from './utils/generatePdf';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
+import { CreatePendencyController } from './controllers/pendency/CreatePendencyController';
+import { ListAllPendentStudentsController } from './controllers/pendency/ListAllPendentStudentsController';
+import { ListPendencyController } from './controllers/pendency/ListPendencyController';
+import { DetailPendencyController } from './controllers/pendency/DetailPendencyController';
+import { DeletePendencyController } from './controllers/pendency/DeletePendencyController';
+import { EditPendencyController } from './controllers/pendency/EditPendencyController';
 
 const router = Router();
 
@@ -69,4 +75,12 @@ router.get('/listTraining', isAuthenticated, new ListTrainingController().handle
 
 // -- Rotas GeneratePdf --
 router.post('/generatePdf', new GeneratePdf().handle)
+// -- Rotas Pendências --
+router.post('/pendency', isAuthenticated, new CreatePendencyController().handle)
+router.get('/listPendentStudents', isAuthenticated, new ListAllPendentStudentsController().handle)
+router.get('/listAllPendencies', isAuthenticated, new ListPendencyController().handle)
+router.get('/pendency/detail', isAuthenticated, new DetailPendencyController().handle)
+router.delete('/deletePendency', isAuthenticated, new DeletePendencyController().handle)
+router.put('/updatePendency', isAuthenticated, new EditPendencyController().handle)
+
 export { router };
