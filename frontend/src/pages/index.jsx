@@ -64,7 +64,7 @@ export default function Home() {
           <Button type='submit'>Acessar</Button> 
         </form>
 
-        <Link href="/" className={styles.text}>
+        <Link href="/editPassword/securityQuestion" className={styles.text}>
           Esqueci minha senha
         </Link>
       </div>
