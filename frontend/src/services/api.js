@@ -7,7 +7,7 @@ export function setupAPIClient(ctx = undefined) {
   let cookies = parseCookies(ctx);
 
   const api = axios.create({
-    baseURL: "http://18.231.178.110:3333",
+    baseURL: "https://strix-backend.onrender.com",
     headers: {
       Authorization: `Bearer ${cookies["@nextauth.token"]}`,
     },
