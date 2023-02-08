@@ -42,7 +42,7 @@ class SendEmail {
     let info = await transporter.sendMail({
       from: emailUsername,
       to: studentEmail,
-      subject: "Treino de musculaçãao",
+      subject: "Treino de musculação",
       text: "Segue em anexo o arquivo PDF do seu treino.",
       attachments: [
         {

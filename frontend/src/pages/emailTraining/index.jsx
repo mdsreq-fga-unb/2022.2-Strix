@@ -35,14 +35,20 @@ export default function EmailTraining({ students }) {
 
   async function handleSendEmail(event){
     event.preventDefault();
-    alert('enviado por email!');
-
+    
     try {
-      const response = await api.delete('/deleteFileRoot');
-      console.log("Requisição feita com sucesso!");
+      let data = {
+        "pathToPDF": "Treino.pdf",
+        "emailUsername" : emailUsername,
+        "emailPassword" : emailPassword,
+        "studentEmail" : studentEmail,
+      } 
+      const send = await api.post('/sendEmail', data);
     } catch (error) {
       console.log("Error ao fazer a requisição!", error);
     }
+    alert('enviado por email!');
+    const del = await api.delete('/deleteFileRoot');
   }
   
   return (
@@ -70,7 +76,7 @@ export default function EmailTraining({ students }) {
           <CustomizedInputs
             size='small' 
             label={'Senha do usuário'} 
-            type={'text'} 
+            type={'password'} 
             value={emailPassword}
             onChange={ (e) => setEmailPassword(e.target.value) }
           />
