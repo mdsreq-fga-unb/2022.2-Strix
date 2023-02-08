@@ -14,6 +14,9 @@ export function Header() {
                 <div className={styles.headerContent}>
                     <h1 className={styles.headerTitle}>STRIX</h1>
                     <nav className={styles.menuNav}>
+                        <Link href={'/createAula'}>
+                            Aulas
+                        </Link>
                         <Link href={'/financas'}>
                             Finanças
                         </Link>
