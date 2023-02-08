@@ -103,13 +103,12 @@ model PendentStudent {
 }
 
 model Class {
-  id       String @id @default(uuid())
-  name     String
-  duration String
-  date     String
-  time     String
-
-  studentsIDs String[] // array de IDs dos alunos 
+  id        String @id @default(uuid())
+  name      String
+  duration  String
+  date      String
+  time      String
+  studentID String
 
   @@map("classes")
 }

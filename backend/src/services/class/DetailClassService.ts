@@ -17,7 +17,7 @@ class DetailClassService {
           name: true,
           date: true,
           duration: true,
-          studentsIDs: true,
+          studentID: true,
         },
       });
       return aulaEncontrada;
