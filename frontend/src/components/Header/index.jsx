@@ -5,6 +5,8 @@ import Link from 'next/link';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Button from '@mui/material/Button';
 import { AuthContext } from '../../contexts/AuthContext';
+import Image from 'next/image';
+import logoImg from '../../../public/logo-5.png';
 
 export function Header() {
     const { signOut } = useContext(AuthContext);
@@ -12,7 +14,8 @@ export function Header() {
         <Fragment>
             <header className={styles.headerContainer}>
                 <div className={styles.headerContent}>
-                    <h1 className={styles.headerTitle}>STRIX</h1>
+                    {/* <h1 className={styles.headerTitle}>STRIX</h1> */}
+                    <Image src={logoImg} alt="Strix" />
                     <nav className={styles.menuNav}>
                         <Link href={'/financas'}>
                             Finanças

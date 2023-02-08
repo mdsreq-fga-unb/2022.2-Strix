@@ -12,6 +12,7 @@
 | 29/12/22 | 0.4 | Correção issues #1, #2 e #3 | Beatriz |
 | 29/12/22 | 0.5 | Correção issues #3, #4 e #5 | Pedro |
 | 30/12/22 | 0.6 | Correção issue #6 | Beatriz |
+| 31/01/23 | 0.7 | Correção das numerações das features no item 2.2 | Beatriz |
 
 <br/>
 
@@ -60,9 +61,9 @@ Javascript, React, Node.js
 | Sprint 2 | Definição do Backlog do produto e elicitação de requisitos  | 19/11/2022 | 03/12/2022 |
 | Sprint 3 | Criação do protótipo, configuração do ambiente de desenvolvimento e estudo das linguagens | 04/12/2022 | 19/12/2022 |
 | Sprint 4 | Implementação das histórias pertencentes à feature 2.1.0 de alunos | 20/12/2022 | 03/01/2023 |
-| Sprint 5 | Implementação das histórias pertencentes à feature 4.1.0 de exercícios e 4.2.0 de envio de treino | 04/01/2023 | 18/01/2023 |
-| Sprint 6 | Implementação das histórias pertencentes à feature 3.1.0 de pendências e 3.2.0 de registro de pagamentos | 19/01/2023 | 02/02/2023 |
-| Sprint 7 | Implementação das histórias pertencentes à feature 5.1.0 de login | 03/02/2023 | 09/02/2023 |
+| Sprint 5 | Implementação das histórias pertencentes à feature 3.1.0 de categorias e 3.2.0 de resgistro de exercícios e 3.3.0 de registro de treino | 04/01/2023 | 18/01/2023 |
+| Sprint 6 | Implementação das histórias pertencentes à feature 1.1.0 de cadastro de aulas, 2.2.0 de registro de pendências | 19/01/2023 | 02/02/2023 |
+| Sprint 7 | Implementação das histórias pertencentes à feature 4.1.0 de login | 03/02/2023 | 09/02/2023 |
 
 ### 2.3 Matriz de Comunicação
 

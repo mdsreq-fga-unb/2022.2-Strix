@@ -38,6 +38,8 @@ model Student {
 
   user_id String
 
+  pendencies Pendency[]
+
   @@map("students")
 }
 
@@ -76,4 +78,26 @@ model Training {
   updated_at  DateTime? @default(now())
 
   @@map("training")
+}
+
+model Pendency {
+  id          String    @id @default(uuid())
+  price       Float
+  startDate   DateTime? @default(now())
+  description String
+
+  student   Student @relation(fields: [studentId], references: [id])
+  studentId String
+
+  @@map("pendencies")
+}
+
+model PendentStudent {
+  id            String @id @default(uuid())
+  name          String
+  total_value   Float
+  studentId     String @unique
+  qt_pendencies Int
+
+  @@map("pendentStudents")
 }

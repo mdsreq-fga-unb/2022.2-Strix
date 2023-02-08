@@ -7,6 +7,8 @@ import Link from 'next/link';
 import { AuthContext } from '../contexts/AuthContext';
 import { toast } from 'react-toastify';
 import { canSSRGuest } from '../../utils/canSSRGuest';
+import Image from 'next/image';
+import logoImg from '../../public/logo-3.png';
 
 export default function Home() {
   const { signIn } = useContext(AuthContext)
@@ -40,9 +42,11 @@ export default function Home() {
      
       <div className={styles.login}> 
 
-        <Link href="/" className={styles.logo}>
+        {/* <Link href="/" className={styles.logo}>
           STRIX
-        </Link>
+        </Link> */}
+
+        <Image src={logoImg} alt="Strix" />
 
         <form onSubmit={handleLogin}>
           <CustomizedInputs

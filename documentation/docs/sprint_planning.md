@@ -61,7 +61,21 @@ Observação: os papéis não dos alunos não foram alterados durante as sprints
 
 ### Objetivo:
 
-- Implementação das histórias pertencentes à feature 3.2.0 de exercícios e de 3.3.0 de treino
+- Implementação das histórias pertencentes à feature 3.1.0 de categorias e 3.2.0 de resgistro de exercícios e 3.3.0 de registro de treino
+
+### Entrega:
+
+- Feature 3.2.0 (exercício), histórias 3.1.1 e 3.1.2 (categoria) e 3.3.1 e 3.3.2 (treino)
+
+### Conclusão:
+
+- A sprint foi parcialmente entregue, o que acarretará em debto técnico na sprint seguinte.
+
+# **Planning  - sprint 6 (19/01/23 - 02/02/23)**
+
+### Objetivo:
+
+- Implementação das histórias pertencentes à feature 1.1.0 de cadastro de aulas, 2.2.0 de registro de pendências e histórias 3.1.3 (excluir categoria), 3.3.3, 3.3.4 e 3.3.5 (treino) como resultado do debto técnico da sprint anterior.
 
 ### Entrega:
 
