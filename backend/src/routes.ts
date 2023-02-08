@@ -44,6 +44,7 @@ import { EditPendencyController } from './controllers/pendency/EditPendencyContr
 import { CreateClassController } from './controllers/class/CreateClassController';
 import { DetailClassController } from './controllers/class/DetailClassController';
 import { EditClassController } from './controllers/class/EditClassController';
+import { DeleteClassController } from './controllers/class/DeleteClassController';
 
 const router = Router();
 
@@ -87,8 +88,9 @@ router.delete('/deletePendency', isAuthenticated, new DeletePendencyController()
 router.put('/updatePendency', isAuthenticated, new EditPendencyController().handle)
 
 // -- Rotas Aulas --
-router.post('/classes', new CreateClassController().handle)
-router.get('/classes/detail', new DetailClassController().handle) // SE NÃO PASSAR O "classID" no body da req, ele retorna TODAS as aulas, se PASSAR O "classID", vai retornar só a aula específica
-router.put('/updateClass', new EditClassController().handle)
+router.post('/class', new CreateClassController().handle)
+router.get('/class/detail', new DetailClassController().handle) // SE NÃO PASSAR O "classID" no body da req, ele retorna TODAS as aulas, se PASSAR O "classID", vai retornar só a aula específica
+router.put('/class', new EditClassController().handle)
+router.delete('/class', new DeleteClassController().handle)
 
 export { router };
