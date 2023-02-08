@@ -12,99 +12,101 @@ import { setupAPIClient } from '../../services/api';
 import MenuItem from '@mui/material/MenuItem';
 import Router from 'next/router';
 
-export default function RegisterExercise({ listCategories }) {
 
-  const { registerExercise } = useContext(AuthContext);
+export default function RegisterExercise({ allStudents }) {
 
-  const [name, setName] = useState(''); 
-  const [reps, setReps] = useState('');
-  const [time, setTime] = useState('');
-  const [observation, setObservation] = useState('');
-  const [category_name, setCategory_name] = useState('');
+  const { registerClass } = useContext(AuthContext);
 
-  async function handleRegisterExercise(event){
+  const [data, setData] = useState(''); 
+  const [hora, setHora] = useState('');
+  const [duracao, setDuracao] = useState('');
+  const [nomedaAula, setNomeAula] = useState('');
+  const [alunos, setAlunos] = useState('');
+
+  async function handleCreateAula(event){
     event.preventDefault();
 
-    if(name === '' || reps === '' || time === '' || category_name === '' || observation === '') {
+    if(data === '' || hora === '' || duracao === '' || alunos === '' || nomedaAula === '') {
       toast.error("Preencha os campos!");
       return;
     }
 
     let data = {
-        name,
-        reps,
-        time,
-        category_name,
-        observation
+        date: data,
+        time: hora,
+        duration: duracao,
+        student: alunos,
+        name: nomedaAula
     }
 
     console.log(data)
 
-    await registerExercise(data);
-    setName('');
-    setObservation('');
-    setReps('');
-    setTime('');
-    setCategory_name('');
+    await registerClass(data);
+
+    setData('');
+    setNomeAula('');
+    setHora('');
+    setDuracao('');
+    setAlunos('');
   }
 
   function handleRegisterLink(){
-    Router.push('/registerCategory');
+    Router.push('/students');
   }
   
   return (
     <>
     <Head>
-      <title>Strix - Cadastre um exercício</title>
+      <title>Strix - Cadastre uma aula</title>
     </Head>
     <Header />
     <div className={styles.containerCenterRegister}>
       <div className={styles.login}> 
         
-        <Link href="/registerExercise" className={styles.subtitulo}>
-          Exercícios
+        <Link href="/createAula" className={styles.subtitulo}>
+          Registro de Aula
         </Link>
 
-        <form onSubmit={handleRegisterExercise}>
+        <form onSubmit={handleCreateAula}>
           <CustomizedInputs
             size='small' 
-            label={'Nome do exercício *'} 
+            label={'Data da aula *'} 
             type={'text'} 
-            value={name}
-            onChange={ (e) => setName(e.target.value) }
+            value={data}
+            onChange={ (e) => setData(e.target.value) }
           />
 
           <CustomizedInputs
             size='small' 
-            label={'Repetições *'} 
+            label={'Horário *'} 
             type={'text'} 
-            value={reps}
-            onChange={ (e) => setReps(e.target.value) }
+            value={hora}
+            onChange={ (e) => setHora(e.target.value) }
           />
 
           <CustomizedInputs
             size='small' 
-            label={'Duração do exercício *'} 
+            label={'Duração da aula *'} 
             type={'text'} 
-            value={time}
-            onChange={ (e) => setTime(e.target.value) }
+            value={duracao}
+            onChange={ (e) => setDuracao(e.target.value) }
           />
 
           <CustomizedInputs
             size='small' 
             select
-            label={'Categoria *'} 
+            label={'Alunos *'} 
             type={'text'} 
-            value={category_name}
-            onChange={(e) => (setCategory_name(e.target.value))}
+            value={alunos}
+            onChange={(e) => (setAlunos(e.target.value))}
             sx={{
               '.MuiSelect-icon':{
                 color: '#D9D9D9'
               }
             }}
           >
-            {listCategories.map((option) => (
-              <MenuItem key={option.name} value={option.name}>
+            {allStudents.map((option) => (
+              <MenuItem key={option.name} value={option.id}>
                 {option.name}
               </MenuItem>
             ))}
@@ -113,11 +115,11 @@ export default function RegisterExercise({ listCategories }) {
           <CustomizedInputs 
             size='small' 
             type={"text"} 
-            label={'Observação *'}
+            label={'Nome da aula *'}
             multiline
             rows={3}
-            value={observation}
-            onChange={ (e) => setObservation(e.target.value) }
+            value={nomedaAula}
+            onChange={ (e) => setNomeAula(e.target.value) }
             variant="outlined"
             sx={{
                 backgroundColor: '#D9D9D9',
@@ -128,11 +130,7 @@ export default function RegisterExercise({ listCategories }) {
           />
 
           <p className={styles.msg}>* Campo Obrigatório</p>
-          <Button type='submit'>Cadastrar Exercício</Button> 
-          <Button onClick={handleRegisterLink} type='button' style={{ 
-          backgroundColor: '#AF3A3A',
-          marginTop: '2rem'
-        }}>Cadastrar Nova Categoria</Button> 
+          <Button onClick={handleRegisterLink} type='submit'>Cadastrar Aula</Button>
         </form>
         
       </div>
@@ -143,10 +141,10 @@ export default function RegisterExercise({ listCategories }) {
 
 export const getServerSideProps = canSSRAuth(async (ctx) => {
   const apiClient = setupAPIClient(ctx);
-  const response = await apiClient.get('/listCategories');
+  const response = await apiClient.get('/listStudents');
   return {
       props: {
-        listCategories: response.data
+        allStudents: response.data
       },
     };
 });
