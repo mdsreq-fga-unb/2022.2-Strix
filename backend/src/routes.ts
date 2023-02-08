@@ -42,6 +42,7 @@ import { DetailPendencyController } from './controllers/pendency/DetailPendencyC
 import { DeletePendencyController } from './controllers/pendency/DeletePendencyController';
 import { EditPendencyController } from './controllers/pendency/EditPendencyController';
 import { CreateClassController } from './controllers/class/CreateClassController';
+import { DetailClassController } from './controllers/class/DetailClassController';
 
 const router = Router();
 
@@ -85,6 +86,7 @@ router.delete('/deletePendency', isAuthenticated, new DeletePendencyController()
 router.put('/updatePendency', isAuthenticated, new EditPendencyController().handle)
 
 // -- Rotas Aulas --
-router.post('/classes', isAuthenticated, new CreateClassController().handle)
+router.post('/classes', new CreateClassController().handle)
+router.get('/classes', new DetailClassController().handle)
 
 export { router };
