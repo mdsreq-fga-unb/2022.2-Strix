@@ -101,3 +101,14 @@ model PendentStudent {
 
   @@map("pendentStudents")
 }
+
+model Class {
+  id       String @id @default(uuid())
+  name     String
+  duration String
+  date     String
+
+  studentsIDs String[] // array de IDs dos alunos 
+
+  @@map("classes")
+}
