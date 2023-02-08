@@ -107,6 +107,7 @@ model Class {
   name     String
   duration String
   date     String
+  time     String
 
   studentsIDs String[] // array de IDs dos alunos 
 
