@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useContext, useEffect } from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, visibleGridColumnsLengthSelector } from '@mui/x-data-grid';
 import { setupAPIClient } from '../../services/api';
 import { canSSRAuth } from '../../../utils/canSSRAuth';
 import { Header } from '../../components/Header';
@@ -19,9 +19,10 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
+import { red } from '@mui/material/colors';
 
 export default function viewWorkoutExercises({ exercises, students }) {
-  const { listIdExercise, trainingName, pickUpNameStudent } = useContext(AuthContext);
+  const { listIdExercise, trainingName, pickUpNameStudent, pickUpIdExercise } = useContext(AuthContext);
   const [state, setState] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState('');
   //const [nameReq, setNameReq] = useState('');
@@ -219,10 +220,54 @@ export default function viewWorkoutExercises({ exercises, students }) {
             .forEach(
               (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
             );
+          let id = thisRow.id;
+          pickUpIdExercise(id);
+          Router.push('/editExercise');
           //return console.log(JSON.stringify(thisRow, null, 4));
         };
   
         return <Button onClick={onClick}>Editar</Button>;
+      }
+    },
+    {
+      field: "Excluir",
+      headerName: "Excluir",
+      sortable: false,
+      width: 122,
+      disableClickEventBubbling: true,
+      renderCell: (params) => {
+        const onClick = (e) => {
+          e.stopPropagation();
+  
+          const api = params.api;
+          const thisRow = {};
+  
+          api
+            .getAllColumns()
+            .filter((c) => c.field !== '__check__' && !!c)
+            .forEach(
+              (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
+            );
+          let idRow = thisRow.id;
+          let newState = [];
+
+          for (let c = 0; c < state.length; c++){
+            if (state[c].id === idRow) {
+              newState = state.filter(el => el !== state[c]);
+              setState(newState);
+              console.log("NewState é: " + newState);
+            }
+          }
+
+
+          //pickUpIdExercise(id);
+          //Router.push('/editExercise');
+          //return console.log(JSON.stringify(thisRow, null, 4));
+        };
+  
+        return <Button style={{
+          backgroundColor: '#AF3A3A'
+        }} onClick={onClick}>Excluir</Button>;
       }
     },
   ];
