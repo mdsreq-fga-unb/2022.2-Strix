@@ -13,9 +13,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Router from 'next/router';
 
 
-export default function RegisterExercise({ listCategories }) {
+export default function RegisterExercise({ allStudents }) {
 
-  const { registerExercise } = useContext(AuthContext);
+  const { registerClass } = useContext(AuthContext);
 
   const [data, setData] = useState(''); 
   const [hora, setHora] = useState('');
@@ -26,23 +26,23 @@ export default function RegisterExercise({ listCategories }) {
   async function handleCreateAula(event){
     event.preventDefault();
 
-
     if(data === '' || hora === '' || duracao === '' || alunos === '' || nomedaAula === '') {
       toast.error("Preencha os campos!");
       return;
     }
 
     let data = {
-        data: data,
-        hora: hora,
-        duracao: duracao,
-        alunos: alunos,
-        nomedaAula: nomedaAula
+        date: data,
+        time: hora,
+        duration: duracao,
+        student: alunos,
+        name: nomedaAula
     }
 
     console.log(data)
 
-    await registerExercise(data);
+    await registerClass(data);
+
     setData('');
     setNomeAula('');
     setHora('');
@@ -51,19 +51,19 @@ export default function RegisterExercise({ listCategories }) {
   }
 
   function handleRegisterLink(){
-    Router.push('/registerStudent');
+    Router.push('/students');
   }
   
   return (
     <>
     <Head>
-      <title>Strix - Cadastre um exercício</title>
+      <title>Strix - Cadastre uma aula</title>
     </Head>
     <Header />
     <div className={styles.containerCenterRegister}>
       <div className={styles.login}> 
         
-        <Link href="/registerExercise" className={styles.subtitulo}>
+        <Link href="/createAula" className={styles.subtitulo}>
           Registro de Aula
         </Link>
 
@@ -105,8 +105,8 @@ export default function RegisterExercise({ listCategories }) {
               }
             }}
           >
-            {listCategories.map((option) => (
-              <MenuItem key={option.name} value={option.name}>
+            {allStudents.map((option) => (
+              <MenuItem key={option.name} value={option.id}>
                 {option.name}
               </MenuItem>
             ))}
@@ -144,7 +144,7 @@ export const getServerSideProps = canSSRAuth(async (ctx) => {
   const response = await apiClient.get('/listStudents');
   return {
       props: {
-        listCategories: response.data
+        allStudents: response.data
       },
     };
 });
