@@ -88,7 +88,7 @@ router.put('/updatePendency', isAuthenticated, new EditPendencyController().hand
 
 // -- Rotas Aulas --
 router.post('/classes', new CreateClassController().handle)
-router.get('/classes/detail', new DetailClassController().handle)
+router.get('/classes/detail', new DetailClassController().handle) // SE NÃO PASSAR O "classID" no body da req, ele retorna TODAS as aulas, se PASSAR O "classID", vai retornar só a aula específica
 router.put('/updateClass', new EditClassController().handle)
 
 export { router };
