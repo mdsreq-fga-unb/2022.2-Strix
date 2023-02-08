@@ -26,6 +26,9 @@ export function AuthProvider({ children }){
     const [idExercise, setIdExercise] = useState('');
     const [trainingName, setTrainingName] = useState('');
 
+    // email do aluno selecionado
+    const[nameStudent, setNameStudent] = useState('');
+
     useEffect(() => {
         // Tentar pegar algo no cookie
         const { '@nextauth.token': token } = parseCookies();
@@ -267,11 +270,15 @@ export function AuthProvider({ children }){
     async function setDetailedPendency(id) {
         setPendencyId(id);
     }
+
+    async function pickUpNameStudent(name){
+        setNameStudent(name);
+    }
     
     return(
         <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent,
          deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, registerPendency,
-          studentPendenciesState, pendencyStudentId,updatePendency, studentName, pendencyStudentName, deletePendency, pendencyId, setDetailedPendency, pickUpIdExercise, idExercise, updatedExercise, deleteExercise, pickUpNameTraining, trainingName }}>
+          studentPendenciesState, pendencyStudentId,updatePendency, studentName, pendencyStudentName, deletePendency, pendencyId, setDetailedPendency, pickUpIdExercise, idExercise, updatedExercise, deleteExercise, pickUpNameTraining, trainingName, nameStudent, pickUpNameStudent }}>
             {children}
         </AuthContext.Provider>
     )

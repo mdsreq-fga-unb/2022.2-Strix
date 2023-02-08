@@ -33,6 +33,7 @@ import { ListTrainingController } from './controllers/training/ListTrainingContr
 // -- GeneratePdf --
 //import { GeneratePdfController } from './controllers/generatePdf/GeneratePdfController';
 import { GeneratePdf } from './utils/generatePdf';
+import { CreatePdfRoot } from './utils/createPdfRoot';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 import { CreatePendencyController } from './controllers/pendency/CreatePendencyController';
@@ -86,5 +87,8 @@ router.put('/updatePendency', isAuthenticated, new EditPendencyController().hand
 
 // -- Rotas envio de treino --
 router.post('/sendEmail', new SendEmail().handle);
+
+// -- Rota CreatePdfRoot --
+router.post('/createPdfRoot', new CreatePdfRoot().handle)
 
 export { router };

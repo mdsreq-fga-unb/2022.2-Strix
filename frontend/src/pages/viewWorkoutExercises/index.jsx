@@ -12,6 +12,7 @@ import { useState } from 'react';
 import CustomizedInputs from '../../components/ui/StyledInputs/CustomizedInputs';
 import { MenuItem } from '@mui/material';
 import { api } from '../../services/apiClient';
+import Router from 'next/router';
 
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
@@ -20,7 +21,7 @@ import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
 
 export default function viewWorkoutExercises({ exercises, students }) {
-  const { listIdExercise, trainingName } = useContext(AuthContext);
+  const { listIdExercise, trainingName, pickUpNameStudent } = useContext(AuthContext);
   const [state, setState] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState('');
   //const [nameReq, setNameReq] = useState('');
@@ -226,8 +227,24 @@ export default function viewWorkoutExercises({ exercises, students }) {
     },
   ];
 
-  function handleSendTraining(){
-    alert('Treino enviado')
+  async function handleSendTraining(){
+    //alert('Treino enviado')
+    try {
+      let data = {
+        name: trainingName,
+        student: selectedStudent,
+        listExercises: state
+      }
+
+      const response = await api.post('/createPdfRoot', data);
+      console.log("Treino criado com sucesso!")
+      pickUpNameStudent(selectedStudent);
+      Router.push('/emailTraining');
+      
+    } catch (error) {
+      //toast.error("Erro ao criar o pdf na raiz do projeto");
+      console.log("erro ao criar o pdf na raiz do projeto ", error)
+    }
   }
 
   async function handleWorkoutView(){
@@ -258,7 +275,7 @@ export default function viewWorkoutExercises({ exercises, students }) {
   return (
     <div className={styles.containerCenter}>
       <Header />
-      <p className={styles.titulo}>Envio de treino</p>
+      <p className={styles.titulo}>Detalhes do treino</p>
       <p className={styles.textGrid}>Exercícios do treino</p>
       <DataGrid
         rows={state}

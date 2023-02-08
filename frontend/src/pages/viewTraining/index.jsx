@@ -54,7 +54,7 @@ export default function ViewTraining({ training }) {
           return console.log(JSON.stringify(thisRow, null, 4));
         };
 
-        return <Button onClick={onClick}>Enviar treino</Button>;
+        return <Button onClick={onClick}>Detalhes do treino</Button>;
       }
     },
   ];
