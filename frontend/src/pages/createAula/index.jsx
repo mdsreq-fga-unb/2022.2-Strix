@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Router from 'next/router';
 
 
-export default function RegisterExercise({ allStudents }) {
+export default function RegisterClass({ allStudents }) {
 
   const { registerClass } = useContext(AuthContext);
 
@@ -31,27 +31,23 @@ export default function RegisterExercise({ allStudents }) {
       return;
     }
 
-    let data = {
+    let body = {
+        name: nomedaAula,
         date: data,
         time: hora,
         duration: duracao,
-        student: alunos,
-        name: nomedaAula
+        studentID: alunos,
     }
 
-    console.log(data)
+    console.log(body)
 
-    await registerClass(data);
+    await registerClass(body);
 
     setData('');
     setNomeAula('');
     setHora('');
     setDuracao('');
     setAlunos('');
-  }
-
-  function handleRegisterLink(){
-    Router.push('/students');
   }
   
   return (
@@ -130,7 +126,7 @@ export default function RegisterExercise({ allStudents }) {
           />
 
           <p className={styles.msg}>* Campo Obrigatório</p>
-          <Button onClick={handleRegisterLink} type='submit'>Cadastrar Aula</Button>
+          <Button type='submit'>Cadastrar Aula</Button>
         </form>
         
       </div>

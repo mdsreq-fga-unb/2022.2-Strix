@@ -211,12 +211,13 @@ export function AuthProvider({ children }){
         }
     }
 
-    async function registerClass({name, date, duration, studentIDs}) {
+    async function registerClass({name, date, time, duration, studentID}) {
         try {
             const res = await api.post('/class', {
-                name, date, duration, studentIDs
+                name, date, time, duration, studentID
             });
             toast.success("Aula registrada com sucesso!");
+            Router.push('/students')
         } catch (err) {
             toast.error("Erro ao cadastrar aula: " + err);
         }
@@ -284,7 +285,9 @@ export function AuthProvider({ children }){
     return(
         <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent,
          deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, registerPendency,
-          studentPendenciesState, pendencyStudentId,updatePendency, studentName, pendencyStudentName, deletePendency, pendencyId, setDetailedPendency, pickUpIdExercise, idExercise, updatedExercise, deleteExercise, pickUpNameTraining, trainingName, registerClass }}>
+          studentPendenciesState, pendencyStudentId,updatePendency, studentName, pendencyStudentName, deletePendency,
+           pendencyId, setDetailedPendency, pickUpIdExercise, idExercise, updatedExercise, deleteExercise, pickUpNameTraining, trainingName,
+            registerClass }}>
             {children}
         </AuthContext.Provider>
     )
