@@ -76,3 +76,8 @@ A partir disso, foram votados 2 pontos a melhorar para que fosse traçado um pla
 | Delegar o trabalho        | Entender os limites pessoais, oferecer ajuda aos outros.           |
 | Esclarecimento de dúvidas | Falar diariamente as dificuldades, não ter vergonha de pedir ajuda |
 
+# **Retrospectiva 3**
+
+Referente as sprints 5 e 6.
+
+#### Participantes:

@@ -1,114 +1,117 @@
-import { useState, useContext } from 'react';
-import Head from 'next/head';
-import styles from '../../../styles/Home.module.scss';
-import CustomizedInputs from '../../components/ui/StyledInputs/CustomizedInputs';
-import { Button } from '../../components/ui/Button';
-import { AuthContext } from '../../contexts/AuthContext';
-import { toast } from 'react-toastify';
-import { canSSRAuth } from '../../../utils/canSSRAuth';
-import { Header } from '../../components/Header';
-import { setupAPIClient } from '../../services/api';
-import MenuItem from '@mui/material/MenuItem';
+import { useState, useEffect, useContext } from "react";
+import Head from "next/head";
+import styles from "../../../styles/Home.module.scss";
+import CustomizedInputs from "../../components/ui/StyledInputs/CustomizedInputs";
+import { Button } from "../../components/ui/Button";
+import Link from "next/link";
+import { AuthContext } from "../../contexts/AuthContext";
+import { toast } from "react-toastify";
+import { canSSRAuth } from "../../../utils/canSSRAuth";
+import { Header } from "../../components/Header";
+import { api } from "../../services/apiClient";
+import { Excluir } from "../../components/Confirm";
+import SpringModal from "../../components/Modal";
+import InputMask from "react-input-mask";
 
-export default function RegisterPendency({ studentsList }) {
-  const { registerPendency } = useContext(AuthContext);
-  const [studentId, setStudentId] = useState("");
-  const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
+export default function EditPendency() {
+  const { pendencyId, deletePendency, updatePendency } = useContext(AuthContext);
+  const [valor, setValor] = useState("");
+  const [descricao, setDescricao] = useState("");
 
-  async function handleRegisterPendency(event) {
-    event.preventDefault();
-
-    if (studentId === "" || price === "" || description === "") {
-      toast.error("Preencha os campos!");
-      return;
+  async function detailPendencyRequest(id) {
+    try {
+      const response = await api.get("/pendency/detail", {
+        params: {
+          pendencyId: id,
+        },
+      });
+      console.log('RESPONSE.DATA: %s', response.data);
+      const { price, description } = response.data;
+      setValor(price);
+      setDescricao(description);
+      console.log(valor + " e descricao: " + descricao);
+      console.log("detalhes pego com sucesso!");
+    } catch (error) {
+      console.log("Erro ao tentar puxar os detalhes da pendencia!" + error);
     }
-
-    let data = {
-      studentId,
-      price,
-      description,
-    };
-
-    console.log(data);
-
-    await registerPendency(data);
-
-    setStudentId("");
-    setPrice("");
-    setDescription("");
   }
+
+  async function handleDelete(){
+    await deletePendency(pendencyId);
+  }
+
+  async function handleEditPendency(event) {
+    event.preventDefault();
+    await updatePendency({pendencyId, valor, descricao})
+  }
+
+  useEffect(() => {
+    detailPendencyRequest(pendencyId);
+  }, []);
+
+  const [openModal, setOpenModal] = useState(false);
+  const handleOpenModal = () => setOpenModal(true);
+  const handleCloseModal = () => setOpenModal(false);
 
   return (
     <>
       <Head>
-        <title>Strix - Registre nova pendência</title>
+        <title>Strix - Edição de pendência</title>
       </Head>
       <Header />
       <div className={styles.containerCenterRegister}>
         <div className={styles.login}>
-          <p className={styles.subtitulo}>Nova Pendência</p>
+          <Link href="/" className={styles.subtitulo}>
+            Edição de Pendência
+          </Link>
 
-          <form onSubmit={handleRegisterPendency}>
+          <form onSubmit={handleEditPendency}>
             <CustomizedInputs
               size="small"
-              select
-              label={"Aluno *"}
+              label={"valor"}
               type={"text"}
-              value={studentId}
-              onChange={(e) => setStudentId(e.target.value)}
-              sx={{
-                ".MuiSelect-icon": {
-                  color: "#D9D9D9",
-                },
-              }}
-            >
-              {studentsList.map((option) => (
-                <MenuItem key={option.id} value={option.id}>
-                  {option.name}
-                </MenuItem>
-              ))}
-            </CustomizedInputs>
-
-            <CustomizedInputs
-              size="small"
-              label={"Valor *"}
-              type={"text"}
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
+              value={valor}
+              required
+              onChange={(e) => setValor(e.target.value)}
             />
 
             <CustomizedInputs
               size="small"
+              label={"descricao"}
               type={"text"}
-              label={"Descrição *"}
-              multiline
-              rows={3}
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              variant="outlined"
-              sx={{
-                backgroundColor: "#D9D9D9",
-                borderRadius: "10px",
-                border: "0",
-                marginBottom: "1rem",
-              }}
+              value={descricao}
+              required
+              onChange={(e) => setDescricao(e.target.value)}
             />
+
             <p className={styles.msg}>* Campo Obrigatório</p>
-            <Button type="submit">Registrar Pendência</Button>
+            <div className={styles.buttons}>
+              <Button
+                type="submit"
+                style={{ width: "170px", marginTop: "2rem" }}
+              >
+                Salvar
+              </Button>
+              <Button
+                type="button"
+                style={{ width: "170px" }}
+                className={styles.delete}
+                onClick={handleOpenModal}
+              >
+                Excluir Pendência
+              </Button>
+            </div>
+
+            <SpringModal
+              open={openModal}
+              handleClose={handleCloseModal}
+              component={
+              <Excluir funcNo={handleCloseModal} funcYes={handleDelete} />
+              }
+            />
           </form>
         </div>
       </div>
     </>
   );
 }
-
-export const getServerSideProps = canSSRAuth(async (ctx) => {
-  const apiClient = setupAPIClient(ctx);
-  const response = await apiClient.get("/listStudents");
-  return {
-    props: {
-      studentsList: response.data,
-    },
-  };
-});
