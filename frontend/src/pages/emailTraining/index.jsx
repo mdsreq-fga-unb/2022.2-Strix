@@ -36,6 +36,13 @@ export default function EmailTraining({ students }) {
   async function handleSendEmail(event){
     event.preventDefault();
     alert('enviado por email!');
+
+    try {
+      const response = await api.delete('/deleteFileRoot');
+      console.log("Requisição feita com sucesso!");
+    } catch (error) {
+      console.log("Error ao fazer a requisição!", error);
+    }
   }
   
   return (

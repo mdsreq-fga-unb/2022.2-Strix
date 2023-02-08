@@ -43,6 +43,7 @@ import { DetailPendencyController } from './controllers/pendency/DetailPendencyC
 import { DeletePendencyController } from './controllers/pendency/DeletePendencyController';
 import { EditPendencyController } from './controllers/pendency/EditPendencyController';
 import { SendEmail } from './utils/sendEmail';
+import { DeleteFileRoot } from './utils/deleteFileRoot';
 
 const router = Router();
 
@@ -90,5 +91,8 @@ router.post('/sendEmail', new SendEmail().handle);
 
 // -- Rota CreatePdfRoot --
 router.post('/createPdfRoot', new CreatePdfRoot().handle)
+
+// --Rota DeleteFileRoot --
+router.delete('/deleteFileRoot', new DeleteFileRoot().handle)
 
 export { router };
