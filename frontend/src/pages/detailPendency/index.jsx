@@ -8,22 +8,30 @@ import Router from "next/router";
 import styles from "./styles.module.scss";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useState } from "react";
+import { api } from "../../services/apiClient";
 
 export default function DetailPendencyPage({ pendencies }) {
   const { pendencyStudentId } = useContext(AuthContext);
   const { pendencyStudentName } = useContext(AuthContext);
   const [state, setState] = useState([]);
-  const { setDetailedPendency } = useContext(AuthContext)
+  const { setDetailedPendency } = useContext(AuthContext);
 
   useEffect(() => {
     let new_arr = [];
+    console.log("total de pendencias existentes: %d", pendencies.length);
+    console.log("id do student vindo do props: %s", pendencyStudentId);
+    console.log("nome: %s", pendencyStudentName);
     for (let i = 0; i < pendencies.length; i++) {
-      console.log(pendencies[i].studentId);
+      console.log(
+        "id do student da pendencia atual: %s",
+        pendencies[i].studentId
+      );
       if (pendencies[i].studentId === pendencyStudentId) {
+        console.log("pendencia %d achada pro aluno", i);
         new_arr.push(pendencies[i]);
       }
     }
-    new_arr && setState(new_arr);
+    setState(new_arr);
   }, []);
 
   const columns = [
@@ -104,10 +112,12 @@ export default function DetailPendencyPage({ pendencies }) {
 
 export const getServerSideProps = canSSRAuth(async (ctx) => {
   const apiClient = setupAPIClient(ctx);
-  const response = await apiClient.get("/listAllPendencies");
+  console.log("mandando request no detailPendency getSSP");
+  const res = await apiClient.get("/listAllPendencies");
+  console.log("response from detailPendency: " + res);
   return {
     props: {
-      pendencies: response.data,
+      pendencies: await res.data,
     },
   };
 });

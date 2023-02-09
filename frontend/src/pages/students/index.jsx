@@ -128,10 +128,12 @@ export default function Students({ students }) {
 
 export const getServerSideProps = canSSRAuth(async (ctx) => {
     const apiClient = setupAPIClient(ctx);
+    console.log("chamando SSRP de students");
     const response = await apiClient.get('/listStudents');
+    console.log("response: %s", response.data);
     return {
         props: {
-            students: response.data
+            students: await response.data
         }
     }
 })
