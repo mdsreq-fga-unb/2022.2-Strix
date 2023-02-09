@@ -10,7 +10,7 @@ import styles from "./styles.module.scss";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export default function AulasPage({ classes }) {
-  const { studentIdState } = useContext(AuthContext);
+  const { setClassIDState } = useContext(AuthContext);
 
   const columns = [
     { field: "id", headerName: "ID", width: 90, editable: false },
@@ -64,7 +64,7 @@ export default function AulasPage({ classes }) {
               (c) => (thisRow[c.field] = params.getValue(params.id, c.field))
             );
           let id = thisRow.id;
-          studentIdState(id);
+          setClassIDState(id);
           Router.push("/editAula");
           return console.log(JSON.stringify(thisRow, null, 4));
         };

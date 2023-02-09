@@ -25,7 +25,7 @@ export function AuthProvider({ children }){
     const [pendencyId, setPendencyId] = useState('');
     const [idExercise, setIdExercise] = useState('');
     const [trainingName, setTrainingName] = useState('');
-    const [classID, setClassID] = useState(''); // PARA CONTROLAR O ID DA AULA QUE VAI SER EDITADA
+    const [classID_ctx, setClassID_ctx] = useState(''); // PARA CONTROLAR O ID DA AULA QUE VAI SER EDITADA
 
     useEffect(() => {
         // Tentar pegar algo no cookie
@@ -102,6 +102,10 @@ export function AuthProvider({ children }){
 
     async function studentIdState(id){
         setIdState(id);
+    }
+
+    async function setClassIDState(id) {
+        setClassID_ctx(id);
     }
 
     async function updatedStudent({ name, email, cpf, phone, birthDate, id }){
@@ -224,6 +228,49 @@ export function AuthProvider({ children }){
         }
     }
 
+    async function updateClass({
+      classID,
+      name,
+      date,
+      time,
+      duration,
+      studentID,
+      studentName,
+    }) {
+      try {
+        const response = await api.put("/class", {
+          classID,
+          name,
+          date,
+          time,
+          duration,
+          studentID,
+          studentName,
+        });
+        toast.success("Aula editada com sucesso!");
+        Router.push("/aulas");
+      } catch (error) {
+        toast.error("Erro ao editar aula: " + error);
+        console.log("erro ao editar aula: ", error);
+      }
+    }
+
+    async function deleteClass({classID}) {
+        try {
+            console.log("tentando deletar class com id %s", classID)
+            const res = await api.delete('/class', {
+                params:{
+                    classID: classID,
+                }
+            });
+            toast.success("Aula excluida com sucesso!");
+            Router.push('/aulas');
+        } catch (err) {
+            toast.error("Erro ao editar aula: " + err);
+            console.log("erro editando aula: " + err);
+        }
+    }
+
     async function studentPendenciesState(id) {
         setPendencyStudentId(id);
     }
@@ -283,13 +330,45 @@ export function AuthProvider({ children }){
         setPendencyId(id);
     }
     
-    return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent,
-         deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, registerPendency,
-          studentPendenciesState, pendencyStudentId,updatePendency, studentName, pendencyStudentName, deletePendency,
-           pendencyId, setDetailedPendency, pickUpIdExercise, idExercise, updatedExercise, deleteExercise, pickUpNameTraining, trainingName,
-            registerClass }}>
-            {children}
-        </AuthContext.Provider>
-    )
+    return (
+      <AuthContext.Provider
+        value={{
+          user,
+          isAuthenticated,
+          signIn,
+          signOut,
+          registerStudent,
+          studentIdState,
+          idState,
+          updatedStudent,
+          deleteStudent,
+          registerCategories,
+          registerExercise,
+          exerciseListIdState,
+          listIdExercise,
+          registerPendency,
+          studentPendenciesState,
+          pendencyStudentId,
+          updatePendency,
+          studentName,
+          pendencyStudentName,
+          deletePendency,
+          pendencyId,
+          setDetailedPendency,
+          pickUpIdExercise,
+          idExercise,
+          updatedExercise,
+          deleteExercise,
+          pickUpNameTraining,
+          trainingName,
+          registerClass,
+          updateClass,
+          deleteClass,
+          setClassIDState,
+          classID_ctx
+        }}
+      >
+        {children}
+      </AuthContext.Provider>
+    );
 }
