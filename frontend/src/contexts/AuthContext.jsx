@@ -23,6 +23,8 @@ export function AuthProvider({ children }){
     const [pendencyStudentId, setPendencyStudentId] = useState('');
     const [pendencyStudentName, setPendencyStudentName] = useState('');
     const [pendencyId, setPendencyId] = useState('');
+    const [idExercise, setIdExercise] = useState('');
+    const [trainingName, setTrainingName] = useState('');
 
     useEffect(() => {
         // Tentar pegar algo no cookie
@@ -46,6 +48,9 @@ export function AuthProvider({ children }){
 
     async function editPassword({ password }){
         try{
+            const response = await api.put('/users', {
+                password
+            })
             toast.success('Senha alterada com sucesso!');
             Router.push('/')
 
@@ -231,6 +236,49 @@ export function AuthProvider({ children }){
         setListIdExercise(id);
     }
 
+    async function pickUpIdExercise(id){
+        setIdExercise(id);
+    }
+
+    async function updatedExercise({ id, name, reps, time, observation, category_name }){
+        try{
+            const response = await api.put('/updateExercise', {
+              id,
+              name,
+              reps,
+              time,
+              observation,
+              category_name
+              
+            })
+            toast.success('Dados atualizados com sucesso!');
+            Router.push('/viewExercises');
+        }catch(error){
+          toast.error("Erro ao editar!");
+          console.log("Erro ao atualizar os dados do exercício ", error);
+        }
+    }
+
+    async function deleteExercise({ exercise_id }){
+        try{
+            const response = await api.delete('/exerciseDelete', {
+                params:{
+                    exercise_id: exercise_id,
+                }
+            })
+            toast.success('Exercício deletado com sucesso!');
+            Router.push('/viewExercises');
+        }catch(error){
+            toast.error("Erro ao deletar Exercício.");
+            console.log('Erro ao remover Exercício.', error)
+        }
+    }
+
+    async function pickUpNameTraining(name){
+        setTrainingName(name);
+    }
+
+
     async function setDetailedPendency(id) {
         setPendencyId(id);
     }
@@ -238,7 +286,7 @@ export function AuthProvider({ children }){
     return(
         <AuthContext.Provider value={{ user, isAuthenticated, editPassword, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent,
          deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, registerPendency,
-          studentPendenciesState, pendencyStudentId,updatePendency, studentName, pendencyStudentName, deletePendency, pendencyId, setDetailedPendency }}>
+          studentPendenciesState, pendencyStudentId,updatePendency, studentName, pendencyStudentName, deletePendency, pendencyId, setDetailedPendency, pickUpIdExercise, idExercise, updatedExercise, deleteExercise, pickUpNameTraining, trainingName }}>
             {children}
         </AuthContext.Provider>
     )

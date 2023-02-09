@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useContext } from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { setupAPIClient } from '../../services/api';
 import { canSSRAuth } from '../../../utils/canSSRAuth';
 import { Header } from '../../components/Header';
@@ -17,38 +17,38 @@ export default function Students({ students }) {
     {
       field: 'name',
       headerName: 'Nome',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: 'cpf',
       headerName: 'CPF',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: 'email',
       headerName: 'Email',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: 'birthDate',
       headerName: 'Data de Nascimento',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: 'phone',
       headerName: 'Telefone',
-      width: 150,
+      width: 170,
       editable: false,
     },
     {
       field: "Editar",
       headerName: "Editar",
       sortable: false,
-      width: 130,
+      width: 122,
       disableClickEventBubbling: true,
       renderCell: (params) => {
         const onClick = (e) => {
@@ -87,6 +87,12 @@ export default function Students({ students }) {
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
+        columnVisibilityModel={{ // Para esconder a coluna id
+            id: false
+          } 
+        }
+
+        //components={{ Toolbar: GridToolbar }}
 
         sx={{
           height: 400,
@@ -112,6 +118,7 @@ export default function Students({ students }) {
           height: '60px',
           width: '480px',
           fontSize: '20px',
+          marginBottom: '50px'
         }}>
           Adicionar novo aluno
         </Button> 
@@ -128,3 +135,9 @@ export const getServerSideProps = canSSRAuth(async (ctx) => {
         }
     }
 })
+
+/*
+  - A propriedade columnVisibilityModel permite definir quais colunas estarão visíveis ou não. Contudo,
+ela trava a funcionalidade de Show columns que nos permitia escolher quais colunas estariam visíveis dinamicamente, em tempo de execução, e tb a propriedade hide, que nos permitia esconder uma coluna.
+  - Set the column visibility model of the grid. If defined, the grid will ignore the hide property in [[GridColDef]].
+*/

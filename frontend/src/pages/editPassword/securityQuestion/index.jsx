@@ -6,6 +6,8 @@ import { Button } from '../../../components/ui/Button';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
 import Router from 'next/router';
+import Image from 'next/image';
+import logoImg from '../../../../public/logo-3.png';
 
 export default function SecurityQuestion() {
   const [answer, setAnswer] = useState('');
@@ -34,9 +36,7 @@ export default function SecurityQuestion() {
      
       <div className={styles.login}> 
 
-        <Link href="/" className={styles.logo}>
-          STRIX
-        </Link>
+        <Image src={logoImg} alt="Strix" />
 
         <form onSubmit={handleSecurityQuestion}>
           <CustomizedInputs

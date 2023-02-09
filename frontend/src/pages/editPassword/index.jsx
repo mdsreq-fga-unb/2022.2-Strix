@@ -6,6 +6,8 @@ import { Button } from '../../components/ui/Button';
 import Link from 'next/link';
 import { AuthContext } from '../../contexts/AuthContext';
 import { toast } from 'react-toastify';
+import Image from 'next/image';
+import logoImg from '../../../public/logo-3.png';
 
 export default function EditPassword() {
   const { editPassword } = useContext(AuthContext)
@@ -43,9 +45,7 @@ export default function EditPassword() {
      
       <div className={styles.login}> 
 
-        <Link href="/" className={styles.logo}>
-          STRIX
-        </Link>
+        <Image src={logoImg} alt="Strix" />
 
         <form onSubmit={handlePassword}>
           <CustomizedInputs
