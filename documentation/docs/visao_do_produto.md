@@ -13,6 +13,7 @@
 | 29/12/22 | 0.5 | Correção issues #3, #4 e #5 | Pedro |
 | 30/12/22 | 0.6 | Correção issue #6 | Beatriz |
 | 31/01/23 | 0.7 | Correção das numerações das features no item 2.2 | Beatriz |
+| 09/02/23 | 0.8 | Inclusão item 4.4 | Beatriz |
 
 <br/>
 
