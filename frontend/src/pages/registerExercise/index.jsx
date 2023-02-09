@@ -11,6 +11,7 @@ import { Header } from '../../components/Header';
 import { setupAPIClient } from '../../services/api';
 import MenuItem from '@mui/material/MenuItem';
 import Router from 'next/router';
+import InputMask from 'react-input-mask';
 
 export default function RegisterExercise({ listCategories }) {
 
@@ -52,6 +53,38 @@ export default function RegisterExercise({ listCategories }) {
     Router.push('/registerCategory');
   }
   
+  const validateInputs = ({ input, validChar}) => {
+    let tam = input.length
+    
+    while (tam--) {
+      if(!validChar.includes(input.charAt(tam))) {
+        return false
+      }
+    }
+    return true
+  }
+
+  const onBlurReps = () => {
+    if(reps != '-') {
+      if(reps == 1) {
+        setReps(reps.concat(" repetição"))
+      } else{
+        setReps(reps.concat(" repetições"))
+      }
+    }
+    if(reps == "") {
+      setReps("-")
+    }
+  }
+
+  const onFocusReps = () => {
+    if(reps[0] == 1 && reps[1] == " ") {
+      setReps(reps.replace(" repetição", ""))
+    } else {
+      setReps(reps.replace(" repetições", ""))
+    }
+  }
+
   return (
     <>
     <Head>
@@ -71,7 +104,10 @@ export default function RegisterExercise({ listCategories }) {
             label={'Nome do exercício *'} 
             type={'text'} 
             value={name}
-            onChange={ (e) => setName(e.target.value) }
+            onChange={ (e) => validateInputs({
+              input: e.target.value,
+              validChar: "ABCEDFGHIJKLMNOPQRSTUVXWYZ abcdefghijklmnopqrstuvxwyzáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ0123456789"
+            }) ? setName(e.target.value) : null }
           />
 
           <CustomizedInputs
@@ -79,16 +115,28 @@ export default function RegisterExercise({ listCategories }) {
             label={'Repetições *'} 
             type={'text'} 
             value={reps}
-            onChange={ (e) => setReps(e.target.value) }
+            placeholder={'xx repetições ("-" se não se aplica)'}
+            onChange={ (e) => validateInputs({
+              input: e.target.value,
+              validChar: "0123456789-"
+            }) ? setReps(e.target.value) : null }
+            onBlur={() => onBlurReps()}
+            onFocus={() => onFocusReps()}
           />
 
-          <CustomizedInputs
-            size='small' 
-            label={'Duração do exercício *'} 
-            type={'text'} 
+          <InputMask 
+            mask="99:99:99"
+            maskChar=""
             value={time}
             onChange={ (e) => setTime(e.target.value) }
-          />
+          >
+            {() => <CustomizedInputs
+              size='small' 
+              label={'Duração do exercício *'}
+              placeholder={'hh:mm:ss'}
+              type={'text'}
+            />}
+          </InputMask>
 
           <CustomizedInputs
             size='small' 
@@ -130,9 +178,9 @@ export default function RegisterExercise({ listCategories }) {
           <p className={styles.msg}>* Campo Obrigatório</p>
           <Button type='submit'>Cadastrar Exercício</Button> 
           <Button onClick={handleRegisterLink} type='button' style={{ 
-          backgroundColor: '#AF3A3A',
-          marginTop: '2rem'
-        }}>Cadastrar Nova Categoria</Button> 
+            backgroundColor: '#AF3A3A',
+            marginTop: '2rem'
+          }}>Cadastrar Nova Categoria</Button> 
         </form>
         
       </div>
