@@ -189,6 +189,13 @@ A equipe concluiu que teve um grande avanço desde a última unidade, principalm
 
 Essas mudanças são de grande ganho pra equipe, pois deixa o processo mais flúido e rápido, permitindo a atuação de todos os membros e a conclusão das tarefas a serem realizadas.
 
+### 4.4 Unidade 4
+
+A equipe concluiu que teve avanço nas questões de melhorias apontadas na retrospectiva da última unidade, melhorou a comunicação e a confiança entre os membros do grupo. Mas como o foco da agilidade é em melhoria contínua, também foram analisados pontos que podem melhorar, como a divisão individual de tempo.
+
+Com o time mais integrado, o andamento das tarefas executada por ele também é melhorada, e isso foi peceptível. É importante que o time siga no caminho em que está, de melhorar constantemente. 
+
+
 ## 5 Referências bibliográficas
 PRESSMAN, ROGER S., Engenharia de Software- (6ª edição), São Paulo, Ed. McGrawHill, 2006.
 
