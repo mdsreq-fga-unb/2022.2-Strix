@@ -11,6 +11,7 @@ import { Header } from '../../components/Header';
 import { setupAPIClient } from '../../services/api';
 import MenuItem from '@mui/material/MenuItem';
 import Router from 'next/router';
+import InputMask from 'react-input-mask';
 import { useStyleRegistry } from 'styled-jsx';
 
 
@@ -73,25 +74,38 @@ export default function RegisterClass({ allStudents }) {
         </Link>
 
         <form onSubmit={handleCreateAula}>
-          <CustomizedInputs
+
+          <InputMask
+                      mask="99/99/9999"
+                      maskChar=""
+                      value={data}
+                      onChange={ (e) => setData(e.target.value) }
+          >
+          { () => <CustomizedInputs
             size='small' 
-            label={'Data da aula *'} 
+            label={'Data da aula (DD/MM/AAAA)*'} 
             type={'text'} 
-            value={data}
-            onChange={ (e) => setData(e.target.value) }
-          />
+          />}
+          </InputMask>
+          
+          <InputMask
+                      mask="99:99"
+                      maskChar=""
+                      value={hora}
+                      onChange={ (e) => setHora(e.target.value) }
+          >
+            {
+              () => <CustomizedInputs
+              size='small' 
+              label={'Horário (HH:MM)*'} 
+              type={'text'} 
+            />
+            }
+          </InputMask>
 
           <CustomizedInputs
             size='small' 
-            label={'Horário *'} 
-            type={'text'} 
-            value={hora}
-            onChange={ (e) => setHora(e.target.value) }
-          />
-
-          <CustomizedInputs
-            size='small' 
-            label={'Duração da aula *'} 
+            label={'Duração da aula (em minutos)*'} 
             type={'text'} 
             value={duracao}
             onChange={ (e) => setDuracao(e.target.value) }
@@ -122,7 +136,7 @@ export default function RegisterClass({ allStudents }) {
           <CustomizedInputs 
             size='small' 
             type={"text"} 
-            label={'Nome da aula *'}
+            label={'Nome/descrição da aula *'}
             multiline
             rows={3}
             value={nomedaAula}
