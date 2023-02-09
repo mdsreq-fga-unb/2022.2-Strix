@@ -16,6 +16,7 @@
 | 09/01/23 | 0.9    | Correção referente a issue #10 e ajustes referentes ao novo diagrama | Beatriz
 | 11/01/23 | 1.0    | Ajustes no MVP1 | Pedro
 | 31/01/23 | 1.1    | Ajustes sugeridos pelo outro grupo em sala de aula | Beatriz
+| 09/02/23 | 1.2    | Ajustes em história | Beatriz
 
 ## 1. Introdução
 
@@ -70,7 +71,7 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 | 1.1.1 | Adicionar aula            | Eu como personal, Quero adicionar uma aula, Para lembrar-me mais tarde.                                                                             | Deve abrir o formulário para preenchimento da data, hora, duração, nome da aula e seleção de alunos; Deve permitir a não inclusão de alunos (campo não obrigatório);      |
 | 1.1.2 | Editar aula               | Eu como personal, Quero editar uma aula registrada, Para alterar algum dado.                                                                        | Deve permitir editar todos os dados da aula (data, hora, duração, nome da aula e alunos);                                                                                                                                  |
 | 1.1.3 | Excluir aula              | Eu como personal, Quero excluir uma aula registrada, Para retirar um compromisso que não existe mais.                                               | Deve retirar a aula excluída do calendário.                                                                                                                                                                                                                       |
-| 1.2.1 | Visualizar calendário     | Eu como personal, Quero visualizar no calendário as aulas que tenho marcadas, Para organizar meus compromissos.                                     | Deve listar as aulas registradas no calendário, cada dia deve conter as aulas marcadas em ordem crescente de horário; Deve mostrar apenas as aulas que ainda irão acontecer, não deve aparecer as dos dias passados;                                                                                                                                             |
+| 1.2.1 | Visualizar aulas     | Eu como personal, Quero visualizar  as aulas que tenho marcadas, Para organizar meus compromissos.                                     | Deve listar as aulas registradas em lista com os campos de data, hora, duração, nome da aula e seleção de alunos.                                                                                                                                     |
 | 1.2.2 | Enviar convite aos alunos | Eu como personal,  Quero enviar o convite de aula ao aluno,  Para que ele receba o mesmo em seu próprio calendário e possa se planejar para a aula. | Deve realizar o envio de convite da aula ao calendário do email do(s) aluno(s) registrado(s) naquela aula.                                                                                                                                                                                                                                                       |
 | 2.1.1 | Adicionar aluno           | Eu como personal, Quero adicionar um aluno, Para gerenciar suas aulas e pagamentos.                                                                 | Deve abrir o formulário para preenchimento dos dados do aluno contendo nome completo, data de nascimento, telefone, CPF e email; Deve exibir máscara nos campos de data, telefone e CPF; Deve realizar a validação do CPF e da data que não pode ser superior a atual; Não deve permitir a inclusão de alunos com o mesmo CPF; Todos os campos são obrigatórios. |
 | 2.1.2 | Visualizar aluno          | Eu como personal, Quero visualizar os meus alunos, Para obter a listagem de todos eles.                                                             | Deve permitir a visualização da lista de alunos adicionados;                                                                                                                                                                                                                                                                                                     |
@@ -166,10 +167,12 @@ Os requisitos funcionais estão organizados hierarquicamente na estrutura de Ép
 | [3.2.4] Excluir exercício | Sprint 5 |
 | [3.3.5] Enviar treino | Sprint 5 |
 | [1.1.1] Adicionar aula | Sprint 6 |
-| [1.1.2] Editar aula | Sprint 6 |
-| [1.1.3] Excluir aula | Sprint 6 |
 | [2.2.1] Adicionar pendência | Sprint 6 |
 | [2.2.2] Visualizar pendência | Sprint 6 |
 | [2.2.3] Editar pendência | Sprint 6 |
 | [2.2.4] Excluir pendência | Sprint 6 |
-| [4.1.3] Alterar senha | Sprint 7 |
+| [3.3.1] Adicionar treino | Sprint 7 |
+| [3.3.2] Visualizar treino | Sprint 7 |
+| [3.3.3] Editar treino | Sprint 7 |
+| [3.3.4] Excluir treino | Sprint 7 |
+| [1.2.1] Visualizar aulas | Sprint 7 |
