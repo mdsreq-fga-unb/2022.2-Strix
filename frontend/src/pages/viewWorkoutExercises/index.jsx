@@ -19,13 +19,13 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
-import { red } from '@mui/material/colors';
+import { toast } from 'react-toastify';
 
 export default function viewWorkoutExercises({ exercises, students }) {
-  const { listIdExercise, trainingName, pickUpNameStudent, pickUpIdExercise } = useContext(AuthContext);
-  const [state, setState] = useState([]);
+  const { listIdExercise, trainingName, pickUpNameStudent, pickUpIdExercise, trainingId } = useContext(AuthContext);
+  const [state, setState] = useState([]); // array
   const [selectedStudent, setSelectedStudent] = useState('');
-  //const [nameReq, setNameReq] = useState('');
+  const [selectedExercise, setSelectedExercise] = useState({}); // objeto
 
   useEffect(() => {
     let new_arr = [];
@@ -259,9 +259,6 @@ export default function viewWorkoutExercises({ exercises, students }) {
             }
           }
 
-
-          //pickUpIdExercise(id);
-          //Router.push('/editExercise');
           //return console.log(JSON.stringify(thisRow, null, 4));
         };
   
@@ -317,6 +314,37 @@ export default function viewWorkoutExercises({ exercises, students }) {
     });
   }
 
+  async function handleWorkoutAdd(){
+    if(state.includes(selectedExercise)) {
+      toast.error('esse exercício já está adicionado no treino');
+      return;
+    } else {
+      setState([...state, selectedExercise])
+    }
+  }
+
+  async function handleUpdateTraining(){
+    alert("Dados atualizados com sucesso!");
+    try{
+      let listId = [];
+      for(let a = 0; a < state.length; a++){
+        listId.push(state[a].id);
+      }
+
+      let data = {
+        id: trainingId,
+        name: trainingName,
+        exercise_id: listId
+      }
+  
+      const response = await api.put('/updateTraining', data);
+      toast.success('Dados atualizados com sucesso!');
+
+    }catch(error){
+
+    }
+  }
+
   return (
     <div className={styles.containerCenter}>
       <Header />
@@ -351,6 +379,41 @@ export default function viewWorkoutExercises({ exercises, students }) {
           }
         }}
       />
+
+      <p className={styles.text}>Adicione um exercício ao treino</p>
+      <div>
+      <CustomizedInputs
+            size='small' 
+            select
+            label={'Selecionar exercício'} 
+            type={'text'} 
+            value={selectedExercise}
+            onChange={(e) => (setSelectedExercise(e.target.value))}
+            sx={{
+                '.MuiSelect-icon':{
+                  color: '#D9D9D9'
+                },
+                width: '340px'
+              }}
+            >
+              {exercises.map((option) => (
+                <MenuItem key={option.name} value={option}>
+                  {option.name}
+                </MenuItem>
+              ))}
+          </CustomizedInputs>
+
+          <Button onClick={handleWorkoutAdd} style={{ 
+            backgroundColor: '#3AAFA1',
+            height: '40px',
+            width: '120px',
+            fontSize: '15px',
+            padding: '0',
+            marginLeft: '20px'
+          }}>Adicionar ao treino</Button>
+      </div>
+
+
       <p className={styles.text}>Selecione o aluno para enviar o treino</p>
 
         <div>
@@ -390,9 +453,20 @@ export default function viewWorkoutExercises({ exercises, students }) {
           height: '60px',
           width: '480px',
           fontSize: '20px',
-          marginBottom: '50px'
+          marginBottom: '50px',
+          marginRight: '10px'
         }}>
           Enviar treino
+        </Button>
+        <Button onClick={handleUpdateTraining} style={{ 
+          backgroundColor: '#AF3A3A',
+          height: '60px',
+          width: '480px',
+          fontSize: '20px',
+          marginBottom: '50px',
+          //marginLeft: '10px'
+        }}>
+          Salvar as alterações do treino
         </Button>
       </div>
   );

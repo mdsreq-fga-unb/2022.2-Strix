@@ -10,7 +10,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import Router from 'next/router';
 
 export default function ViewTraining({ training }) {
-  const { exerciseListIdState, pickUpNameTraining } = useContext(AuthContext);
+  const { exerciseListIdState, pickUpNameTraining, pickUpIdTraining } = useContext(AuthContext);
 
   const columns = [
     {
@@ -45,9 +45,10 @@ export default function ViewTraining({ training }) {
             .forEach(
               (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
             );
-
+          let id = thisRow.id
           let exercise_id = thisRow.exercise_id;
           let name = thisRow.name;
+          pickUpIdTraining(id);
           exerciseListIdState(exercise_id);
           pickUpNameTraining(name);
           Router.push('/viewWorkoutExercises');

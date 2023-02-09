@@ -28,8 +28,7 @@ import { RemoveExerciseController } from './controllers/exercise/RemoveExerciseC
 import { CreateTrainingController } from './controllers/training/CreateTrainingController';
 import { DetailTrainingController } from './controllers/training/DetailTrainingController';
 import { ListTrainingController } from './controllers/training/ListTrainingController';
-
-
+import { EditTrainingController } from './controllers/training/EditTrainingController';
 // -- GeneratePdf --
 //import { GeneratePdfController } from './controllers/generatePdf/GeneratePdfController';
 import { GeneratePdf } from './utils/generatePdf';
@@ -75,6 +74,7 @@ router.delete('/exerciseDelete', isAuthenticated, new RemoveExerciseController()
 router.post('/training', isAuthenticated, new CreateTrainingController().handle)
 router.get('/training/detail', isAuthenticated, new DetailTrainingController().handle)
 router.get('/listTraining', isAuthenticated, new ListTrainingController().handle)
+router.put('/updateTraining', isAuthenticated, new EditTrainingController().handle)
 
 // -- Rotas GeneratePdf --
 router.post('/generatePdf', new GeneratePdf().handle)

@@ -25,6 +25,8 @@ export function AuthProvider({ children }){
     const [pendencyId, setPendencyId] = useState('');
     const [idExercise, setIdExercise] = useState('');
     const [trainingName, setTrainingName] = useState('');
+    const [trainingId, setTrainingId] = useState('');
+
 
     // email do aluno selecionado
     const[nameStudent, setNameStudent] = useState('');
@@ -274,11 +276,15 @@ export function AuthProvider({ children }){
     async function pickUpNameStudent(name){
         setNameStudent(name);
     }
+
+    async function pickUpIdTraining(id){
+        setTrainingId(id);
+    }
     
     return(
         <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent,
          deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, registerPendency,
-          studentPendenciesState, pendencyStudentId,updatePendency, studentName, pendencyStudentName, deletePendency, pendencyId, setDetailedPendency, pickUpIdExercise, idExercise, updatedExercise, deleteExercise, pickUpNameTraining, trainingName, nameStudent, pickUpNameStudent }}>
+          studentPendenciesState, pendencyStudentId,updatePendency, studentName, pendencyStudentName, deletePendency, pendencyId, setDetailedPendency, pickUpIdExercise, idExercise, updatedExercise, deleteExercise, pickUpNameTraining, trainingName, nameStudent, pickUpNameStudent, trainingId, pickUpIdTraining }}>
             {children}
         </AuthContext.Provider>
     )
