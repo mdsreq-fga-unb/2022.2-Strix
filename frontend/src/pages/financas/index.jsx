@@ -109,18 +109,10 @@ export default function FinancasPage({ pendentStudents }) {
 
 export const getServerSideProps = canSSRAuth(async (ctx) => {
   const apiClient = setupAPIClient(ctx);
-  try {
-    const response = await apiClient.get("/listPendentStudents");
-    const data = await response.json();
-    console.log("e a response.data é: %s", data);
-    return {
-      props: {
-        pendentStudents: data,
-      },
-    };
-  } catch (err) {
-    console.log("erro: " + err.data);
-    return err;
-  }
-
+  const response = await apiClient.get("/listPendentStudents");
+  return {
+    props: {
+      pendentStudents: response.data,
+    },
+  };
 });
