@@ -1,7 +1,6 @@
 | STRIX                                           |   Versão:           1.0 |
 |------------------------------------------------|-------------------------|
 | Especificação de Caso de Uso: Adicionar Pendência |   Data:  30/01/2023  |
-| UC001                                          |                         |
 
 ## Histórico de revisão
 |    Data    | Versão |         Descrição         |   Autor   |
