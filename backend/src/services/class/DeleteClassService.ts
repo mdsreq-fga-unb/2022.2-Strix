@@ -1,7 +1,7 @@
 import prismaClient from "../../prisma";
 
 class DeleteClassService {
-  async execute(classID: string) {
+  async execute(classID) {
     const deleted = await prismaClient.class.delete({
       where: {
         id: classID,
