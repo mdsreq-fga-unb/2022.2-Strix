@@ -65,5 +65,10 @@
 | Video de apresentação | [link](https://www.youtube.com/watch?v=qel0khWSWgc) |
 | Video de feedback do cliente | [link](https://www.youtube.com/watch?v=BO6qKlfV3aY) |
 | Link do trello | [link](https://trello.com/invite/b/R8Zmkse0/ATTIdd9bd4fce7c773190e8ee12d6103073907830A80/requisitos) |
+| Caso de uso Adicionar Exercício | [link](./AdicionarExercícios.md) |
+| Caso de uso Adicionar Pendência | [link](./AdicionarPendencia.md) |
+| Caso de uso Enviar treino | [link](./EnviarTreino.md) |
+| Caso de uso Manter Aluno | [link](./ManterAluno.md) |
+| Caso de uso Visualizar Aluno | [link](./VisualizarAlunos.md) |
 
 1. Modelo de casos de usoW ![](./img/diagramaCasoUso.jpg)
