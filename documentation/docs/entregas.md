@@ -68,4 +68,4 @@
 | Video de feedback do cliente | [link](https://www.youtube.com/watch?v=BO6qKlfV3aY) |
 | Link do trello | [link](https://trello.com/invite/b/R8Zmkse0/ATTIdd9bd4fce7c773190e8ee12d6103073907830A80/requisitos) |
 
-1. Modelo de casos de usoW ![](./img/CasosUso.jpg)
+1. Modelo de casos de usoW ![](./img/diagramaCasoUso.jpg)
