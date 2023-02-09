@@ -29,6 +29,8 @@ import { CreateTrainingController } from './controllers/training/CreateTrainingC
 import { DetailTrainingController } from './controllers/training/DetailTrainingController';
 import { ListTrainingController } from './controllers/training/ListTrainingController';
 import { EditTrainingController } from './controllers/training/EditTrainingController';
+import { RemoveTrainingControlller } from './controllers/training/RemoveTrainingController';
+
 // -- GeneratePdf --
 //import { GeneratePdfController } from './controllers/generatePdf/GeneratePdfController';
 import { GeneratePdf } from './utils/generatePdf';
@@ -75,6 +77,7 @@ router.post('/training', isAuthenticated, new CreateTrainingController().handle)
 router.get('/training/detail', isAuthenticated, new DetailTrainingController().handle)
 router.get('/listTraining', isAuthenticated, new ListTrainingController().handle)
 router.put('/updateTraining', isAuthenticated, new EditTrainingController().handle)
+router.delete('/trainingDelete', isAuthenticated, new RemoveTrainingControlller().handle)
 
 // -- Rotas GeneratePdf --
 router.post('/generatePdf', new GeneratePdf().handle)

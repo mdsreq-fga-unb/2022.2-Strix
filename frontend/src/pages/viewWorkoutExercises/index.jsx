@@ -324,7 +324,6 @@ export default function viewWorkoutExercises({ exercises, students }) {
   }
 
   async function handleUpdateTraining(){
-    alert("Dados atualizados com sucesso!");
     try{
       let listId = [];
       for(let a = 0; a < state.length; a++){

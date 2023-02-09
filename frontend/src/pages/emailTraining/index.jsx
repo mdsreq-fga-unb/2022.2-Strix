@@ -44,10 +44,13 @@ export default function EmailTraining({ students }) {
         "studentEmail" : studentEmail,
       } 
       const send = await api.post('/sendEmail', data);
+      toast.success("Treino enviado com sucesso!");
     } catch (error) {
+      toast.error('Falha ao enviar');
       console.log("Error ao fazer a requisição!", error);
+
     }
-    alert('enviado por email!');
+    //alert('enviado por email!');
     const del = await api.delete('/deleteFileRoot');
   }
   

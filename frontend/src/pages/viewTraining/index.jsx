@@ -8,15 +8,31 @@ import { Button } from '../../components/ui/Button';
 import styles from './styles.module.scss';
 import { AuthContext } from '../../contexts/AuthContext';
 import Router from 'next/router';
+import { api } from '../../services/apiClient';
+import { toast } from 'react-toastify';
 
 export default function ViewTraining({ training }) {
   const { exerciseListIdState, pickUpNameTraining, pickUpIdTraining } = useContext(AuthContext);
+
+  async function deleteTraining(id){
+    try{
+      const response = await api.delete('/trainingDelete', {
+        params:{
+          training_id: id
+        }
+      })
+
+      toast.success('Treino deletado com sucesso!');
+    }catch(err){
+      console.log('Erro ao tentar deletar treino.', err);
+    }
+  }
 
   const columns = [
     {
       field: 'name',
       headerName: 'Nome do treino',
-      width: 786,
+      width: 663,
       editable: false,
     },
     { field: 'id', headerName: 'ID do treino', width: 300, editable: false },
@@ -56,6 +72,36 @@ export default function ViewTraining({ training }) {
         };
 
         return <Button onClick={onClick}>Detalhes do treino</Button>;
+      }
+    },
+    {
+      field: "Excluir",
+      headerName: "Excluir",
+      sortable: false,
+      width: 122,
+      disableClickEventBubbling: true,
+      renderCell: (params) => {
+        const onClick = (e) => {
+          e.stopPropagation();
+  
+          const api = params.api;
+          const thisRow = {};
+  
+          api
+            .getAllColumns()
+            .filter((c) => c.field !== '__check__' && !!c)
+            .forEach(
+              (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
+            );
+
+          let id = thisRow.id;
+          deleteTraining(id);
+          Router.push('/viewTraining');
+        };
+  
+        return <Button style={{
+          backgroundColor: '#AF3A3A'
+        }} onClick={onClick}>Excluir</Button>;
       }
     },
   ];
