@@ -81,3 +81,37 @@ A partir disso, foram votados 2 pontos a melhorar para que fosse traçado um pla
 Referente as sprints 5 e 6.
 
 #### Participantes:
+
+* Beatriz
+* Guilherme
+* Israel
+* Pedro
+* Mário
+
+#### Em relação aos últimos pontos de ação/melhoria apontados na última retrospectiva:
+
+* melhoramos na divisao do trabalho, a comunicacão do progresso permitiu integrar com mais facilidade o que cada um tava fazendo, o grupo se engajou mais, a comunicação melhorou e houve maior transparência sobre as atividades de cada um.
+* o grupo como um todo perdeu mais o medo de pedir ajuda pros outros membros
+
+Reunião realizada pelo Google Meet e dinâmica pelo Jamboard, o quadro pode ser visto na segunda página por [esse link](https://jamboard.google.com/d/1A53gPWhp4-ROlKXHsKvZmd6k-T2ZugMpcFfNsaUzhd8/viewer?f=2).
+
+#### Pontos positivos apontados:
+
+* Comunicação;
+* Engajamento;
+* Procura por ajuda sempre que não conseguia progredir;
+* Ter recebido ajuda quando foi necessário.
+
+#### Pontos à melhorar apontados:
+
+* Não fazer algumas reuniões;
+* Falta de tempo pra se dedicar ao projeto;
+* Falta de organização do tempo para trabalhar nas pendências do projeto.
+
+A partir disso, foi traçado um plano de ação para cada ponto afim de melhorar no próximo ciclo, foram eles:
+
+| Pontos à melhorar         | Plano de ação                                                      |
+|---------------------------|--------------------------------------------------------------------|
+| Não fazer algumas reuniões        |  Melhorar o tempo dos nossos outros compromissos para sempre deixar reservado um tempo para a reunião no dia marcado           |
+| Falta de tempo pra se dedicar ao projeto | Organizar os compromissos diários para que sempre haja tempo de cumprir todas as obrigaćões |
+| Falta de organização do tempo para trabalhar nas pendências do projeto | Dividir melhor as tarefas entre os membros da equipe com base no tempo disponível e conhecimento para realizá-la. |
