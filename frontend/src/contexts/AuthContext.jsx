@@ -25,6 +25,7 @@ export function AuthProvider({ children }){
     const [pendencyId, setPendencyId] = useState('');
     const [idExercise, setIdExercise] = useState('');
     const [trainingName, setTrainingName] = useState('');
+    const [classID, setClassID] = useState(''); // PARA CONTROLAR O ID DA AULA QUE VAI SER EDITADA
 
     useEffect(() => {
         // Tentar pegar algo no cookie
@@ -211,10 +212,10 @@ export function AuthProvider({ children }){
         }
     }
 
-    async function registerClass({name, date, time, duration, studentID}) {
+    async function registerClass({name, date, time, duration, studentID, studentName}) {
         try {
             const res = await api.post('/class', {
-                name, date, time, duration, studentID
+                name, date, time, duration, studentID, studentName
             });
             toast.success("Aula registrada com sucesso!");
             Router.push('/students')

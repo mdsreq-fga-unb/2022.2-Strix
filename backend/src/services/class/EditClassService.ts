@@ -7,6 +7,7 @@ interface EditClassRequest {
   duration: string;
   time: string;
   studentID: string; // pode vir vazio
+  studentName: string;
 }
 
 class EditClassService {
@@ -17,6 +18,7 @@ class EditClassService {
     time,
     duration,
     studentID,
+    studentName,
   }: EditClassRequest) {
     const foundClass = await prismaClient.class.findFirst({
       where: {
@@ -27,6 +29,17 @@ class EditClassService {
       throw new Error("Cannot find AULA with id " + classID);
     }
     const original_studentID = foundClass.studentID;
+    let idToChange : string;
+    let nameToChange : string;
+    if (studentID === undefined) {
+      idToChange = original_studentID;
+      nameToChange = foundClass.studentName;
+    }
+    else 
+    {
+      idToChange = studentID;
+      nameToChange = studentName;
+    }
     const edited = await prismaClient.class.update({
       where: {
         id: classID,
@@ -35,9 +48,10 @@ class EditClassService {
         name: name,
         date: date,
         duration: duration,
+        time: time,
         // se não definir um novo studentsIDs, ele mantém o antigo, se definir um novo, ele faz a troca
-        studentID:
-          studentID === undefined ? original_studentID : studentID,
+        studentID: idToChange,
+        studentName: nameToChange,
       },
       select: {
         name: true,

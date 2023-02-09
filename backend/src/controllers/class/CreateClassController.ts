@@ -3,7 +3,7 @@ import { CreateClassService } from "../../services/class/CreateClassService";
 
 class CreateClassController {
   async handle(req: Request, res: Response) {
-    const { name, date, time, duration, studentID } = req.body;
+    const { name, date, time, duration, studentID, studentName } = req.body;
     const createClassService = new CreateClassService();
     const aula = await createClassService.execute({
       name,
@@ -11,6 +11,7 @@ class CreateClassController {
       duration,
       time,
       studentID,
+      studentName,
     });
     return res.json(aula);
   }

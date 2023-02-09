@@ -6,10 +6,11 @@ interface ClassRequest {
   duration: string;
   time: string;
   studentID: string; // pode vir vazio
+  studentName: string;
 }
 
 class CreateClassService {
-  async execute({ name, date, time, duration, studentID }: ClassRequest) {
+  async execute({ name, date, time, duration, studentID, studentName }: ClassRequest) {
     const aulaCriada = await prismaClient.class.create({
       data: {
         name,
@@ -17,6 +18,7 @@ class CreateClassService {
         time,
         duration,
         studentID,
+        studentName
       },
     });
     return aulaCriada;

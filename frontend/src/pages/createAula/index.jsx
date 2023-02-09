@@ -11,6 +11,7 @@ import { Header } from '../../components/Header';
 import { setupAPIClient } from '../../services/api';
 import MenuItem from '@mui/material/MenuItem';
 import Router from 'next/router';
+import { useStyleRegistry } from 'styled-jsx';
 
 
 export default function RegisterClass({ allStudents }) {
@@ -31,12 +32,20 @@ export default function RegisterClass({ allStudents }) {
       return;
     }
 
+    let studentName = "";
+
+    allStudents.map((st) => {
+      if (st.id === alunos)
+        studentName = st.name;
+    });
+
     let body = {
         name: nomedaAula,
         date: data,
         time: hora,
         duration: duracao,
         studentID: alunos,
+        studentName: studentName,
     }
 
     console.log(body)
@@ -94,7 +103,9 @@ export default function RegisterClass({ allStudents }) {
             label={'Alunos *'} 
             type={'text'} 
             value={alunos}
-            onChange={(e) => (setAlunos(e.target.value))}
+            onChange={(e) => {
+              setAlunos(e.target.value);
+            }}
             sx={{
               '.MuiSelect-icon':{
                 color: '#D9D9D9'
