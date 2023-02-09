@@ -17,6 +17,9 @@ export function Header() {
                     {/* <h1 className={styles.headerTitle}>STRIX</h1> */}
                     <Image src={logoImg} alt="Strix" />
                     <nav className={styles.menuNav}>
+                        <Link href={'/aulas'}>
+                            Aulas
+                        </Link>
                         <Link href={'/financas'}>
                             Finanças
                         </Link>
