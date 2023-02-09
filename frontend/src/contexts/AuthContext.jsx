@@ -218,7 +218,7 @@ export function AuthProvider({ children }){
                 name, date, time, duration, studentID, studentName
             });
             toast.success("Aula registrada com sucesso!");
-            Router.push('/students')
+            Router.push('/aulas')
         } catch (err) {
             toast.error("Erro ao cadastrar aula: " + err);
         }
