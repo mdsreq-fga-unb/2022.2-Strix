@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Sprint Planning - My Docs</title>
+        <title>Caso de uso Visualizar Alunos - My Docs</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -45,8 +45,8 @@
                             <li class="navitem">
                                 <a href="../entregas/" class="nav-link">Entregas</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Sprint Planning</a>
+                            <li class="navitem">
+                                <a href="../sprint_planning/" class="nav-link">Sprint Planning</a>
                             </li>
                             <li class="navitem">
                                 <a href="../sprint_retrospective/" class="nav-link">Sprint Retrospective</a>
@@ -57,8 +57,8 @@
                             <li class="navitem">
                                 <a href="../AdicionarPendencia/" class="nav-link">Caso de uso Adicionar Pendência</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../VisualizarAlunos/" class="nav-link">Caso de uso Visualizar Alunos</a>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Caso de uso Visualizar Alunos</a>
                             </li>
                             <li class="navitem">
                                 <a href="../ManterAluno/" class="nav-link">Caso de uso Manter Aluno</a>
@@ -75,12 +75,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../entregas/" class="nav-link">
+                                <a rel="prev" href="../AdicionarPendencia/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../sprint_retrospective/" class="nav-link">
+                                <a rel="next" href="../ManterAluno/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -102,32 +102,52 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#planning-sprint-1-311022-181122" class="nav-link">Planning  - sprint 1 (31/10/22 - 18/11/22)</a>
+            <li class="nav-item" data-level="2"><a href="#historico-de-revisao" class="nav-link">Histórico de revisão</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#planning-sprint-2-191122-031222" class="nav-link">Planning  - sprint 2 (19/11/22 - 03/12/22)</a>
+            <li class="nav-item" data-level="2"><a href="#1-breve-descricao" class="nav-link">1. Breve Descrição</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#planning-sprint-3-041222-191222" class="nav-link">Planning  - sprint 3 (04/12/22 - 19/12/22)</a>
+            <li class="nav-item" data-level="2"><a href="#2-pre-condicoes" class="nav-link">2. Pré-condições</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#planning-sprint-4-201222-030123" class="nav-link">Planning  - sprint 4 (20/12/22 - 03/01/23)</a>
+            <li class="nav-item" data-level="2"><a href="#3-fluxo-basico-de-eventos" class="nav-link">3. Fluxo Básico de eventos</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#planning-sprint-5-040123-180123" class="nav-link">Planning  - sprint 5 (04/01/23 - 18/01/23)</a>
+            <li class="nav-item" data-level="2"><a href="#4-fluxos-alternativos" class="nav-link">4. Fluxos Alternativos</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#planning-sprint-6-190123-020223" class="nav-link">Planning  - sprint 6 (19/01/23 - 02/02/23)</a>
+            <li class="nav-item" data-level="2"><a href="#5-fluxos-de-excecao" class="nav-link">5. Fluxos de Exceção</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#6-pos-condicoes" class="nav-link">6. Pós Condições</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#7-pontos-de-extensao" class="nav-link">7. Pontos de Extensão</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#8-requisitos-especiais" class="nav-link">8. Requisitos Especiais</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#9-informacoes-adicionais" class="nav-link">9. Informações Adicionais</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -136,79 +156,73 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>Observação: os papéis não dos alunos não foram alterados durante as sprints.</p>
-<h1 id="planning-sprint-1-311022-181122"><strong>Planning  - sprint 1 (31/10/22 - 18/11/22)</strong></h1>
-<h3 id="objetivo">Objetivo:</h3>
-<ul>
-<li>Definir a visão de produto e projeto junto ao cliente</li>
-</ul>
-<h3 id="entrega">Entrega:</h3>
-<ul>
-<li>Documento de visão do produto e projeto.</li>
-</ul>
-<h3 id="conclusao">Conclusão:</h3>
-<ul>
-<li>A sprint foi um sucesso, todos os objetivos da foram cumpridos e entregues.</li>
-</ul>
-<h1 id="planning-sprint-2-191122-031222"><strong>Planning  - sprint 2 (19/11/22 - 03/12/22)</strong></h1>
-<h3 id="objetivo_1">Objetivo:</h3>
-<ul>
-<li>Definir o backlog do produto e realizar a elicitação de requisitos junto ao cliente</li>
-</ul>
-<h3 id="entrega_1">Entrega:</h3>
-<ul>
-<li>Documento de requisitos.</li>
-</ul>
-<h3 id="conclusao_1">Conclusão:</h3>
-<ul>
-<li>A sprint foi um sucesso, todos os objetivos da foram cumpridos e entregues.</li>
-</ul>
-<h1 id="planning-sprint-3-041222-191222"><strong>Planning  - sprint 3 (04/12/22 - 19/12/22)</strong></h1>
-<h3 id="objetivo_2">Objetivo:</h3>
-<ul>
-<li>Criação do protótipo, configuração do ambiente de desenvolvimento e estudo das tecnologias escolhidas.</li>
-</ul>
-<h3 id="entrega_2">Entrega:</h3>
-<ul>
-<li><a href="https://www.figma.com/file/eukT59um6mYpO7WxLVI67S/Untitled?node-id=53%3A134&amp;t=xzlRcydeQuDEfksl-1">Protótipo do produto</a>.</li>
-</ul>
-<h3 id="conclusao_2">Conclusão:</h3>
-<ul>
-<li>A sprint foi um sucesso, todos os objetivos da foram cumpridos e entregues.</li>
-</ul>
-<h1 id="planning-sprint-4-201222-030123"><strong>Planning  - sprint 4 (20/12/22 - 03/01/23)</strong></h1>
-<h3 id="objetivo_3">Objetivo:</h3>
-<ul>
-<li>Implementação das histórias pertencentes à feature 2.1.0 de alunos</li>
-</ul>
-<h3 id="entrega_3">Entrega:</h3>
-<ul>
-<li>Feature 2.1.0 (alunos), histórias 4.1.1 e 4.1.2 (login e logout)</li>
-</ul>
-<h3 id="conclusao_3">Conclusão:</h3>
-<ul>
-<li>A sprint foi um sucesso, todos os seus objetivos foram cumpridos e entregues e ainda conseguiu adiantar dois itens não previstos para serem feitos nela.</li>
-</ul>
-<h1 id="planning-sprint-5-040123-180123"><strong>Planning  - sprint 5 (04/01/23 - 18/01/23)</strong></h1>
-<h3 id="objetivo_4">Objetivo:</h3>
-<ul>
-<li>Implementação das histórias pertencentes à feature 3.1.0 de categorias e 3.2.0 de resgistro de exercícios e 3.3.0 de registro de treino</li>
-</ul>
-<h3 id="entrega_4">Entrega:</h3>
-<ul>
-<li>Feature 3.2.0 (exercício), histórias 3.1.1 e 3.1.2 (categoria) e 3.3.1 e 3.3.2 (treino)</li>
-</ul>
-<h3 id="conclusao_4">Conclusão:</h3>
-<ul>
-<li>A sprint foi parcialmente entregue, o que acarretará em debto técnico na sprint seguinte.</li>
-</ul>
-<h1 id="planning-sprint-6-190123-020223"><strong>Planning  - sprint 6 (19/01/23 - 02/02/23)</strong></h1>
-<h3 id="objetivo_5">Objetivo:</h3>
-<ul>
-<li>Implementação das histórias pertencentes à feature 1.1.0 de cadastro de aulas, 2.2.0 de registro de pendências e histórias 3.1.3 (excluir categoria), 3.3.3, 3.3.4 e 3.3.5 (treino) como resultado do debto técnico da sprint anterior.</li>
-</ul>
-<h3 id="entrega_5">Entrega:</h3>
-<h3 id="conclusao_5">Conclusão:</h3></div>
+<table>
+<thead>
+<tr>
+<th>STRIX</th>
+<th>Versão:           1.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Especificação de Caso de Uso: Visualizar Aluno</td>
+<td>Data:  31/01/2023</td>
+</tr>
+</tbody>
+</table>
+<h2 id="historico-de-revisao">Histórico de revisão</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Data</th>
+<th align="center">Versão</th>
+<th align="center">Descrição</th>
+<th align="center">Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">31/01/2023</td>
+<td align="center">1.0</td>
+<td align="center">Inclusão dos casos de uso</td>
+<td align="center">Guilherme</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-breve-descricao">1. Breve Descrição</h2>
+<p>Esse caso de uso consiste na visualização dos alunos do personal, apenas usuários autenticados podem executar este caso de uso, o ator pertencente ao caso de uso é o personal.</p>
+<h2 id="2-pre-condicoes">2. Pré-condições</h2>
+<pre><code>1. O personal já estar logado;
+2. Já existe ao menos UM aluno cadastrado.
+</code></pre>
+<h2 id="3-fluxo-basico-de-eventos">3. Fluxo Básico de eventos</h2>
+<pre><code>1. O caso de uso se inicia quando o personal decide visualizar os alunos cadastrados;
+2. O sistema exibe um menu de opções;
+3. O personal seleciona a opção “Alunos” no menu;
+4. O sistema exibe os alunos cadastrados para a visualização (FA01 e FA02);
+5. O caso de uso se encerra;
+</code></pre>
+<h2 id="4-fluxos-alternativos">4. Fluxos Alternativos</h2>
+<h5 id="fa01-editar-alunos">FA01 - Editar Alunos</h5>
+<pre><code>1. O personal seleciona a opção de editar o aluno;
+2. O sistema apresenta as informações a serem editadas;
+3. O personal informa as informações a serem editadas;
+4. O personal salva as informações;
+5. Retorna ao passo 5 do fluxo básico
+</code></pre>
+<h6 id="fa02-excluir-alunos">FA02 - Excluir alunos</h6>
+<pre><code>1.  O personal seleciona a opção de excluir o aluno
+2.  O sistema exibe uma opção de confirmar exclusão do aluno;
+3.  O personal seleciona em confirmar exclusão 
+4.  Retorna ao passo 5 do fluxo básico.
+</code></pre>
+<h2 id="5-fluxos-de-excecao">5. Fluxos de Exceção</h2>
+<p>Não será possível entrar em um fluxo de exceção pois uma pré-condição é ter pelo menos um aluno cadastrado, o único fluxo alternativo seria caso não tivesse um aluno cadastrado e o sistema retornará uma lista vazia.</p>
+<h2 id="6-pos-condicoes">6. Pós Condições</h2>
+<p>Ao final desse caso de uso, o personal será capaz de visualizar os alunos cadastrados no sistema com a finalidade de editar os alunos caso necessário ou gerenciar a quantidade.</p>
+<h2 id="7-pontos-de-extensao">7. Pontos de Extensão</h2>
+<h2 id="8-requisitos-especiais">8. Requisitos Especiais</h2>
+<h2 id="9-informacoes-adicionais">9. Informações Adicionais</h2></div>
             </div>
         </div>
 
