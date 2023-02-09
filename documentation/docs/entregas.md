@@ -56,8 +56,6 @@
 
 | Título | URL  |
 |----|----|
-| Review da entrega 1 com o Cliente (Parte 1) | [link](https://www.youtube.com/watch?v=GEU_4u1T_5g) |
-| Review da entrega 1 com o Cliente (Parte 2) | [link](https://www.youtube.com/watch?v=JMds2XTMALA) |
 | Documento de requisitos (Atualizado) | [link](./documento_de_requisitos.md) |
 | Documento de visão de produto e projeto (Atualizado) | [link](./visao_do_produto.md) |
 | Link da aplicação (MVP1 e MVP2) | [link](https://2022-2-strix.vercel.app/) |
