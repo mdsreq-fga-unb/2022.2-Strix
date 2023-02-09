@@ -184,6 +184,18 @@
 <td>Ajustes no MVP1</td>
 <td>Pedro</td>
 </tr>
+<tr>
+<td>31/01/23</td>
+<td>1.1</td>
+<td>Ajustes sugeridos pelo outro grupo em sala de aula</td>
+<td>Beatriz</td>
+</tr>
+<tr>
+<td>09/02/23</td>
+<td>1.2</td>
+<td>Ajustes em história</td>
+<td>Beatriz</td>
+</tr>
 </tbody>
 </table>
 <h2 id="1-introducao">1. Introdução</h2>
@@ -282,25 +294,25 @@
 <td align="center">1.1.1</td>
 <td align="center">Adicionar aula</td>
 <td align="center">Eu como personal, Quero adicionar uma aula, Para lembrar-me mais tarde.</td>
-<td align="center">Deve abrir o formulário para preenchimento da data, hora, duração, nome da aula e seleção de alunos; Deve permitir apenas a inclusão de alunos cadastrados no sistema; Deve permitir a não inclusão de alunos (campo não obrigatório); Não deve permitir a marcação de aulas com choque de horário (levando em consideração a hora de início e sua duração).</td>
+<td align="center">Deve abrir o formulário para preenchimento da data, hora, duração, nome da aula e seleção de alunos; Deve permitir a não inclusão de alunos (campo não obrigatório);</td>
 </tr>
 <tr>
 <td align="center">1.1.2</td>
 <td align="center">Editar aula</td>
 <td align="center">Eu como personal, Quero editar uma aula registrada, Para alterar algum dado.</td>
-<td align="center">Deve permitir editar todos os dados da aula (data, hora, duração, nome da aula e alunos); Não  deve seguir os mesmos critérios de inclusão - não permitir marcação com  choque de horários e inclusão de alunos não registrados)</td>
+<td align="center">Deve permitir editar todos os dados da aula (data, hora, duração, nome da aula e alunos);</td>
 </tr>
 <tr>
 <td align="center">1.1.3</td>
 <td align="center">Excluir aula</td>
 <td align="center">Eu como personal, Quero excluir uma aula registrada, Para retirar um compromisso que não existe mais.</td>
-<td align="center">Deve realizar a exclusão da aula selecionada após a confirmação da exclusão por meio de modal; Deve retirar a aula excluída do calendário.</td>
+<td align="center">Deve retirar a aula excluída do calendário.</td>
 </tr>
 <tr>
 <td align="center">1.2.1</td>
-<td align="center">Visualizar calendário</td>
-<td align="center">Eu como personal, Quero visualizar no calendário as aulas que tenho marcadas, Para organizar meus compromissos.</td>
-<td align="center">Deve listar as aulas registradas no calendário, cada dia deve conter as aulas marcadas em ordem crescente de horário; Deve mostrar apenas as aulas que ainda irão acontecer, não deve aparecer as dos dias passados;</td>
+<td align="center">Visualizar aulas</td>
+<td align="center">Eu como personal, Quero visualizar  as aulas que tenho marcadas, Para organizar meus compromissos.</td>
+<td align="center">Deve listar as aulas registradas em lista com os campos de data, hora, duração, nome da aula e seleção de alunos.</td>
 </tr>
 <tr>
 <td align="center">1.2.2</td>
@@ -329,20 +341,20 @@
 <tr>
 <td align="center">2.1.4</td>
 <td align="center">Excluir aluno</td>
-<td align="center">Eu, como usuário, desejo remover um aluno previamente adicionado, para lidar com a desistência de alunos.</td>
+<td align="center">Eu, como personal, desejo remover um aluno previamente adicionado, para lidar com a desistência de alunos.</td>
 <td align="center">Deve permitir a exclusão do aluno selecionado após a confirmação da exclusão por meio de modal; Deve retirar o aluno excluído do calendário.</td>
 </tr>
 <tr>
 <td align="center">2.2.1</td>
 <td align="center">Adicionar pendência</td>
 <td align="center">Eu como personal, Quero adicionar uma pendência, Para estar sempre ciente dos pagamentos a serem feitos.</td>
-<td align="center">Deve permitir adicionar uma pendência de pagamento ao preencher os campos de valor, data de vencimento, título, aluno e status. Deve permitir adicionar apenas 1 aluno já registrado; Deve exibir a máscara nos campos de valor e data; O status pode ser “em aberto” ou “pago”.</td>
+<td align="center">Deve permitir adicionar uma pendência de pagamento ao preencher os campos de valor, data de início, descrição e aluno; Deve exibir a máscara nos campos de valor e data.</td>
 </tr>
 <tr>
 <td align="center">2.2.2</td>
 <td align="center">Visualizar pendência</td>
 <td align="center">Eu como personal, Quero visualizar as pendências de pagamento, Para me organizar financeiramente.</td>
-<td align="center">Deve listar todas as pendências cadastradas;</td>
+<td align="center">Deve listar todas as pendências cadastradas exibindo os campos de valor, data de início, descrição e aluno referente;</td>
 </tr>
 <tr>
 <td align="center">2.2.3</td>
@@ -377,31 +389,31 @@
 <tr>
 <td align="center">3.2.1</td>
 <td align="center">Adicionar exercício</td>
-<td align="center">Eu, como usuário,  Quero criar um novo exercício,Para poder cadastrar os exercícios que eu enviarei aos alunos.</td>
+<td align="center">Eu, como personal,  Quero criar um novo exercício,Para poder cadastrar os exercícios que eu enviarei aos alunos.</td>
 <td align="center">Deve permitir adicionar um exercício ao preencher os campos de nome, repetições, duração, categoria e observação;  Todos os campos devem ser obrigatórios.</td>
 </tr>
 <tr>
 <td align="center">3.2.2</td>
 <td align="center">Visualizar exercício</td>
-<td align="center">Eu, como usuário,  Quero visualizar os dados de um exercício, Para verificar se as instruções estão corretas.</td>
+<td align="center">Eu, como personal,  Quero visualizar os dados de um exercício, Para verificar se as instruções estão corretas.</td>
 <td align="center">Deve permitir editar todos os dados do exercício e salvá-lo.</td>
 </tr>
 <tr>
 <td align="center">3.2.3</td>
 <td align="center">Editar exercício</td>
-<td align="center">Eu, como usuário, Quero editar os dados de um exercício, Para poder modificar alguma instrução.</td>
+<td align="center">Eu, como personal, Quero editar os dados de um exercício, Para poder modificar alguma instrução.</td>
 <td align="center">Deve permitir editar todos os dados do exercício e salvá-lo.</td>
 </tr>
 <tr>
 <td align="center">3.2.4</td>
 <td align="center">Excluir exercício</td>
-<td align="center">Eu, como usuário, Quero remover do sistema um exercício previamente cadastrado, Para não instruir mais este exercício aos alunos.</td>
-<td align="center">Deve permitir excluir o exercício selecionado após confirmação pelo modal; Deve retirar o exercício excluído da listagem.</td>
+<td align="center">Eu, como personal, Quero remover do sistema um exercício previamente cadastrado, Para não instruir mais este exercício aos alunos.</td>
+<td align="center">Deve retirar o exercício excluído da listagem de exercícios.</td>
 </tr>
 <tr>
 <td align="center">3.3.1</td>
 <td align="center">Adicionar treino</td>
-<td align="center">Eu, como usuário, Quero criar um novo treino e adicioná-lo ao sistema, Para poder guardá-los e enviar mais facilmente aos alunos.</td>
+<td align="center">Eu, como personal, Quero criar um novo treino e adicioná-lo ao sistema, Para poder guardá-los e enviar mais facilmente aos alunos.</td>
 <td align="center">Deve permitir criar um treino ao selecionar os exercícios desejados e escrever o nome do treino;  É obrigatório selecionar ao menos um exercício e escrever o nome.</td>
 </tr>
 <tr>
@@ -413,7 +425,7 @@
 <tr>
 <td align="center">3.3.3</td>
 <td align="center">Editar treino</td>
-<td align="center">Eu como persosnal, Quero editar um treino, Para manter o mesmo atualizado.</td>
+<td align="center">Eu como personal, Quero editar um treino, Para manter o mesmo atualizado.</td>
 <td align="center">Deve permitir editar os dados do treino; Os campos devem seguir as mesmas regras da inclusão do treino.</td>
 </tr>
 <tr>
@@ -425,26 +437,26 @@
 <tr>
 <td align="center">3.3.5</td>
 <td align="center">Enviar treino</td>
-<td align="center">Eu, como usuário, Quero selecionar um treino, Para enviá-lo a um aluno.</td>
+<td align="center">Eu, como personal, Quero selecionar um treino, Para enviá-lo a um aluno.</td>
 <td align="center">Deve permitir o envio do treino por meio da seleção do mesmo e do(s) aluno(s) a recebê-lo;  Deve enviar o treino ao e-mail do(s) aluno(s) selecionado(s);</td>
 </tr>
 <tr>
 <td align="center">4.1.1</td>
 <td align="center">Logar no sistema</td>
-<td align="center">Eu, como usuário, Quero que o sistema possua autenticação, Para a segurança dos dados contidos nele.</td>
+<td align="center">Eu, como personal, Quero que o sistema possua autenticação, Para a segurança dos dados contidos nele.</td>
 <td align="center">Deve permitir realizar o login por meio do preenchimento de usuário e senha; Não deve permitir o login caso alguma informação esteja incorreta; O login deve expirar após 1 mês de realizado, exigindo uma nova autenticação.</td>
 </tr>
 <tr>
 <td align="center">4.1.2</td>
 <td align="center">Deslogar no sistema</td>
-<td align="center">Eu como usuário, Quero deslogar do sistema, Para que os dados dos alunos continuem protegidos ao mudar de computador.</td>
+<td align="center">Eu como personal, Quero deslogar do sistema, Para que os dados dos alunos continuem protegidos ao mudar de computador.</td>
 <td align="center">Deve deslogar o usuário e voltar à tela de login.</td>
 </tr>
 <tr>
 <td align="center">4.1.3</td>
 <td align="center">Alterar senha</td>
-<td align="center">Eu, como usuário, Quero redefinir a minha senha de login, Para me autenticar novamente caso eu a esqueça.</td>
-<td align="center">Deve permitir a redenifição de uma nova senha e confirmá-la após a pergunta de segurança ser respondida com sucesso; Não deve permitir mais de uma alteração no período de 12 horas;</td>
+<td align="center">Eu, como personal, Quero redefinir a minha senha de login, Para me autenticar novamente caso eu a esqueça.</td>
+<td align="center">Deve permitir a redenifição de uma nova senha e confirmá-la após a pergunta de segurança ser respondida com sucesso;</td>
 </tr>
 </tbody>
 </table>
@@ -662,14 +674,6 @@
 <td>Sprint 6</td>
 </tr>
 <tr>
-<td>[1.1.2] Editar aula</td>
-<td>Sprint 6</td>
-</tr>
-<tr>
-<td>[1.1.3] Excluir aula</td>
-<td>Sprint 6</td>
-</tr>
-<tr>
 <td>[2.2.1] Adicionar pendência</td>
 <td>Sprint 6</td>
 </tr>
@@ -686,7 +690,23 @@
 <td>Sprint 6</td>
 </tr>
 <tr>
-<td>[4.1.3] Alterar senha</td>
+<td>[3.3.1] Adicionar treino</td>
+<td>Sprint 7</td>
+</tr>
+<tr>
+<td>[3.3.2] Visualizar treino</td>
+<td>Sprint 7</td>
+</tr>
+<tr>
+<td>[3.3.3] Editar treino</td>
+<td>Sprint 7</td>
+</tr>
+<tr>
+<td>[3.3.4] Excluir treino</td>
+<td>Sprint 7</td>
+</tr>
+<tr>
+<td>[1.2.1] Visualizar aulas</td>
 <td>Sprint 7</td>
 </tr>
 </tbody>
