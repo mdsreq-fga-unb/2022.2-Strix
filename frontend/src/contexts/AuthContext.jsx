@@ -26,6 +26,11 @@ export function AuthProvider({ children }){
     const [idExercise, setIdExercise] = useState('');
     const [trainingName, setTrainingName] = useState('');
     const [classID, setClassID] = useState(''); // PARA CONTROLAR O ID DA AULA QUE VAI SER EDITADA
+    const [trainingId, setTrainingId] = useState('');
+
+
+    // email do aluno selecionado
+    const[nameStudent, setNameStudent] = useState('');
 
     useEffect(() => {
         // Tentar pegar algo no cookie
@@ -91,12 +96,10 @@ export function AuthProvider({ children }){
                 email,
                 user_id
             })
-
             toast.success('Aluno cadastrado com sucesso!');
             Router.push('/students');
         }catch(err){
-            toast.error("Erro ao cadastrar!");
-            console.log("erro ao cadastrar aluno ", err)
+            toast.error("Erro ao cadastrar: " + err.response.data.error);
         }
     }
 
@@ -117,8 +120,8 @@ export function AuthProvider({ children }){
             toast.success('Dados editado com sucesso!');
             Router.push('/students');
         }catch(error){
-          toast.error("Erro ao editar!");
-          console.log("erro ao cadastrar aluno ", error);
+          toast.error("Erro ao editar: " + error.response.data.error);
+          console.log("erro ao cadastrar aluno ", error.response.data);
         }
     }
 
@@ -282,12 +285,20 @@ export function AuthProvider({ children }){
     async function setDetailedPendency(id) {
         setPendencyId(id);
     }
+
+    async function pickUpNameStudent(name){
+        setNameStudent(name);
+    }
+
+    async function pickUpIdTraining(id){
+        setTrainingId(id);
+    }
     
     return(
         <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, registerStudent, studentIdState, idState, updatedStudent,
          deleteStudent, registerCategories, registerExercise, exerciseListIdState, listIdExercise, registerPendency,
           studentPendenciesState, pendencyStudentId,updatePendency, studentName, pendencyStudentName, deletePendency,
-           pendencyId, setDetailedPendency, pickUpIdExercise, idExercise, updatedExercise, deleteExercise, pickUpNameTraining, trainingName,
+           pendencyId, setDetailedPendency, pickUpIdExercise, idExercise, updatedExercise, deleteExercise, pickUpNameTraining, trainingName, nameStudent, pickUpNameStudent, trainingId, pickUpIdTraining,
             registerClass }}>
             {children}
         </AuthContext.Provider>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useContext, useEffect } from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, visibleGridColumnsLengthSelector } from '@mui/x-data-grid';
 import { setupAPIClient } from '../../services/api';
 import { canSSRAuth } from '../../../utils/canSSRAuth';
 import { Header } from '../../components/Header';
@@ -12,18 +12,20 @@ import { useState } from 'react';
 import CustomizedInputs from '../../components/ui/StyledInputs/CustomizedInputs';
 import { MenuItem } from '@mui/material';
 import { api } from '../../services/apiClient';
+import Router from 'next/router';
 
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
+import { toast } from 'react-toastify';
 
 export default function viewWorkoutExercises({ exercises, students }) {
-  const { listIdExercise, trainingName } = useContext(AuthContext);
-  const [state, setState] = useState([]);
+  const { listIdExercise, trainingName, pickUpNameStudent, pickUpIdExercise, trainingId } = useContext(AuthContext);
+  const [state, setState] = useState([]); // array
   const [selectedStudent, setSelectedStudent] = useState('');
-  //const [nameReq, setNameReq] = useState('');
+  const [selectedExercise, setSelectedExercise] = useState({}); // objeto
 
   useEffect(() => {
     let new_arr = [];
@@ -218,16 +220,73 @@ export default function viewWorkoutExercises({ exercises, students }) {
             .forEach(
               (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
             );
+          let id = thisRow.id;
+          pickUpIdExercise(id);
+          Router.push('/editExercise');
           //return console.log(JSON.stringify(thisRow, null, 4));
         };
   
         return <Button onClick={onClick}>Editar</Button>;
       }
     },
+    {
+      field: "Excluir",
+      headerName: "Excluir",
+      sortable: false,
+      width: 122,
+      disableClickEventBubbling: true,
+      renderCell: (params) => {
+        const onClick = (e) => {
+          e.stopPropagation();
+  
+          const api = params.api;
+          const thisRow = {};
+  
+          api
+            .getAllColumns()
+            .filter((c) => c.field !== '__check__' && !!c)
+            .forEach(
+              (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
+            );
+          let idRow = thisRow.id;
+          let newState = [];
+
+          for (let c = 0; c < state.length; c++){
+            if (state[c].id === idRow) {
+              newState = state.filter(el => el !== state[c]);
+              setState(newState);
+              console.log("NewState é: " + newState);
+            }
+          }
+
+          //return console.log(JSON.stringify(thisRow, null, 4));
+        };
+  
+        return <Button style={{
+          backgroundColor: '#AF3A3A'
+        }} onClick={onClick}>Excluir</Button>;
+      }
+    },
   ];
 
-  function handleSendTraining(){
-    alert('Treino enviado')
+  async function handleSendTraining(){
+    //alert('Treino enviado')
+    try {
+      let data = {
+        name: trainingName,
+        student: selectedStudent,
+        listExercises: state
+      }
+
+      const response = await api.post('/createPdfRoot', data);
+      console.log("Treino criado com sucesso!")
+      pickUpNameStudent(selectedStudent);
+      Router.push('/emailTraining');
+      
+    } catch (error) {
+      //toast.error("Erro ao criar o pdf na raiz do projeto");
+      console.log("erro ao criar o pdf na raiz do projeto ", error)
+    }
   }
 
   async function handleWorkoutView(){
@@ -255,10 +314,40 @@ export default function viewWorkoutExercises({ exercises, students }) {
     });
   }
 
+  async function handleWorkoutAdd(){
+    if(state.includes(selectedExercise)) {
+      toast.error('esse exercício já está adicionado no treino');
+      return;
+    } else {
+      setState([...state, selectedExercise])
+    }
+  }
+
+  async function handleUpdateTraining(){
+    try{
+      let listId = [];
+      for(let a = 0; a < state.length; a++){
+        listId.push(state[a].id);
+      }
+
+      let data = {
+        id: trainingId,
+        name: trainingName,
+        exercise_id: listId
+      }
+  
+      const response = await api.put('/updateTraining', data);
+      toast.success('Dados atualizados com sucesso!');
+
+    }catch(error){
+
+    }
+  }
+
   return (
     <div className={styles.containerCenter}>
       <Header />
-      <p className={styles.titulo}>Envio de treino</p>
+      <p className={styles.titulo}>Detalhes do treino</p>
       <p className={styles.textGrid}>Exercícios do treino</p>
       <DataGrid
         rows={state}
@@ -289,6 +378,41 @@ export default function viewWorkoutExercises({ exercises, students }) {
           }
         }}
       />
+
+      <p className={styles.text}>Adicione um exercício ao treino</p>
+      <div>
+      <CustomizedInputs
+            size='small' 
+            select
+            label={'Selecionar exercício'} 
+            type={'text'} 
+            value={selectedExercise}
+            onChange={(e) => (setSelectedExercise(e.target.value))}
+            sx={{
+                '.MuiSelect-icon':{
+                  color: '#D9D9D9'
+                },
+                width: '340px'
+              }}
+            >
+              {exercises.map((option) => (
+                <MenuItem key={option.name} value={option}>
+                  {option.name}
+                </MenuItem>
+              ))}
+          </CustomizedInputs>
+
+          <Button onClick={handleWorkoutAdd} style={{ 
+            backgroundColor: '#3AAFA1',
+            height: '40px',
+            width: '120px',
+            fontSize: '15px',
+            padding: '0',
+            marginLeft: '20px'
+          }}>Adicionar ao treino</Button>
+      </div>
+
+
       <p className={styles.text}>Selecione o aluno para enviar o treino</p>
 
         <div>
@@ -328,9 +452,20 @@ export default function viewWorkoutExercises({ exercises, students }) {
           height: '60px',
           width: '480px',
           fontSize: '20px',
-          marginBottom: '50px'
+          marginBottom: '50px',
+          marginRight: '10px'
         }}>
           Enviar treino
+        </Button>
+        <Button onClick={handleUpdateTraining} style={{ 
+          backgroundColor: '#AF3A3A',
+          height: '60px',
+          width: '480px',
+          fontSize: '20px',
+          marginBottom: '50px',
+          //marginLeft: '10px'
+        }}>
+          Salvar as alterações do treino
         </Button>
       </div>
   );

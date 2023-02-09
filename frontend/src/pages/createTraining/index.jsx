@@ -86,13 +86,14 @@ export default function SetUpTraining({ exercises }) {
       }
       console.log(data)
       const response = await api.post('/training', data);
-      toast.success('Exercício cadastrado com sucesso!');
+      toast.success('Treino criado com sucesso!');
       setNameDefinido('');
       setName('');
       setListIdExercises([]);
+      Router.push('/viewTraining');
     }catch(err){
-      toast.error("Erro ao cadastrar exercício!");
-      console.log("erro ao cadastrar exercício ", err);
+      toast.error("Erro ao criar treino!");
+      console.log("erro ao criar treino ", err);
     }
   }
 

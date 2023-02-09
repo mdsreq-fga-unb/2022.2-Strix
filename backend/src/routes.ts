@@ -28,11 +28,13 @@ import { RemoveExerciseController } from './controllers/exercise/RemoveExerciseC
 import { CreateTrainingController } from './controllers/training/CreateTrainingController';
 import { DetailTrainingController } from './controllers/training/DetailTrainingController';
 import { ListTrainingController } from './controllers/training/ListTrainingController';
-
+import { EditTrainingController } from './controllers/training/EditTrainingController';
+import { RemoveTrainingControlller } from './controllers/training/RemoveTrainingController';
 
 // -- GeneratePdf --
 //import { GeneratePdfController } from './controllers/generatePdf/GeneratePdfController';
 import { GeneratePdf } from './utils/generatePdf';
+import { CreatePdfRoot } from './utils/createPdfRoot';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 import { CreatePendencyController } from './controllers/pendency/CreatePendencyController';
@@ -45,6 +47,8 @@ import { CreateClassController } from './controllers/class/CreateClassController
 import { DetailClassController } from './controllers/class/DetailClassController';
 import { EditClassController } from './controllers/class/EditClassController';
 import { DeleteClassController } from './controllers/class/DeleteClassController';
+import { SendEmail } from './utils/sendEmail';
+import { DeleteFileRoot } from './utils/deleteFileRoot';
 
 const router = Router();
 
@@ -76,6 +80,8 @@ router.delete('/exerciseDelete', isAuthenticated, new RemoveExerciseController()
 router.post('/training', isAuthenticated, new CreateTrainingController().handle)
 router.get('/training/detail', isAuthenticated, new DetailTrainingController().handle)
 router.get('/listTraining', isAuthenticated, new ListTrainingController().handle)
+router.put('/updateTraining', isAuthenticated, new EditTrainingController().handle)
+router.delete('/trainingDelete', isAuthenticated, new RemoveTrainingControlller().handle)
 
 // -- Rotas GeneratePdf --
 router.post('/generatePdf', new GeneratePdf().handle)
@@ -86,6 +92,15 @@ router.get('/listAllPendencies', isAuthenticated, new ListPendencyController().h
 router.get('/pendency/detail', isAuthenticated, new DetailPendencyController().handle)
 router.delete('/deletePendency', isAuthenticated, new DeletePendencyController().handle)
 router.put('/updatePendency', isAuthenticated, new EditPendencyController().handle)
+
+// -- Rotas envio de treino --
+router.post('/sendEmail', new SendEmail().handle);
+
+// -- Rota CreatePdfRoot --
+router.post('/createPdfRoot', new CreatePdfRoot().handle)
+
+// --Rota DeleteFileRoot --
+router.delete('/deleteFileRoot', new DeleteFileRoot().handle)
 
 // -- Rotas Aulas --
 router.post('/class', new CreateClassController().handle)
