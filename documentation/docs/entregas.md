@@ -62,7 +62,6 @@
 | Sprint planning | [link](./sprint_planning.md) |
 | Sprint retrospective | [link](./sprint_retrospective.md) |
 | PBB, USM e BDDs | [link](https://miro.com/app/board/uXjVP5RsYIU=/?share_link_id=755010508584) |
-| Video de apresentação | [link](https://www.youtube.com/watch?v=qel0khWSWgc) |
 | Video de feedback do cliente | [link](https://www.youtube.com/watch?v=BO6qKlfV3aY) |
 | Link do trello | [link](https://trello.com/invite/b/R8Zmkse0/ATTIdd9bd4fce7c773190e8ee12d6103073907830A80/requisitos) |
 | Caso de uso Adicionar Exercício | [link](./AdicionarExercícios.md) |
@@ -70,5 +69,8 @@
 | Caso de uso Enviar treino | [link](./EnviarTreino.md) |
 | Caso de uso Manter Aluno | [link](./ManterAluno.md) |
 | Caso de uso Visualizar Aluno | [link](./VisualizarAlunos.md) |
+| Video de apresentação (Parte 1) | [link](https://www.youtube.com/watch?v=skO852lFv7s) |
+| Video de apresentação (Parte 2) | [link](https://www.youtube.com/watch?v=Rd-YcvL6DnY) |
+
 
 1. Modelo de casos de usoW ![](./img/diagramaCasoUso.jpg)
