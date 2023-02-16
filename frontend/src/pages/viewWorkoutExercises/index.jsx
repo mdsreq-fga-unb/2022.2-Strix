@@ -23,21 +23,33 @@ import { toast } from 'react-toastify';
 
 export default function viewWorkoutExercises({ exercises, students }) {
   const { listIdExercise, trainingName, pickUpNameStudent, pickUpIdExercise, trainingId } = useContext(AuthContext);
+  
   const [state, setState] = useState([]); // array
   const [selectedStudent, setSelectedStudent] = useState('');
   const [selectedExercise, setSelectedExercise] = useState({}); // objeto
+  
 
   useEffect(() => {
+  if(listIdExercise.length){
+    localStorage.setItem("listIdExercise", JSON.stringify(listIdExercise));
+  }
+
+  const listId = JSON.parse(localStorage.getItem('listIdExercise'));
+    console.log('listId: ' + listId + ' e o tipo é: ' + typeof(listId));
+    
     let new_arr = [];
     for (let a = 0; a < exercises.length; a++){
-        for (let b = 0; b < listIdExercise.length; b++){
-            if(exercises[a].id === listIdExercise[b]){
+        for (let b = 0; b < listId.length; b++){
+            if(exercises[a].id === listId[b]){
                 new_arr.push(exercises[a]);
             }
         }
     }
     new_arr && setState(new_arr)
+    //setState(new_arr);
+    
   }, [])
+  state && console.log('O state é: ' + state);
 
 
   function isOverflown(element) {
@@ -344,6 +356,10 @@ export default function viewWorkoutExercises({ exercises, students }) {
     }
   }
 
+  if (!state.length){
+    return <div style={{ color: '#fff' }} >Carregando...</div>
+  }
+
   return (
     <div className={styles.containerCenter}>
       <Header />
@@ -473,12 +489,16 @@ export default function viewWorkoutExercises({ exercises, students }) {
 
 export const getServerSideProps = canSSRAuth(async (ctx) => {
   const apiClient = setupAPIClient(ctx);
-  const response = await apiClient.get('/listExercises');
-  const responseStudents = await apiClient.get('/listStudents');
+  try {
+    const response = await apiClient.get('/listExercises');
+    const responseStudents = await apiClient.get('/listStudents');
     return {
         props: {
           exercises: response.data,
           students: responseStudents.data
         }
     }
+  } catch (error) {
+    console.log('Erro ao fazer a requisição ' + error);
+  }  
 })
